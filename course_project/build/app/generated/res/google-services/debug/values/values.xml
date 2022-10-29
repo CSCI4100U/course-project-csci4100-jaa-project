@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">258703453258-0nfp60rmrl55r1vtfren3ild0asemvml.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">258703453258</string>
+    <string name="google_api_key" translatable="false">AIzaSyC6oWlh7yEXmhRUGqzQtAlNrDxR9y2czcw</string>
+    <string name="google_app_id" translatable="false">1:258703453258:android:08753fb42f3143f06a0ab3</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyC6oWlh7yEXmhRUGqzQtAlNrDxR9y2czcw</string>
+    <string name="google_storage_bucket" translatable="false">course-project-f4c51.appspot.com</string>
+    <string name="project_id" translatable="false">course-project-f4c51</string>
+</resources>
