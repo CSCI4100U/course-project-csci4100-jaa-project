@@ -2,21 +2,17 @@
 
 Group members (3-5) (no Student IDs, only names and github usernames):
 
-1. 
+1. Name: Anthony Liscio, Github Username: anthony9105
 
-2. 
+2. Name: Joaquin Tome, Github Username: joacotome24
 
-3. 
-
-4. 
-
-5.
+3. Name: Agustín Hernández, Github Username: AgustinH09
 
 ## Overview
-This group project is designed for you to demonstrate the skills that you have learned in this course.  The final project that you submit in the last week of classes will be a completed mobile application.  Non-functional requirements, especially those associated with production-readiness, will be considered extremely important when marking this project.  You are expected to work in a group of three to five students when completing this project.  Students are not permitted to work alone on the project, as this eliminates one of the learning objectives of this assessment. 
+This group project is designed for you to demonstrate the skills that you have learned in this course.  The final project that you submit in the last week of classes will be a completed mobile application.  Non-functional requirements, especially those associated with production-readiness, will be considered extremely important when marking this project.  You are expected to work in a group of three to five students when completing this project.  Students are not permitted to work alone on the project, as this eliminates one of the learning objectives of this assessment.
 
 _**Note:**  Any projects from individual students will not be accepted, except if special permission has been given by the instructor in advance._
-
+Anthony LiscioAnthony Liscio
 ## Detailed Instructions
 
 ### Choosing a Topic
@@ -60,7 +56,7 @@ The first phase of marking will take place sometime during week 10, meaning that
 #### Functional requirements (7 marks total)
 
 Max Score | Requirement
---------- | ----------- 
+--------- | -----------
 1.50 | Multiple screens/navigation
 1.00 | Dialogs and pickers
 1.00 | Notifications
@@ -71,7 +67,7 @@ Max Score | Requirement
 #### Non-functional requirements (3 marks total)
 
 Max Score | Requirement
---------- | ----------- 
+--------- | -----------
 1.00 | Amount of work done
 1.00 | User interface design/usability
 1.00 | Code and design quality
@@ -83,7 +79,7 @@ The final phase of marking will be carried out at the end of the course.  This e
 #### Functional requirements (5 marks total)
 
 Max Score | Requirement
---------- | ----------- 
+--------- | -----------
 0.50 | multiple screens and navigation
 0.25 | dialogs and pickers
 0.50 | snackbars and notifications
@@ -98,7 +94,7 @@ Max Score | Requirement
 #### Non-functional requirements (25 marks total)
 
 Max Score | Requirement
---------- | ----------- 
+--------- | -----------
 5.00 | code and design quality
 5.00 | user interface design and usability
 15.00 | amount of work done
@@ -106,7 +102,7 @@ Max Score | Requirement
 #### Technical Report (10 marks total)
 
 Max Score | Requirement
---------- | ----------- 
+--------- | -----------
 1.00 | overview of project
 1.00 | list of group members and their contributions
 2.00 | code design (e.g. UML)
@@ -117,12 +113,12 @@ Max Score | Requirement
 #### Individual Demo (10 marks total)
 
 Max Score | Requirement
---------- | ----------- 
+--------- | -----------
 5.00 | demonstration of application
 5.00 | explanation and presentation of individual contribution to the project
 
 ## How to Submit
-The project starter is available on GitHub Classroom, which really just has this README.md, since I want you to have freedom over this project.  There won’t be any starter code, you will start from scratch.  Accept the invite link for this project on GitHub Classroom, and use the new repository generated to store your project files.  This is setup as a group project, so one person can sign up, and others group members can also contribute to the project in that new repository.  
+The project starter is available on GitHub Classroom, which really just has this README.md, since I want you to have freedom over this project.  There won’t be any starter code, you will start from scratch.  Accept the invite link for this project on GitHub Classroom, and use the new repository generated to store your project files.  This is setup as a group project, so one person can sign up, and others group members can also contribute to the project in that new repository.
 
 The markers will use this repository to download the latest version of your project, along with other information (e.g. commit logs) available through Git, when they want to mark the project.
 
