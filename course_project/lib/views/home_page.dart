@@ -2,14 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutterfire_ui/auth.dart';
 
+import 'schedule_event_page.dart';
+
 class HomeScreen extends StatelessWidget {
   final User user;
   const HomeScreen({Key? key, required this.user}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+  
+  Future<void> _showEventScheduler() async{
+    var event = await Navigator.pushNamed(context, '/scheduleEvent');
+    print("New Event Created: $event");
+  }
+
     return MaterialApp(
-        home: Scaffold(
+      home: Scaffold(
       appBar: AppBar(
         title: const Text("FlutterFire UI Authentication"),
       ),
@@ -25,6 +33,18 @@ class HomeScreen extends StatelessWidget {
               const Spacer(),
             ],
           )),
-    ));
+      floatingActionButton: FloatingActionButton(
+        onPressed: _showEventScheduler,
+        tooltip: 'Schedule Event',
+        child: const Icon(Icons.add),
+      ),
+    ),
+    routes: {
+        '/scheduleEvent' : (context){
+          return const ScheduleEventPage();
+        }
+      },
+    );
+    
   }
 }
