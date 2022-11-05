@@ -13,60 +13,60 @@
 13         to allow setting breakpoints, to provide hot reload, etc.
 14    -->
 15    <uses-permission android:name="android.permission.INTERNET" />
-15-->/Users/joacotome24/Desktop/course-project-csci4100-jaa-project/course_project/android/app/src/debug/AndroidManifest.xml:7:5-66
-15-->/Users/joacotome24/Desktop/course-project-csci4100-jaa-project/course_project/android/app/src/debug/AndroidManifest.xml:7:22-64
+15-->C:\Repos\mobile_devices\oblig\course_project\android\app\src\debug\AndroidManifest.xml:7:5-66
+15-->C:\Repos\mobile_devices\oblig\course_project\android\app\src\debug\AndroidManifest.xml:7:22-64
 16    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-16-->[:flutter_local_notifications] /Users/joacotome24/Desktop/course-project-csci4100-jaa-project/course_project/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-81
-16-->[:flutter_local_notifications] /Users/joacotome24/Desktop/course-project-csci4100-jaa-project/course_project/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-78
+16-->[:flutter_local_notifications] C:\Repos\mobile_devices\oblig\course_project\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-81
+16-->[:flutter_local_notifications] C:\Repos\mobile_devices\oblig\course_project\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:9:22-78
 17    <uses-permission android:name="android.permission.VIBRATE" />
-17-->[:flutter_local_notifications] /Users/joacotome24/Desktop/course-project-csci4100-jaa-project/course_project/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:10:5-66
-17-->[:flutter_local_notifications] /Users/joacotome24/Desktop/course-project-csci4100-jaa-project/course_project/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:10:22-63
+17-->[:flutter_local_notifications] C:\Repos\mobile_devices\oblig\course_project\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:10:5-66
+17-->[:flutter_local_notifications] C:\Repos\mobile_devices\oblig\course_project\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:10:22-63
 18    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
-18-->[:flutter_local_notifications] /Users/joacotome24/Desktop/course-project-csci4100-jaa-project/course_project/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:11:5-81
-18-->[:flutter_local_notifications] /Users/joacotome24/Desktop/course-project-csci4100-jaa-project/course_project/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:11:22-78
+18-->[:flutter_local_notifications] C:\Repos\mobile_devices\oblig\course_project\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:11:5-81
+18-->[:flutter_local_notifications] C:\Repos\mobile_devices\oblig\course_project\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:11:22-78
 19    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
-19-->[:flutter_local_notifications] /Users/joacotome24/Desktop/course-project-csci4100-jaa-project/course_project/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:12:5-79
-19-->[:flutter_local_notifications] /Users/joacotome24/Desktop/course-project-csci4100-jaa-project/course_project/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:12:22-76
+19-->[:flutter_local_notifications] C:\Repos\mobile_devices\oblig\course_project\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:12:5-79
+19-->[:flutter_local_notifications] C:\Repos\mobile_devices\oblig\course_project\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:12:22-76
 20    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-20-->[:flutter_local_notifications] /Users/joacotome24/Desktop/course-project-csci4100-jaa-project/course_project/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:13:5-77
-20-->[:flutter_local_notifications] /Users/joacotome24/Desktop/course-project-csci4100-jaa-project/course_project/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:13:22-74
+20-->[:flutter_local_notifications] C:\Repos\mobile_devices\oblig\course_project\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:13:5-77
+20-->[:flutter_local_notifications] C:\Repos\mobile_devices\oblig\course_project\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:13:22-74
 21
 22    <queries>
-22-->[:twitter_login] /Users/joacotome24/Desktop/course-project-csci4100-jaa-project/course_project/build/twitter_login/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-13:15
+22-->[:twitter_login] C:\Repos\mobile_devices\oblig\course_project\build\twitter_login\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-13:15
 23        <intent>
-23-->[:twitter_login] /Users/joacotome24/Desktop/course-project-csci4100-jaa-project/course_project/build/twitter_login/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-12:18
+23-->[:twitter_login] C:\Repos\mobile_devices\oblig\course_project\build\twitter_login\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-12:18
 24            <action android:name="android.support.customtabs.action.CustomTabsService" />
-24-->[:twitter_login] /Users/joacotome24/Desktop/course-project-csci4100-jaa-project/course_project/build/twitter_login/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-90
-24-->[:twitter_login] /Users/joacotome24/Desktop/course-project-csci4100-jaa-project/course_project/build/twitter_login/intermediates/merged_manifest/debug/AndroidManifest.xml:11:21-87
+24-->[:twitter_login] C:\Repos\mobile_devices\oblig\course_project\build\twitter_login\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-90
+24-->[:twitter_login] C:\Repos\mobile_devices\oblig\course_project\build\twitter_login\intermediates\merged_manifest\debug\AndroidManifest.xml:11:21-87
 25        </intent>
 26
 27        <package android:name="com.facebook.katana" />
-27-->[com.facebook.android:facebook-common:14.1.1] /Users/joacotome24/.gradle/caches/transforms-3/374dfd5041a2c5cc2fe6c05a67bbd1ef/transformed/jetified-facebook-common-14.1.1/AndroidManifest.xml:30:9-55
-27-->[com.facebook.android:facebook-common:14.1.1] /Users/joacotome24/.gradle/caches/transforms-3/374dfd5041a2c5cc2fe6c05a67bbd1ef/transformed/jetified-facebook-common-14.1.1/AndroidManifest.xml:30:18-52
+27-->[com.facebook.android:facebook-common:14.1.1] C:\Users\agush\.gradle\caches\transforms-3\374dfd5041a2c5cc2fe6c05a67bbd1ef\transformed\jetified-facebook-common-14.1.1\AndroidManifest.xml:30:9-55
+27-->[com.facebook.android:facebook-common:14.1.1] C:\Users\agush\.gradle\caches\transforms-3\374dfd5041a2c5cc2fe6c05a67bbd1ef\transformed\jetified-facebook-common-14.1.1\AndroidManifest.xml:30:18-52
 28    </queries>
 29
 30    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-30-->[com.google.firebase:firebase-auth:21.1.0] /Users/joacotome24/.gradle/caches/transforms-3/0548e507d3019ac84ce4969b57803f45/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:24:5-79
-30-->[com.google.firebase:firebase-auth:21.1.0] /Users/joacotome24/.gradle/caches/transforms-3/0548e507d3019ac84ce4969b57803f45/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:24:22-76
+30-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\agush\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:24:5-79
+30-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\agush\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:24:22-76
 31    <uses-permission android:name="android.permission.WAKE_LOCK" />
-31-->[com.google.android.gms:play-services-measurement-api:21.2.0] /Users/joacotome24/.gradle/caches/transforms-3/bfd20290ff5d39e38453adc1ae5698f7/transformed/jetified-play-services-measurement-api-21.2.0/AndroidManifest.xml:24:5-68
-31-->[com.google.android.gms:play-services-measurement-api:21.2.0] /Users/joacotome24/.gradle/caches/transforms-3/bfd20290ff5d39e38453adc1ae5698f7/transformed/jetified-play-services-measurement-api-21.2.0/AndroidManifest.xml:24:22-65
+31-->[com.google.android.gms:play-services-measurement-api:21.2.0] C:\Users\agush\.gradle\caches\transforms-3\bfd20290ff5d39e38453adc1ae5698f7\transformed\jetified-play-services-measurement-api-21.2.0\AndroidManifest.xml:24:5-68
+31-->[com.google.android.gms:play-services-measurement-api:21.2.0] C:\Users\agush\.gradle\caches\transforms-3\bfd20290ff5d39e38453adc1ae5698f7\transformed\jetified-play-services-measurement-api-21.2.0\AndroidManifest.xml:24:22-65
 32    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
-32-->[com.google.android.gms:play-services-measurement-api:21.2.0] /Users/joacotome24/.gradle/caches/transforms-3/bfd20290ff5d39e38453adc1ae5698f7/transformed/jetified-play-services-measurement-api-21.2.0/AndroidManifest.xml:25:5-79
-32-->[com.google.android.gms:play-services-measurement-api:21.2.0] /Users/joacotome24/.gradle/caches/transforms-3/bfd20290ff5d39e38453adc1ae5698f7/transformed/jetified-play-services-measurement-api-21.2.0/AndroidManifest.xml:25:22-76
+32-->[com.google.android.gms:play-services-measurement-api:21.2.0] C:\Users\agush\.gradle\caches\transforms-3\bfd20290ff5d39e38453adc1ae5698f7\transformed\jetified-play-services-measurement-api-21.2.0\AndroidManifest.xml:25:5-79
+32-->[com.google.android.gms:play-services-measurement-api:21.2.0] C:\Users\agush\.gradle\caches\transforms-3\bfd20290ff5d39e38453adc1ae5698f7\transformed\jetified-play-services-measurement-api-21.2.0\AndroidManifest.xml:25:22-76
 33    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
-33-->[com.google.android.gms:play-services-measurement:21.2.0] /Users/joacotome24/.gradle/caches/transforms-3/5ec3faad4c67c5d02d41a8d7d7f45ea7/transformed/jetified-play-services-measurement-21.2.0/AndroidManifest.xml:26:5-110
-33-->[com.google.android.gms:play-services-measurement:21.2.0] /Users/joacotome24/.gradle/caches/transforms-3/5ec3faad4c67c5d02d41a8d7d7f45ea7/transformed/jetified-play-services-measurement-21.2.0/AndroidManifest.xml:26:22-107
+33-->[com.google.android.gms:play-services-measurement:21.2.0] C:\Users\agush\.gradle\caches\transforms-3\5ec3faad4c67c5d02d41a8d7d7f45ea7\transformed\jetified-play-services-measurement-21.2.0\AndroidManifest.xml:26:5-110
+33-->[com.google.android.gms:play-services-measurement:21.2.0] C:\Users\agush\.gradle\caches\transforms-3\5ec3faad4c67c5d02d41a8d7d7f45ea7\transformed\jetified-play-services-measurement-21.2.0\AndroidManifest.xml:26:22-107
 34
 35    <application
 36        android:name="android.app.Application"
 37        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-37-->[androidx.core:core:1.6.0] /Users/joacotome24/.gradle/caches/transforms-3/aa701b47cec244085d46a1a42fcc7fb9/transformed/core-1.6.0/AndroidManifest.xml:24:18-86
+37-->[androidx.core:core:1.6.0] C:\Users\agush\.gradle\caches\transforms-3\aa701b47cec244085d46a1a42fcc7fb9\transformed\core-1.6.0\AndroidManifest.xml:24:18-86
 38        android:debuggable="true"
 39        android:icon="@mipmap/ic_launcher"
 40        android:label="course_project"
 41        android:supportsRtl="true" >
-41-->[com.facebook.android:facebook-login:14.1.1] /Users/joacotome24/.gradle/caches/transforms-3/1c94784bd39bf9b92a2af8011fdb8e6a/transformed/jetified-facebook-login-14.1.1/AndroidManifest.xml:28:18-44
+41-->[com.facebook.android:facebook-login:14.1.1] C:\Users\agush\.gradle\caches\transforms-3\1c94784bd39bf9b92a2af8011fdb8e6a\transformed\jetified-facebook-login-14.1.1\AndroidManifest.xml:28:18-44
 42        <activity
 43            android:name="com.example.course_project.MainActivity"
 44            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
@@ -101,348 +101,348 @@
 73            android:value="2" />
 74
 75        <service
-75-->[:firebase_database] /Users/joacotome24/Desktop/course-project-csci4100-jaa-project/course_project/build/firebase_database/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-14:19
+75-->[:firebase_database] C:\Repos\mobile_devices\oblig\course_project\build\firebase_database\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-14:19
 76            android:name="com.google.firebase.components.ComponentDiscoveryService"
-76-->[:firebase_database] /Users/joacotome24/Desktop/course-project-csci4100-jaa-project/course_project/build/firebase_database/intermediates/merged_manifest/debug/AndroidManifest.xml:10:18-89
+76-->[:firebase_database] C:\Repos\mobile_devices\oblig\course_project\build\firebase_database\intermediates\merged_manifest\debug\AndroidManifest.xml:10:18-89
 77            android:directBootAware="true"
-77-->[com.google.firebase:firebase-common:20.2.0] /Users/joacotome24/.gradle/caches/transforms-3/c1f7cd0e68ddf89c76a753ac7fd1a66c/transformed/jetified-firebase-common-20.2.0/AndroidManifest.xml:34:13-43
+77-->[com.google.firebase:firebase-common:20.2.0] C:\Users\agush\.gradle\caches\transforms-3\c1f7cd0e68ddf89c76a753ac7fd1a66c\transformed\jetified-firebase-common-20.2.0\AndroidManifest.xml:34:13-43
 78            android:exported="false" >
-78-->[com.google.firebase:firebase-analytics-ktx:21.2.0] /Users/joacotome24/.gradle/caches/transforms-3/77fcfc1a5ffca8d94a6c1536b3786a34/transformed/jetified-firebase-analytics-ktx-21.2.0/AndroidManifest.xml:10:13-37
+78-->[com.google.firebase:firebase-analytics-ktx:21.2.0] C:\Users\agush\.gradle\caches\transforms-3\77fcfc1a5ffca8d94a6c1536b3786a34\transformed\jetified-firebase-analytics-ktx-21.2.0\AndroidManifest.xml:10:13-37
 79            <meta-data
-79-->[:firebase_database] /Users/joacotome24/Desktop/course-project-csci4100-jaa-project/course_project/build/firebase_database/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-13:85
+79-->[:firebase_database] C:\Repos\mobile_devices\oblig\course_project\build\firebase_database\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
 80                android:name="com.google.firebase.components:io.flutter.plugins.firebase.database.FlutterFirebaseAppRegistrar"
-80-->[:firebase_database] /Users/joacotome24/Desktop/course-project-csci4100-jaa-project/course_project/build/firebase_database/intermediates/merged_manifest/debug/AndroidManifest.xml:12:17-127
+80-->[:firebase_database] C:\Repos\mobile_devices\oblig\course_project\build\firebase_database\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-127
 81                android:value="com.google.firebase.components.ComponentRegistrar" />
-81-->[:firebase_database] /Users/joacotome24/Desktop/course-project-csci4100-jaa-project/course_project/build/firebase_database/intermediates/merged_manifest/debug/AndroidManifest.xml:13:17-82
+81-->[:firebase_database] C:\Repos\mobile_devices\oblig\course_project\build\firebase_database\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
 82            <meta-data
-82-->[:cloud_firestore] /Users/joacotome24/Desktop/course-project-csci4100-jaa-project/course_project/build/cloud_firestore/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-13:85
+82-->[:cloud_firestore] C:\Repos\mobile_devices\oblig\course_project\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
 83                android:name="com.google.firebase.components:io.flutter.plugins.firebase.firestore.FlutterFirebaseFirestoreRegistrar"
-83-->[:cloud_firestore] /Users/joacotome24/Desktop/course-project-csci4100-jaa-project/course_project/build/cloud_firestore/intermediates/merged_manifest/debug/AndroidManifest.xml:12:17-134
+83-->[:cloud_firestore] C:\Repos\mobile_devices\oblig\course_project\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-134
 84                android:value="com.google.firebase.components.ComponentRegistrar" />
-84-->[:cloud_firestore] /Users/joacotome24/Desktop/course-project-csci4100-jaa-project/course_project/build/cloud_firestore/intermediates/merged_manifest/debug/AndroidManifest.xml:13:17-82
+84-->[:cloud_firestore] C:\Repos\mobile_devices\oblig\course_project\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
 85            <meta-data
-85-->[:firebase_dynamic_links] /Users/joacotome24/Desktop/course-project-csci4100-jaa-project/course_project/build/firebase_dynamic_links/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-15:85
+85-->[:firebase_dynamic_links] C:\Repos\mobile_devices\oblig\course_project\build\firebase_dynamic_links\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-15:85
 86                android:name="com.google.firebase.components:io.flutter.plugins.firebase.dynamiclinks.FlutterFirebaseAppRegistrar"
-86-->[:firebase_dynamic_links] /Users/joacotome24/Desktop/course-project-csci4100-jaa-project/course_project/build/firebase_dynamic_links/intermediates/merged_manifest/debug/AndroidManifest.xml:14:17-131
+86-->[:firebase_dynamic_links] C:\Repos\mobile_devices\oblig\course_project\build\firebase_dynamic_links\intermediates\merged_manifest\debug\AndroidManifest.xml:14:17-131
 87                android:value="com.google.firebase.components.ComponentRegistrar" />
-87-->[:firebase_dynamic_links] /Users/joacotome24/Desktop/course-project-csci4100-jaa-project/course_project/build/firebase_dynamic_links/intermediates/merged_manifest/debug/AndroidManifest.xml:15:17-82
+87-->[:firebase_dynamic_links] C:\Repos\mobile_devices\oblig\course_project\build\firebase_dynamic_links\intermediates\merged_manifest\debug\AndroidManifest.xml:15:17-82
 88            <meta-data
-88-->[:firebase_auth] /Users/joacotome24/Desktop/course-project-csci4100-jaa-project/course_project/build/firebase_auth/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-13:85
+88-->[:firebase_auth] C:\Repos\mobile_devices\oblig\course_project\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
 89                android:name="com.google.firebase.components:io.flutter.plugins.firebase.auth.FlutterFirebaseAuthRegistrar"
-89-->[:firebase_auth] /Users/joacotome24/Desktop/course-project-csci4100-jaa-project/course_project/build/firebase_auth/intermediates/merged_manifest/debug/AndroidManifest.xml:12:17-124
+89-->[:firebase_auth] C:\Repos\mobile_devices\oblig\course_project\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-124
 90                android:value="com.google.firebase.components.ComponentRegistrar" />
-90-->[:firebase_auth] /Users/joacotome24/Desktop/course-project-csci4100-jaa-project/course_project/build/firebase_auth/intermediates/merged_manifest/debug/AndroidManifest.xml:13:17-82
+90-->[:firebase_auth] C:\Repos\mobile_devices\oblig\course_project\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
 91            <meta-data
-91-->[:firebase_core] /Users/joacotome24/Desktop/course-project-csci4100-jaa-project/course_project/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-13:85
+91-->[:firebase_core] C:\Repos\mobile_devices\oblig\course_project\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
 92                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
-92-->[:firebase_core] /Users/joacotome24/Desktop/course-project-csci4100-jaa-project/course_project/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:12:17-124
+92-->[:firebase_core] C:\Repos\mobile_devices\oblig\course_project\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-124
 93                android:value="com.google.firebase.components.ComponentRegistrar" />
-93-->[:firebase_core] /Users/joacotome24/Desktop/course-project-csci4100-jaa-project/course_project/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:13:17-82
+93-->[:firebase_core] C:\Repos\mobile_devices\oblig\course_project\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
 94            <meta-data
-94-->[com.google.firebase:firebase-analytics-ktx:21.2.0] /Users/joacotome24/.gradle/caches/transforms-3/77fcfc1a5ffca8d94a6c1536b3786a34/transformed/jetified-firebase-analytics-ktx-21.2.0/AndroidManifest.xml:11:13-13:85
+94-->[com.google.firebase:firebase-analytics-ktx:21.2.0] C:\Users\agush\.gradle\caches\transforms-3\77fcfc1a5ffca8d94a6c1536b3786a34\transformed\jetified-firebase-analytics-ktx-21.2.0\AndroidManifest.xml:11:13-13:85
 95                android:name="com.google.firebase.components:com.google.firebase.analytics.ktx.FirebaseAnalyticsKtxRegistrar"
-95-->[com.google.firebase:firebase-analytics-ktx:21.2.0] /Users/joacotome24/.gradle/caches/transforms-3/77fcfc1a5ffca8d94a6c1536b3786a34/transformed/jetified-firebase-analytics-ktx-21.2.0/AndroidManifest.xml:12:17-126
+95-->[com.google.firebase:firebase-analytics-ktx:21.2.0] C:\Users\agush\.gradle\caches\transforms-3\77fcfc1a5ffca8d94a6c1536b3786a34\transformed\jetified-firebase-analytics-ktx-21.2.0\AndroidManifest.xml:12:17-126
 96                android:value="com.google.firebase.components.ComponentRegistrar" />
-96-->[com.google.firebase:firebase-analytics-ktx:21.2.0] /Users/joacotome24/.gradle/caches/transforms-3/77fcfc1a5ffca8d94a6c1536b3786a34/transformed/jetified-firebase-analytics-ktx-21.2.0/AndroidManifest.xml:13:17-82
+96-->[com.google.firebase:firebase-analytics-ktx:21.2.0] C:\Users\agush\.gradle\caches\transforms-3\77fcfc1a5ffca8d94a6c1536b3786a34\transformed\jetified-firebase-analytics-ktx-21.2.0\AndroidManifest.xml:13:17-82
 97            <meta-data
-97-->[com.google.firebase:firebase-firestore-ktx:24.4.0] /Users/joacotome24/.gradle/caches/transforms-3/9ac83e1892eff40d8cb896828516f7e5/transformed/jetified-firebase-firestore-ktx-24.4.0/AndroidManifest.xml:14:13-16:85
+97-->[com.google.firebase:firebase-firestore-ktx:24.4.0] C:\Users\agush\.gradle\caches\transforms-3\9ac83e1892eff40d8cb896828516f7e5\transformed\jetified-firebase-firestore-ktx-24.4.0\AndroidManifest.xml:14:13-16:85
 98                android:name="com.google.firebase.components:com.google.firebase.firestore.ktx.FirebaseFirestoreKtxRegistrar"
-98-->[com.google.firebase:firebase-firestore-ktx:24.4.0] /Users/joacotome24/.gradle/caches/transforms-3/9ac83e1892eff40d8cb896828516f7e5/transformed/jetified-firebase-firestore-ktx-24.4.0/AndroidManifest.xml:15:17-126
+98-->[com.google.firebase:firebase-firestore-ktx:24.4.0] C:\Users\agush\.gradle\caches\transforms-3\9ac83e1892eff40d8cb896828516f7e5\transformed\jetified-firebase-firestore-ktx-24.4.0\AndroidManifest.xml:15:17-126
 99                android:value="com.google.firebase.components.ComponentRegistrar" />
-99-->[com.google.firebase:firebase-firestore-ktx:24.4.0] /Users/joacotome24/.gradle/caches/transforms-3/9ac83e1892eff40d8cb896828516f7e5/transformed/jetified-firebase-firestore-ktx-24.4.0/AndroidManifest.xml:16:17-82
+99-->[com.google.firebase:firebase-firestore-ktx:24.4.0] C:\Users\agush\.gradle\caches\transforms-3\9ac83e1892eff40d8cb896828516f7e5\transformed\jetified-firebase-firestore-ktx-24.4.0\AndroidManifest.xml:16:17-82
 100            <meta-data
-100-->[com.google.firebase:firebase-auth-ktx:21.1.0] /Users/joacotome24/.gradle/caches/transforms-3/829682bcc56eb16f385528ef5383b56f/transformed/jetified-firebase-auth-ktx-21.1.0/AndroidManifest.xml:11:13-13:85
+100-->[com.google.firebase:firebase-auth-ktx:21.1.0] C:\Users\agush\.gradle\caches\transforms-3\829682bcc56eb16f385528ef5383b56f\transformed\jetified-firebase-auth-ktx-21.1.0\AndroidManifest.xml:11:13-13:85
 101                android:name="com.google.firebase.components:com.google.firebase.auth.ktx.FirebaseAuthKtxRegistrar"
-101-->[com.google.firebase:firebase-auth-ktx:21.1.0] /Users/joacotome24/.gradle/caches/transforms-3/829682bcc56eb16f385528ef5383b56f/transformed/jetified-firebase-auth-ktx-21.1.0/AndroidManifest.xml:12:17-116
+101-->[com.google.firebase:firebase-auth-ktx:21.1.0] C:\Users\agush\.gradle\caches\transforms-3\829682bcc56eb16f385528ef5383b56f\transformed\jetified-firebase-auth-ktx-21.1.0\AndroidManifest.xml:12:17-116
 102                android:value="com.google.firebase.components.ComponentRegistrar" />
-102-->[com.google.firebase:firebase-auth-ktx:21.1.0] /Users/joacotome24/.gradle/caches/transforms-3/829682bcc56eb16f385528ef5383b56f/transformed/jetified-firebase-auth-ktx-21.1.0/AndroidManifest.xml:13:17-82
+102-->[com.google.firebase:firebase-auth-ktx:21.1.0] C:\Users\agush\.gradle\caches\transforms-3\829682bcc56eb16f385528ef5383b56f\transformed\jetified-firebase-auth-ktx-21.1.0\AndroidManifest.xml:13:17-82
 103            <meta-data
-103-->[com.google.firebase:firebase-common-ktx:20.2.0] /Users/joacotome24/.gradle/caches/transforms-3/309717f48df73e3617a5b148ffb548ad/transformed/jetified-firebase-common-ktx-20.2.0/AndroidManifest.xml:14:13-16:85
+103-->[com.google.firebase:firebase-common-ktx:20.2.0] C:\Users\agush\.gradle\caches\transforms-3\309717f48df73e3617a5b148ffb548ad\transformed\jetified-firebase-common-ktx-20.2.0\AndroidManifest.xml:14:13-16:85
 104                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonKtxRegistrar"
-104-->[com.google.firebase:firebase-common-ktx:20.2.0] /Users/joacotome24/.gradle/caches/transforms-3/309717f48df73e3617a5b148ffb548ad/transformed/jetified-firebase-common-ktx-20.2.0/AndroidManifest.xml:15:17-113
+104-->[com.google.firebase:firebase-common-ktx:20.2.0] C:\Users\agush\.gradle\caches\transforms-3\309717f48df73e3617a5b148ffb548ad\transformed\jetified-firebase-common-ktx-20.2.0\AndroidManifest.xml:15:17-113
 105                android:value="com.google.firebase.components.ComponentRegistrar" />
-105-->[com.google.firebase:firebase-common-ktx:20.2.0] /Users/joacotome24/.gradle/caches/transforms-3/309717f48df73e3617a5b148ffb548ad/transformed/jetified-firebase-common-ktx-20.2.0/AndroidManifest.xml:16:17-82
+105-->[com.google.firebase:firebase-common-ktx:20.2.0] C:\Users\agush\.gradle\caches\transforms-3\309717f48df73e3617a5b148ffb548ad\transformed\jetified-firebase-common-ktx-20.2.0\AndroidManifest.xml:16:17-82
 106            <meta-data
-106-->[com.google.firebase:firebase-auth:21.1.0] /Users/joacotome24/.gradle/caches/transforms-3/0548e507d3019ac84ce4969b57803f45/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:67:13-69:85
+106-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\agush\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:67:13-69:85
 107                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
-107-->[com.google.firebase:firebase-auth:21.1.0] /Users/joacotome24/.gradle/caches/transforms-3/0548e507d3019ac84ce4969b57803f45/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:68:17-109
+107-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\agush\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:68:17-109
 108                android:value="com.google.firebase.components.ComponentRegistrar" />
-108-->[com.google.firebase:firebase-auth:21.1.0] /Users/joacotome24/.gradle/caches/transforms-3/0548e507d3019ac84ce4969b57803f45/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:69:17-82
+108-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\agush\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:69:17-82
 109            <meta-data
-109-->[com.google.firebase:firebase-firestore:24.4.0] /Users/joacotome24/.gradle/caches/transforms-3/e39fe4bf08d15a7a36bde2a48516de12/transformed/jetified-firebase-firestore-24.4.0/AndroidManifest.xml:19:13-21:85
+109-->[com.google.firebase:firebase-firestore:24.4.0] C:\Users\agush\.gradle\caches\transforms-3\e39fe4bf08d15a7a36bde2a48516de12\transformed\jetified-firebase-firestore-24.4.0\AndroidManifest.xml:19:13-21:85
 110                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
-110-->[com.google.firebase:firebase-firestore:24.4.0] /Users/joacotome24/.gradle/caches/transforms-3/e39fe4bf08d15a7a36bde2a48516de12/transformed/jetified-firebase-firestore-24.4.0/AndroidManifest.xml:20:17-111
+110-->[com.google.firebase:firebase-firestore:24.4.0] C:\Users\agush\.gradle\caches\transforms-3\e39fe4bf08d15a7a36bde2a48516de12\transformed\jetified-firebase-firestore-24.4.0\AndroidManifest.xml:20:17-111
 111                android:value="com.google.firebase.components.ComponentRegistrar" />
-111-->[com.google.firebase:firebase-firestore:24.4.0] /Users/joacotome24/.gradle/caches/transforms-3/e39fe4bf08d15a7a36bde2a48516de12/transformed/jetified-firebase-firestore-24.4.0/AndroidManifest.xml:21:17-82
+111-->[com.google.firebase:firebase-firestore:24.4.0] C:\Users\agush\.gradle\caches\transforms-3\e39fe4bf08d15a7a36bde2a48516de12\transformed\jetified-firebase-firestore-24.4.0\AndroidManifest.xml:21:17-82
 112            <meta-data
-112-->[com.google.firebase:firebase-dynamic-links:21.1.0] /Users/joacotome24/.gradle/caches/transforms-3/e85453bab06ab800ea54b5e2e463fb1f/transformed/jetified-firebase-dynamic-links-21.1.0/AndroidManifest.xml:26:13-28:85
+112-->[com.google.firebase:firebase-dynamic-links:21.1.0] C:\Users\agush\.gradle\caches\transforms-3\e85453bab06ab800ea54b5e2e463fb1f\transformed\jetified-firebase-dynamic-links-21.1.0\AndroidManifest.xml:26:13-28:85
 113                android:name="com.google.firebase.components:com.google.firebase.dynamiclinks.internal.FirebaseDynamicLinkRegistrar"
-113-->[com.google.firebase:firebase-dynamic-links:21.1.0] /Users/joacotome24/.gradle/caches/transforms-3/e85453bab06ab800ea54b5e2e463fb1f/transformed/jetified-firebase-dynamic-links-21.1.0/AndroidManifest.xml:27:17-133
+113-->[com.google.firebase:firebase-dynamic-links:21.1.0] C:\Users\agush\.gradle\caches\transforms-3\e85453bab06ab800ea54b5e2e463fb1f\transformed\jetified-firebase-dynamic-links-21.1.0\AndroidManifest.xml:27:17-133
 114                android:value="com.google.firebase.components.ComponentRegistrar" />
-114-->[com.google.firebase:firebase-dynamic-links:21.1.0] /Users/joacotome24/.gradle/caches/transforms-3/e85453bab06ab800ea54b5e2e463fb1f/transformed/jetified-firebase-dynamic-links-21.1.0/AndroidManifest.xml:28:17-82
+114-->[com.google.firebase:firebase-dynamic-links:21.1.0] C:\Users\agush\.gradle\caches\transforms-3\e85453bab06ab800ea54b5e2e463fb1f\transformed\jetified-firebase-dynamic-links-21.1.0\AndroidManifest.xml:28:17-82
 115            <meta-data
-115-->[com.google.firebase:firebase-database:20.1.0] /Users/joacotome24/.gradle/caches/transforms-3/213a1dfac06a559ac66124b026fba95a/transformed/jetified-firebase-database-20.1.0/AndroidManifest.xml:31:13-33:85
+115-->[com.google.firebase:firebase-database:20.1.0] C:\Users\agush\.gradle\caches\transforms-3\213a1dfac06a559ac66124b026fba95a\transformed\jetified-firebase-database-20.1.0\AndroidManifest.xml:31:13-33:85
 116                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
-116-->[com.google.firebase:firebase-database:20.1.0] /Users/joacotome24/.gradle/caches/transforms-3/213a1dfac06a559ac66124b026fba95a/transformed/jetified-firebase-database-20.1.0/AndroidManifest.xml:32:17-109
+116-->[com.google.firebase:firebase-database:20.1.0] C:\Users\agush\.gradle\caches\transforms-3\213a1dfac06a559ac66124b026fba95a\transformed\jetified-firebase-database-20.1.0\AndroidManifest.xml:32:17-109
 117                android:value="com.google.firebase.components.ComponentRegistrar" />
-117-->[com.google.firebase:firebase-database:20.1.0] /Users/joacotome24/.gradle/caches/transforms-3/213a1dfac06a559ac66124b026fba95a/transformed/jetified-firebase-database-20.1.0/AndroidManifest.xml:33:17-82
+117-->[com.google.firebase:firebase-database:20.1.0] C:\Users\agush\.gradle\caches\transforms-3\213a1dfac06a559ac66124b026fba95a\transformed\jetified-firebase-database-20.1.0\AndroidManifest.xml:33:17-82
 118            <meta-data
-118-->[com.google.android.gms:play-services-measurement-api:21.2.0] /Users/joacotome24/.gradle/caches/transforms-3/bfd20290ff5d39e38453adc1ae5698f7/transformed/jetified-play-services-measurement-api-21.2.0/AndroidManifest.xml:31:13-33:85
+118-->[com.google.android.gms:play-services-measurement-api:21.2.0] C:\Users\agush\.gradle\caches\transforms-3\bfd20290ff5d39e38453adc1ae5698f7\transformed\jetified-play-services-measurement-api-21.2.0\AndroidManifest.xml:31:13-33:85
 119                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
-119-->[com.google.android.gms:play-services-measurement-api:21.2.0] /Users/joacotome24/.gradle/caches/transforms-3/bfd20290ff5d39e38453adc1ae5698f7/transformed/jetified-play-services-measurement-api-21.2.0/AndroidManifest.xml:32:17-139
+119-->[com.google.android.gms:play-services-measurement-api:21.2.0] C:\Users\agush\.gradle\caches\transforms-3\bfd20290ff5d39e38453adc1ae5698f7\transformed\jetified-play-services-measurement-api-21.2.0\AndroidManifest.xml:32:17-139
 120                android:value="com.google.firebase.components.ComponentRegistrar" />
-120-->[com.google.android.gms:play-services-measurement-api:21.2.0] /Users/joacotome24/.gradle/caches/transforms-3/bfd20290ff5d39e38453adc1ae5698f7/transformed/jetified-play-services-measurement-api-21.2.0/AndroidManifest.xml:33:17-82
+120-->[com.google.android.gms:play-services-measurement-api:21.2.0] C:\Users\agush\.gradle\caches\transforms-3\bfd20290ff5d39e38453adc1ae5698f7\transformed\jetified-play-services-measurement-api-21.2.0\AndroidManifest.xml:33:17-82
 121            <meta-data
-121-->[com.google.firebase:firebase-installations:17.1.0] /Users/joacotome24/.gradle/caches/transforms-3/3fe9d54d7b663dbec51ad86b1763f50a/transformed/jetified-firebase-installations-17.1.0/AndroidManifest.xml:17:13-19:85
+121-->[com.google.firebase:firebase-installations:17.1.0] C:\Users\agush\.gradle\caches\transforms-3\3fe9d54d7b663dbec51ad86b1763f50a\transformed\jetified-firebase-installations-17.1.0\AndroidManifest.xml:17:13-19:85
 122                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
-122-->[com.google.firebase:firebase-installations:17.1.0] /Users/joacotome24/.gradle/caches/transforms-3/3fe9d54d7b663dbec51ad86b1763f50a/transformed/jetified-firebase-installations-17.1.0/AndroidManifest.xml:18:17-127
+122-->[com.google.firebase:firebase-installations:17.1.0] C:\Users\agush\.gradle\caches\transforms-3\3fe9d54d7b663dbec51ad86b1763f50a\transformed\jetified-firebase-installations-17.1.0\AndroidManifest.xml:18:17-127
 123                android:value="com.google.firebase.components.ComponentRegistrar" />
-123-->[com.google.firebase:firebase-installations:17.1.0] /Users/joacotome24/.gradle/caches/transforms-3/3fe9d54d7b663dbec51ad86b1763f50a/transformed/jetified-firebase-installations-17.1.0/AndroidManifest.xml:19:17-82
+123-->[com.google.firebase:firebase-installations:17.1.0] C:\Users\agush\.gradle\caches\transforms-3\3fe9d54d7b663dbec51ad86b1763f50a\transformed\jetified-firebase-installations-17.1.0\AndroidManifest.xml:19:17-82
 124        </service>
 125
 126        <receiver
-126-->[:flutter_local_notifications] /Users/joacotome24/Desktop/course-project-csci4100-jaa-project/course_project/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:16:9-18:40
+126-->[:flutter_local_notifications] C:\Repos\mobile_devices\oblig\course_project\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:16:9-18:40
 127            android:name="com.dexterous.flutterlocalnotifications.ActionBroadcastReceiver"
-127-->[:flutter_local_notifications] /Users/joacotome24/Desktop/course-project-csci4100-jaa-project/course_project/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:17:13-91
+127-->[:flutter_local_notifications] C:\Repos\mobile_devices\oblig\course_project\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:17:13-91
 128            android:exported="false" />
-128-->[:flutter_local_notifications] /Users/joacotome24/Desktop/course-project-csci4100-jaa-project/course_project/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:18:13-37
+128-->[:flutter_local_notifications] C:\Repos\mobile_devices\oblig\course_project\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:18:13-37
 129        <receiver
-129-->[:flutter_local_notifications] /Users/joacotome24/Desktop/course-project-csci4100-jaa-project/course_project/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:19:9-21:40
+129-->[:flutter_local_notifications] C:\Repos\mobile_devices\oblig\course_project\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:19:9-21:40
 130            android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver"
-130-->[:flutter_local_notifications] /Users/joacotome24/Desktop/course-project-csci4100-jaa-project/course_project/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:20:13-97
+130-->[:flutter_local_notifications] C:\Repos\mobile_devices\oblig\course_project\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:20:13-97
 131            android:exported="false" />
-131-->[:flutter_local_notifications] /Users/joacotome24/Desktop/course-project-csci4100-jaa-project/course_project/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:21:13-37
+131-->[:flutter_local_notifications] C:\Repos\mobile_devices\oblig\course_project\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:21:13-37
 132        <receiver
-132-->[:flutter_local_notifications] /Users/joacotome24/Desktop/course-project-csci4100-jaa-project/course_project/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:22:9-31:20
+132-->[:flutter_local_notifications] C:\Repos\mobile_devices\oblig\course_project\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:22:9-31:20
 133            android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationBootReceiver"
-133-->[:flutter_local_notifications] /Users/joacotome24/Desktop/course-project-csci4100-jaa-project/course_project/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:23:13-101
+133-->[:flutter_local_notifications] C:\Repos\mobile_devices\oblig\course_project\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:23:13-101
 134            android:exported="false" >
-134-->[:flutter_local_notifications] /Users/joacotome24/Desktop/course-project-csci4100-jaa-project/course_project/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:24:13-37
+134-->[:flutter_local_notifications] C:\Repos\mobile_devices\oblig\course_project\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:24:13-37
 135            <intent-filter>
-135-->[:flutter_local_notifications] /Users/joacotome24/Desktop/course-project-csci4100-jaa-project/course_project/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:25:13-30:29
+135-->[:flutter_local_notifications] C:\Repos\mobile_devices\oblig\course_project\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:25:13-30:29
 136                <action android:name="android.intent.action.BOOT_COMPLETED" />
-136-->[:flutter_local_notifications] /Users/joacotome24/Desktop/course-project-csci4100-jaa-project/course_project/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:26:17-79
-136-->[:flutter_local_notifications] /Users/joacotome24/Desktop/course-project-csci4100-jaa-project/course_project/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:26:25-76
+136-->[:flutter_local_notifications] C:\Repos\mobile_devices\oblig\course_project\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:26:17-79
+136-->[:flutter_local_notifications] C:\Repos\mobile_devices\oblig\course_project\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:26:25-76
 137                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
-137-->[:flutter_local_notifications] /Users/joacotome24/Desktop/course-project-csci4100-jaa-project/course_project/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:27:17-84
-137-->[:flutter_local_notifications] /Users/joacotome24/Desktop/course-project-csci4100-jaa-project/course_project/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:27:25-81
+137-->[:flutter_local_notifications] C:\Repos\mobile_devices\oblig\course_project\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:27:17-84
+137-->[:flutter_local_notifications] C:\Repos\mobile_devices\oblig\course_project\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:27:25-81
 138                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
-138-->[:flutter_local_notifications] /Users/joacotome24/Desktop/course-project-csci4100-jaa-project/course_project/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:28:17-82
-138-->[:flutter_local_notifications] /Users/joacotome24/Desktop/course-project-csci4100-jaa-project/course_project/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:28:25-79
+138-->[:flutter_local_notifications] C:\Repos\mobile_devices\oblig\course_project\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:28:17-82
+138-->[:flutter_local_notifications] C:\Repos\mobile_devices\oblig\course_project\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:28:25-79
 139                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON" />
-139-->[:flutter_local_notifications] /Users/joacotome24/Desktop/course-project-csci4100-jaa-project/course_project/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:29:17-82
-139-->[:flutter_local_notifications] /Users/joacotome24/Desktop/course-project-csci4100-jaa-project/course_project/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:29:25-79
+139-->[:flutter_local_notifications] C:\Repos\mobile_devices\oblig\course_project\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:29:17-82
+139-->[:flutter_local_notifications] C:\Repos\mobile_devices\oblig\course_project\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:29:25-79
 140            </intent-filter>
 141        </receiver>
 142
 143        <activity android:name="com.maru.twitter_login.chrome_custom_tabs.ChromeCustomTabsActivity" />
-143-->[:twitter_login] /Users/joacotome24/Desktop/course-project-csci4100-jaa-project/course_project/build/twitter_login/intermediates/merged_manifest/debug/AndroidManifest.xml:16:9-103
-143-->[:twitter_login] /Users/joacotome24/Desktop/course-project-csci4100-jaa-project/course_project/build/twitter_login/intermediates/merged_manifest/debug/AndroidManifest.xml:16:19-100
+143-->[:twitter_login] C:\Repos\mobile_devices\oblig\course_project\build\twitter_login\intermediates\merged_manifest\debug\AndroidManifest.xml:16:9-103
+143-->[:twitter_login] C:\Repos\mobile_devices\oblig\course_project\build\twitter_login\intermediates\merged_manifest\debug\AndroidManifest.xml:16:19-100
 144
 145        <uses-library
-145-->[androidx.window:window:1.0.0-beta04] /Users/joacotome24/.gradle/caches/transforms-3/542a859793ec57d6a4d40865c7efc6d9/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:25:9-27:40
+145-->[androidx.window:window:1.0.0-beta04] C:\Users\agush\.gradle\caches\transforms-3\542a859793ec57d6a4d40865c7efc6d9\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:25:9-27:40
 146            android:name="androidx.window.extensions"
-146-->[androidx.window:window:1.0.0-beta04] /Users/joacotome24/.gradle/caches/transforms-3/542a859793ec57d6a4d40865c7efc6d9/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:26:13-54
+146-->[androidx.window:window:1.0.0-beta04] C:\Users\agush\.gradle\caches\transforms-3\542a859793ec57d6a4d40865c7efc6d9\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:26:13-54
 147            android:required="false" />
-147-->[androidx.window:window:1.0.0-beta04] /Users/joacotome24/.gradle/caches/transforms-3/542a859793ec57d6a4d40865c7efc6d9/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:27:13-37
+147-->[androidx.window:window:1.0.0-beta04] C:\Users\agush\.gradle\caches\transforms-3\542a859793ec57d6a4d40865c7efc6d9\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:27:13-37
 148        <uses-library
-148-->[androidx.window:window:1.0.0-beta04] /Users/joacotome24/.gradle/caches/transforms-3/542a859793ec57d6a4d40865c7efc6d9/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:28:9-30:40
+148-->[androidx.window:window:1.0.0-beta04] C:\Users\agush\.gradle\caches\transforms-3\542a859793ec57d6a4d40865c7efc6d9\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:28:9-30:40
 149            android:name="androidx.window.sidecar"
-149-->[androidx.window:window:1.0.0-beta04] /Users/joacotome24/.gradle/caches/transforms-3/542a859793ec57d6a4d40865c7efc6d9/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:29:13-51
+149-->[androidx.window:window:1.0.0-beta04] C:\Users\agush\.gradle\caches\transforms-3\542a859793ec57d6a4d40865c7efc6d9\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:29:13-51
 150            android:required="false" />
-150-->[androidx.window:window:1.0.0-beta04] /Users/joacotome24/.gradle/caches/transforms-3/542a859793ec57d6a4d40865c7efc6d9/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:30:13-37
+150-->[androidx.window:window:1.0.0-beta04] C:\Users\agush\.gradle\caches\transforms-3\542a859793ec57d6a4d40865c7efc6d9\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:30:13-37
 151
 152        <activity
-152-->[com.google.firebase:firebase-auth:21.1.0] /Users/joacotome24/.gradle/caches/transforms-3/0548e507d3019ac84ce4969b57803f45/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:27:9-44:20
+152-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\agush\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:27:9-44:20
 153            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
-153-->[com.google.firebase:firebase-auth:21.1.0] /Users/joacotome24/.gradle/caches/transforms-3/0548e507d3019ac84ce4969b57803f45/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:28:13-80
+153-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\agush\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:28:13-80
 154            android:excludeFromRecents="true"
-154-->[com.google.firebase:firebase-auth:21.1.0] /Users/joacotome24/.gradle/caches/transforms-3/0548e507d3019ac84ce4969b57803f45/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:29:13-46
+154-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\agush\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:29:13-46
 155            android:exported="true"
-155-->[com.google.firebase:firebase-auth:21.1.0] /Users/joacotome24/.gradle/caches/transforms-3/0548e507d3019ac84ce4969b57803f45/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:30:13-36
+155-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\agush\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:30:13-36
 156            android:launchMode="singleTask"
-156-->[com.google.firebase:firebase-auth:21.1.0] /Users/joacotome24/.gradle/caches/transforms-3/0548e507d3019ac84ce4969b57803f45/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:31:13-44
+156-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\agush\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:31:13-44
 157            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-157-->[com.google.firebase:firebase-auth:21.1.0] /Users/joacotome24/.gradle/caches/transforms-3/0548e507d3019ac84ce4969b57803f45/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:32:13-72
+157-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\agush\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:32:13-72
 158            <intent-filter>
-158-->[com.google.firebase:firebase-auth:21.1.0] /Users/joacotome24/.gradle/caches/transforms-3/0548e507d3019ac84ce4969b57803f45/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:33:13-43:29
+158-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\agush\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:33:13-43:29
 159                <action android:name="android.intent.action.VIEW" />
-159-->[com.google.firebase:firebase-auth:21.1.0] /Users/joacotome24/.gradle/caches/transforms-3/0548e507d3019ac84ce4969b57803f45/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:34:17-69
-159-->[com.google.firebase:firebase-auth:21.1.0] /Users/joacotome24/.gradle/caches/transforms-3/0548e507d3019ac84ce4969b57803f45/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:34:25-66
+159-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\agush\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:34:17-69
+159-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\agush\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:34:25-66
 160
 161                <category android:name="android.intent.category.DEFAULT" />
-161-->[com.google.firebase:firebase-auth:21.1.0] /Users/joacotome24/.gradle/caches/transforms-3/0548e507d3019ac84ce4969b57803f45/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:36:17-76
-161-->[com.google.firebase:firebase-auth:21.1.0] /Users/joacotome24/.gradle/caches/transforms-3/0548e507d3019ac84ce4969b57803f45/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:36:27-73
+161-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\agush\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:36:17-76
+161-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\agush\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:36:27-73
 162                <category android:name="android.intent.category.BROWSABLE" />
-162-->[com.google.firebase:firebase-auth:21.1.0] /Users/joacotome24/.gradle/caches/transforms-3/0548e507d3019ac84ce4969b57803f45/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:37:17-78
-162-->[com.google.firebase:firebase-auth:21.1.0] /Users/joacotome24/.gradle/caches/transforms-3/0548e507d3019ac84ce4969b57803f45/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:37:27-75
+162-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\agush\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:37:17-78
+162-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\agush\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:37:27-75
 163
 164                <data
-164-->[com.google.firebase:firebase-auth:21.1.0] /Users/joacotome24/.gradle/caches/transforms-3/0548e507d3019ac84ce4969b57803f45/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:39:17-42:51
+164-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\agush\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:39:17-42:51
 165                    android:host="firebase.auth"
-165-->[com.google.firebase:firebase-auth:21.1.0] /Users/joacotome24/.gradle/caches/transforms-3/0548e507d3019ac84ce4969b57803f45/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:40:21-49
+165-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\agush\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:40:21-49
 166                    android:path="/"
-166-->[com.google.firebase:firebase-auth:21.1.0] /Users/joacotome24/.gradle/caches/transforms-3/0548e507d3019ac84ce4969b57803f45/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:41:21-37
+166-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\agush\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:41:21-37
 167                    android:scheme="genericidp" />
-167-->[com.google.firebase:firebase-auth:21.1.0] /Users/joacotome24/.gradle/caches/transforms-3/0548e507d3019ac84ce4969b57803f45/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:42:21-48
+167-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\agush\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:42:21-48
 168            </intent-filter>
 169        </activity>
 170        <activity
-170-->[com.google.firebase:firebase-auth:21.1.0] /Users/joacotome24/.gradle/caches/transforms-3/0548e507d3019ac84ce4969b57803f45/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:45:9-62:20
+170-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\agush\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:45:9-62:20
 171            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
-171-->[com.google.firebase:firebase-auth:21.1.0] /Users/joacotome24/.gradle/caches/transforms-3/0548e507d3019ac84ce4969b57803f45/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:46:13-79
+171-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\agush\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:46:13-79
 172            android:excludeFromRecents="true"
-172-->[com.google.firebase:firebase-auth:21.1.0] /Users/joacotome24/.gradle/caches/transforms-3/0548e507d3019ac84ce4969b57803f45/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:47:13-46
+172-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\agush\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:47:13-46
 173            android:exported="true"
-173-->[com.google.firebase:firebase-auth:21.1.0] /Users/joacotome24/.gradle/caches/transforms-3/0548e507d3019ac84ce4969b57803f45/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:48:13-36
+173-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\agush\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:48:13-36
 174            android:launchMode="singleTask"
-174-->[com.google.firebase:firebase-auth:21.1.0] /Users/joacotome24/.gradle/caches/transforms-3/0548e507d3019ac84ce4969b57803f45/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:49:13-44
+174-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\agush\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:49:13-44
 175            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-175-->[com.google.firebase:firebase-auth:21.1.0] /Users/joacotome24/.gradle/caches/transforms-3/0548e507d3019ac84ce4969b57803f45/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:50:13-72
+175-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\agush\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:50:13-72
 176            <intent-filter>
-176-->[com.google.firebase:firebase-auth:21.1.0] /Users/joacotome24/.gradle/caches/transforms-3/0548e507d3019ac84ce4969b57803f45/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:51:13-61:29
+176-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\agush\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:51:13-61:29
 177                <action android:name="android.intent.action.VIEW" />
-177-->[com.google.firebase:firebase-auth:21.1.0] /Users/joacotome24/.gradle/caches/transforms-3/0548e507d3019ac84ce4969b57803f45/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:34:17-69
-177-->[com.google.firebase:firebase-auth:21.1.0] /Users/joacotome24/.gradle/caches/transforms-3/0548e507d3019ac84ce4969b57803f45/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:34:25-66
+177-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\agush\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:34:17-69
+177-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\agush\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:34:25-66
 178
 179                <category android:name="android.intent.category.DEFAULT" />
-179-->[com.google.firebase:firebase-auth:21.1.0] /Users/joacotome24/.gradle/caches/transforms-3/0548e507d3019ac84ce4969b57803f45/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:36:17-76
-179-->[com.google.firebase:firebase-auth:21.1.0] /Users/joacotome24/.gradle/caches/transforms-3/0548e507d3019ac84ce4969b57803f45/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:36:27-73
+179-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\agush\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:36:17-76
+179-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\agush\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:36:27-73
 180                <category android:name="android.intent.category.BROWSABLE" />
-180-->[com.google.firebase:firebase-auth:21.1.0] /Users/joacotome24/.gradle/caches/transforms-3/0548e507d3019ac84ce4969b57803f45/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:37:17-78
-180-->[com.google.firebase:firebase-auth:21.1.0] /Users/joacotome24/.gradle/caches/transforms-3/0548e507d3019ac84ce4969b57803f45/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:37:27-75
+180-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\agush\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:37:17-78
+180-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\agush\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:37:27-75
 181
 182                <data
-182-->[com.google.firebase:firebase-auth:21.1.0] /Users/joacotome24/.gradle/caches/transforms-3/0548e507d3019ac84ce4969b57803f45/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:39:17-42:51
+182-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\agush\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:39:17-42:51
 183                    android:host="firebase.auth"
-183-->[com.google.firebase:firebase-auth:21.1.0] /Users/joacotome24/.gradle/caches/transforms-3/0548e507d3019ac84ce4969b57803f45/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:40:21-49
+183-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\agush\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:40:21-49
 184                    android:path="/"
-184-->[com.google.firebase:firebase-auth:21.1.0] /Users/joacotome24/.gradle/caches/transforms-3/0548e507d3019ac84ce4969b57803f45/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:41:21-37
+184-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\agush\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:41:21-37
 185                    android:scheme="recaptcha" />
-185-->[com.google.firebase:firebase-auth:21.1.0] /Users/joacotome24/.gradle/caches/transforms-3/0548e507d3019ac84ce4969b57803f45/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:42:21-48
+185-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\agush\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:42:21-48
 186            </intent-filter>
 187        </activity>
 188
 189        <provider
-189-->[com.google.firebase:firebase-common:20.2.0] /Users/joacotome24/.gradle/caches/transforms-3/c1f7cd0e68ddf89c76a753ac7fd1a66c/transformed/jetified-firebase-common-20.2.0/AndroidManifest.xml:25:9-30:39
+189-->[com.google.firebase:firebase-common:20.2.0] C:\Users\agush\.gradle\caches\transforms-3\c1f7cd0e68ddf89c76a753ac7fd1a66c\transformed\jetified-firebase-common-20.2.0\AndroidManifest.xml:25:9-30:39
 190            android:name="com.google.firebase.provider.FirebaseInitProvider"
-190-->[com.google.firebase:firebase-common:20.2.0] /Users/joacotome24/.gradle/caches/transforms-3/c1f7cd0e68ddf89c76a753ac7fd1a66c/transformed/jetified-firebase-common-20.2.0/AndroidManifest.xml:26:13-77
+190-->[com.google.firebase:firebase-common:20.2.0] C:\Users\agush\.gradle\caches\transforms-3\c1f7cd0e68ddf89c76a753ac7fd1a66c\transformed\jetified-firebase-common-20.2.0\AndroidManifest.xml:26:13-77
 191            android:authorities="com.example.course_project.firebaseinitprovider"
-191-->[com.google.firebase:firebase-common:20.2.0] /Users/joacotome24/.gradle/caches/transforms-3/c1f7cd0e68ddf89c76a753ac7fd1a66c/transformed/jetified-firebase-common-20.2.0/AndroidManifest.xml:27:13-72
+191-->[com.google.firebase:firebase-common:20.2.0] C:\Users\agush\.gradle\caches\transforms-3\c1f7cd0e68ddf89c76a753ac7fd1a66c\transformed\jetified-firebase-common-20.2.0\AndroidManifest.xml:27:13-72
 192            android:directBootAware="true"
-192-->[com.google.firebase:firebase-common:20.2.0] /Users/joacotome24/.gradle/caches/transforms-3/c1f7cd0e68ddf89c76a753ac7fd1a66c/transformed/jetified-firebase-common-20.2.0/AndroidManifest.xml:28:13-43
+192-->[com.google.firebase:firebase-common:20.2.0] C:\Users\agush\.gradle\caches\transforms-3\c1f7cd0e68ddf89c76a753ac7fd1a66c\transformed\jetified-firebase-common-20.2.0\AndroidManifest.xml:28:13-43
 193            android:exported="false"
-193-->[com.google.firebase:firebase-common:20.2.0] /Users/joacotome24/.gradle/caches/transforms-3/c1f7cd0e68ddf89c76a753ac7fd1a66c/transformed/jetified-firebase-common-20.2.0/AndroidManifest.xml:29:13-37
+193-->[com.google.firebase:firebase-common:20.2.0] C:\Users\agush\.gradle\caches\transforms-3\c1f7cd0e68ddf89c76a753ac7fd1a66c\transformed\jetified-firebase-common-20.2.0\AndroidManifest.xml:29:13-37
 194            android:initOrder="100" />
-194-->[com.google.firebase:firebase-common:20.2.0] /Users/joacotome24/.gradle/caches/transforms-3/c1f7cd0e68ddf89c76a753ac7fd1a66c/transformed/jetified-firebase-common-20.2.0/AndroidManifest.xml:30:13-36
+194-->[com.google.firebase:firebase-common:20.2.0] C:\Users\agush\.gradle\caches\transforms-3\c1f7cd0e68ddf89c76a753ac7fd1a66c\transformed\jetified-firebase-common-20.2.0\AndroidManifest.xml:30:13-36
 195
 196        <activity
-196-->[com.facebook.android:facebook-common:14.1.1] /Users/joacotome24/.gradle/caches/transforms-3/374dfd5041a2c5cc2fe6c05a67bbd1ef/transformed/jetified-facebook-common-14.1.1/AndroidManifest.xml:34:9-37:66
+196-->[com.facebook.android:facebook-common:14.1.1] C:\Users\agush\.gradle\caches\transforms-3\374dfd5041a2c5cc2fe6c05a67bbd1ef\transformed\jetified-facebook-common-14.1.1\AndroidManifest.xml:34:9-37:66
 197            android:name="com.facebook.FacebookActivity"
-197-->[com.facebook.android:facebook-common:14.1.1] /Users/joacotome24/.gradle/caches/transforms-3/374dfd5041a2c5cc2fe6c05a67bbd1ef/transformed/jetified-facebook-common-14.1.1/AndroidManifest.xml:35:13-57
+197-->[com.facebook.android:facebook-common:14.1.1] C:\Users\agush\.gradle\caches\transforms-3\374dfd5041a2c5cc2fe6c05a67bbd1ef\transformed\jetified-facebook-common-14.1.1\AndroidManifest.xml:35:13-57
 198            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
-198-->[com.facebook.android:facebook-common:14.1.1] /Users/joacotome24/.gradle/caches/transforms-3/374dfd5041a2c5cc2fe6c05a67bbd1ef/transformed/jetified-facebook-common-14.1.1/AndroidManifest.xml:36:13-96
+198-->[com.facebook.android:facebook-common:14.1.1] C:\Users\agush\.gradle\caches\transforms-3\374dfd5041a2c5cc2fe6c05a67bbd1ef\transformed\jetified-facebook-common-14.1.1\AndroidManifest.xml:36:13-96
 199            android:theme="@style/com_facebook_activity_theme" />
-199-->[com.facebook.android:facebook-common:14.1.1] /Users/joacotome24/.gradle/caches/transforms-3/374dfd5041a2c5cc2fe6c05a67bbd1ef/transformed/jetified-facebook-common-14.1.1/AndroidManifest.xml:37:13-63
+199-->[com.facebook.android:facebook-common:14.1.1] C:\Users\agush\.gradle\caches\transforms-3\374dfd5041a2c5cc2fe6c05a67bbd1ef\transformed\jetified-facebook-common-14.1.1\AndroidManifest.xml:37:13-63
 200        <activity android:name="com.facebook.CustomTabMainActivity" />
-200-->[com.facebook.android:facebook-common:14.1.1] /Users/joacotome24/.gradle/caches/transforms-3/374dfd5041a2c5cc2fe6c05a67bbd1ef/transformed/jetified-facebook-common-14.1.1/AndroidManifest.xml:38:9-71
-200-->[com.facebook.android:facebook-common:14.1.1] /Users/joacotome24/.gradle/caches/transforms-3/374dfd5041a2c5cc2fe6c05a67bbd1ef/transformed/jetified-facebook-common-14.1.1/AndroidManifest.xml:38:19-68
+200-->[com.facebook.android:facebook-common:14.1.1] C:\Users\agush\.gradle\caches\transforms-3\374dfd5041a2c5cc2fe6c05a67bbd1ef\transformed\jetified-facebook-common-14.1.1\AndroidManifest.xml:38:9-71
+200-->[com.facebook.android:facebook-common:14.1.1] C:\Users\agush\.gradle\caches\transforms-3\374dfd5041a2c5cc2fe6c05a67bbd1ef\transformed\jetified-facebook-common-14.1.1\AndroidManifest.xml:38:19-68
 201        <activity
-201-->[com.facebook.android:facebook-common:14.1.1] /Users/joacotome24/.gradle/caches/transforms-3/374dfd5041a2c5cc2fe6c05a67bbd1ef/transformed/jetified-facebook-common-14.1.1/AndroidManifest.xml:39:9-53:20
+201-->[com.facebook.android:facebook-common:14.1.1] C:\Users\agush\.gradle\caches\transforms-3\374dfd5041a2c5cc2fe6c05a67bbd1ef\transformed\jetified-facebook-common-14.1.1\AndroidManifest.xml:39:9-53:20
 202            android:name="com.facebook.CustomTabActivity"
-202-->[com.facebook.android:facebook-common:14.1.1] /Users/joacotome24/.gradle/caches/transforms-3/374dfd5041a2c5cc2fe6c05a67bbd1ef/transformed/jetified-facebook-common-14.1.1/AndroidManifest.xml:40:13-58
+202-->[com.facebook.android:facebook-common:14.1.1] C:\Users\agush\.gradle\caches\transforms-3\374dfd5041a2c5cc2fe6c05a67bbd1ef\transformed\jetified-facebook-common-14.1.1\AndroidManifest.xml:40:13-58
 203            android:exported="true" >
-203-->[com.facebook.android:facebook-common:14.1.1] /Users/joacotome24/.gradle/caches/transforms-3/374dfd5041a2c5cc2fe6c05a67bbd1ef/transformed/jetified-facebook-common-14.1.1/AndroidManifest.xml:41:13-36
+203-->[com.facebook.android:facebook-common:14.1.1] C:\Users\agush\.gradle\caches\transforms-3\374dfd5041a2c5cc2fe6c05a67bbd1ef\transformed\jetified-facebook-common-14.1.1\AndroidManifest.xml:41:13-36
 204            <intent-filter>
-204-->[com.facebook.android:facebook-common:14.1.1] /Users/joacotome24/.gradle/caches/transforms-3/374dfd5041a2c5cc2fe6c05a67bbd1ef/transformed/jetified-facebook-common-14.1.1/AndroidManifest.xml:43:13-52:29
+204-->[com.facebook.android:facebook-common:14.1.1] C:\Users\agush\.gradle\caches\transforms-3\374dfd5041a2c5cc2fe6c05a67bbd1ef\transformed\jetified-facebook-common-14.1.1\AndroidManifest.xml:43:13-52:29
 205                <action android:name="android.intent.action.VIEW" />
-205-->[com.google.firebase:firebase-auth:21.1.0] /Users/joacotome24/.gradle/caches/transforms-3/0548e507d3019ac84ce4969b57803f45/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:34:17-69
-205-->[com.google.firebase:firebase-auth:21.1.0] /Users/joacotome24/.gradle/caches/transforms-3/0548e507d3019ac84ce4969b57803f45/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:34:25-66
+205-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\agush\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:34:17-69
+205-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\agush\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:34:25-66
 206
 207                <category android:name="android.intent.category.DEFAULT" />
-207-->[com.google.firebase:firebase-auth:21.1.0] /Users/joacotome24/.gradle/caches/transforms-3/0548e507d3019ac84ce4969b57803f45/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:36:17-76
-207-->[com.google.firebase:firebase-auth:21.1.0] /Users/joacotome24/.gradle/caches/transforms-3/0548e507d3019ac84ce4969b57803f45/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:36:27-73
+207-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\agush\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:36:17-76
+207-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\agush\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:36:27-73
 208                <category android:name="android.intent.category.BROWSABLE" />
-208-->[com.google.firebase:firebase-auth:21.1.0] /Users/joacotome24/.gradle/caches/transforms-3/0548e507d3019ac84ce4969b57803f45/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:37:17-78
-208-->[com.google.firebase:firebase-auth:21.1.0] /Users/joacotome24/.gradle/caches/transforms-3/0548e507d3019ac84ce4969b57803f45/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:37:27-75
+208-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\agush\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:37:17-78
+208-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\agush\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:37:27-75
 209
 210                <data
-210-->[com.google.firebase:firebase-auth:21.1.0] /Users/joacotome24/.gradle/caches/transforms-3/0548e507d3019ac84ce4969b57803f45/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:39:17-42:51
+210-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\agush\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:39:17-42:51
 211                    android:host="cct.com.example.course_project"
-211-->[com.google.firebase:firebase-auth:21.1.0] /Users/joacotome24/.gradle/caches/transforms-3/0548e507d3019ac84ce4969b57803f45/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:40:21-49
+211-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\agush\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:40:21-49
 212                    android:scheme="fbconnect" />
-212-->[com.google.firebase:firebase-auth:21.1.0] /Users/joacotome24/.gradle/caches/transforms-3/0548e507d3019ac84ce4969b57803f45/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:42:21-48
+212-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\agush\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:42:21-48
 213            </intent-filter>
 214        </activity>
 215        <activity
-215-->[com.google.android.gms:play-services-auth:20.0.1] /Users/joacotome24/.gradle/caches/transforms-3/66e089c069618d46ecbcfc30035e5ab3/transformed/jetified-play-services-auth-20.0.1/AndroidManifest.xml:23:9-27:75
+215-->[com.google.android.gms:play-services-auth:20.0.1] C:\Users\agush\.gradle\caches\transforms-3\66e089c069618d46ecbcfc30035e5ab3\transformed\jetified-play-services-auth-20.0.1\AndroidManifest.xml:23:9-27:75
 216            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-216-->[com.google.android.gms:play-services-auth:20.0.1] /Users/joacotome24/.gradle/caches/transforms-3/66e089c069618d46ecbcfc30035e5ab3/transformed/jetified-play-services-auth-20.0.1/AndroidManifest.xml:24:13-93
+216-->[com.google.android.gms:play-services-auth:20.0.1] C:\Users\agush\.gradle\caches\transforms-3\66e089c069618d46ecbcfc30035e5ab3\transformed\jetified-play-services-auth-20.0.1\AndroidManifest.xml:24:13-93
 217            android:excludeFromRecents="true"
-217-->[com.google.android.gms:play-services-auth:20.0.1] /Users/joacotome24/.gradle/caches/transforms-3/66e089c069618d46ecbcfc30035e5ab3/transformed/jetified-play-services-auth-20.0.1/AndroidManifest.xml:25:13-46
+217-->[com.google.android.gms:play-services-auth:20.0.1] C:\Users\agush\.gradle\caches\transforms-3\66e089c069618d46ecbcfc30035e5ab3\transformed\jetified-play-services-auth-20.0.1\AndroidManifest.xml:25:13-46
 218            android:exported="false"
-218-->[com.google.android.gms:play-services-auth:20.0.1] /Users/joacotome24/.gradle/caches/transforms-3/66e089c069618d46ecbcfc30035e5ab3/transformed/jetified-play-services-auth-20.0.1/AndroidManifest.xml:26:13-37
+218-->[com.google.android.gms:play-services-auth:20.0.1] C:\Users\agush\.gradle\caches\transforms-3\66e089c069618d46ecbcfc30035e5ab3\transformed\jetified-play-services-auth-20.0.1\AndroidManifest.xml:26:13-37
 219            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-219-->[com.google.android.gms:play-services-auth:20.0.1] /Users/joacotome24/.gradle/caches/transforms-3/66e089c069618d46ecbcfc30035e5ab3/transformed/jetified-play-services-auth-20.0.1/AndroidManifest.xml:27:13-72
+219-->[com.google.android.gms:play-services-auth:20.0.1] C:\Users\agush\.gradle\caches\transforms-3\66e089c069618d46ecbcfc30035e5ab3\transformed\jetified-play-services-auth-20.0.1\AndroidManifest.xml:27:13-72
 220        <!--
 221            Service handling Google Sign-In user revocation. For apps that do not integrate with
 222            Google Sign-In, this service will never be started.
 223        -->
 224        <service
-224-->[com.google.android.gms:play-services-auth:20.0.1] /Users/joacotome24/.gradle/caches/transforms-3/66e089c069618d46ecbcfc30035e5ab3/transformed/jetified-play-services-auth-20.0.1/AndroidManifest.xml:33:9-37:51
+224-->[com.google.android.gms:play-services-auth:20.0.1] C:\Users\agush\.gradle\caches\transforms-3\66e089c069618d46ecbcfc30035e5ab3\transformed\jetified-play-services-auth-20.0.1\AndroidManifest.xml:33:9-37:51
 225            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
-225-->[com.google.android.gms:play-services-auth:20.0.1] /Users/joacotome24/.gradle/caches/transforms-3/66e089c069618d46ecbcfc30035e5ab3/transformed/jetified-play-services-auth-20.0.1/AndroidManifest.xml:34:13-89
+225-->[com.google.android.gms:play-services-auth:20.0.1] C:\Users\agush\.gradle\caches\transforms-3\66e089c069618d46ecbcfc30035e5ab3\transformed\jetified-play-services-auth-20.0.1\AndroidManifest.xml:34:13-89
 226            android:exported="true"
-226-->[com.google.android.gms:play-services-auth:20.0.1] /Users/joacotome24/.gradle/caches/transforms-3/66e089c069618d46ecbcfc30035e5ab3/transformed/jetified-play-services-auth-20.0.1/AndroidManifest.xml:35:13-36
+226-->[com.google.android.gms:play-services-auth:20.0.1] C:\Users\agush\.gradle\caches\transforms-3\66e089c069618d46ecbcfc30035e5ab3\transformed\jetified-play-services-auth-20.0.1\AndroidManifest.xml:35:13-36
 227            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
-227-->[com.google.android.gms:play-services-auth:20.0.1] /Users/joacotome24/.gradle/caches/transforms-3/66e089c069618d46ecbcfc30035e5ab3/transformed/jetified-play-services-auth-20.0.1/AndroidManifest.xml:36:13-107
+227-->[com.google.android.gms:play-services-auth:20.0.1] C:\Users\agush\.gradle\caches\transforms-3\66e089c069618d46ecbcfc30035e5ab3\transformed\jetified-play-services-auth-20.0.1\AndroidManifest.xml:36:13-107
 228            android:visibleToInstantApps="true" />
-228-->[com.google.android.gms:play-services-auth:20.0.1] /Users/joacotome24/.gradle/caches/transforms-3/66e089c069618d46ecbcfc30035e5ab3/transformed/jetified-play-services-auth-20.0.1/AndroidManifest.xml:37:13-48
+228-->[com.google.android.gms:play-services-auth:20.0.1] C:\Users\agush\.gradle\caches\transforms-3\66e089c069618d46ecbcfc30035e5ab3\transformed\jetified-play-services-auth-20.0.1\AndroidManifest.xml:37:13-48
 229
 230        <activity
-230-->[com.google.android.gms:play-services-base:18.0.1] /Users/joacotome24/.gradle/caches/transforms-3/19fea4fb28dedd992824e13cc158e7a1/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
+230-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\agush\.gradle\caches\transforms-3\19fea4fb28dedd992824e13cc158e7a1\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:9-22:45
 231            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-231-->[com.google.android.gms:play-services-base:18.0.1] /Users/joacotome24/.gradle/caches/transforms-3/19fea4fb28dedd992824e13cc158e7a1/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:19-85
+231-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\agush\.gradle\caches\transforms-3\19fea4fb28dedd992824e13cc158e7a1\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:19-85
 232            android:exported="false"
-232-->[com.google.android.gms:play-services-base:18.0.1] /Users/joacotome24/.gradle/caches/transforms-3/19fea4fb28dedd992824e13cc158e7a1/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:22:19-43
+232-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\agush\.gradle\caches\transforms-3\19fea4fb28dedd992824e13cc158e7a1\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:22:19-43
 233            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-233-->[com.google.android.gms:play-services-base:18.0.1] /Users/joacotome24/.gradle/caches/transforms-3/19fea4fb28dedd992824e13cc158e7a1/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:21:19-78
+233-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\agush\.gradle\caches\transforms-3\19fea4fb28dedd992824e13cc158e7a1\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:21:19-78
 234
 235        <receiver
-235-->[com.google.android.gms:play-services-measurement:21.2.0] /Users/joacotome24/.gradle/caches/transforms-3/5ec3faad4c67c5d02d41a8d7d7f45ea7/transformed/jetified-play-services-measurement-21.2.0/AndroidManifest.xml:29:9-33:20
+235-->[com.google.android.gms:play-services-measurement:21.2.0] C:\Users\agush\.gradle\caches\transforms-3\5ec3faad4c67c5d02d41a8d7d7f45ea7\transformed\jetified-play-services-measurement-21.2.0\AndroidManifest.xml:29:9-33:20
 236            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
-236-->[com.google.android.gms:play-services-measurement:21.2.0] /Users/joacotome24/.gradle/caches/transforms-3/5ec3faad4c67c5d02d41a8d7d7f45ea7/transformed/jetified-play-services-measurement-21.2.0/AndroidManifest.xml:30:13-85
+236-->[com.google.android.gms:play-services-measurement:21.2.0] C:\Users\agush\.gradle\caches\transforms-3\5ec3faad4c67c5d02d41a8d7d7f45ea7\transformed\jetified-play-services-measurement-21.2.0\AndroidManifest.xml:30:13-85
 237            android:enabled="true"
-237-->[com.google.android.gms:play-services-measurement:21.2.0] /Users/joacotome24/.gradle/caches/transforms-3/5ec3faad4c67c5d02d41a8d7d7f45ea7/transformed/jetified-play-services-measurement-21.2.0/AndroidManifest.xml:31:13-35
+237-->[com.google.android.gms:play-services-measurement:21.2.0] C:\Users\agush\.gradle\caches\transforms-3\5ec3faad4c67c5d02d41a8d7d7f45ea7\transformed\jetified-play-services-measurement-21.2.0\AndroidManifest.xml:31:13-35
 238            android:exported="false" >
-238-->[com.google.android.gms:play-services-measurement:21.2.0] /Users/joacotome24/.gradle/caches/transforms-3/5ec3faad4c67c5d02d41a8d7d7f45ea7/transformed/jetified-play-services-measurement-21.2.0/AndroidManifest.xml:32:13-37
+238-->[com.google.android.gms:play-services-measurement:21.2.0] C:\Users\agush\.gradle\caches\transforms-3\5ec3faad4c67c5d02d41a8d7d7f45ea7\transformed\jetified-play-services-measurement-21.2.0\AndroidManifest.xml:32:13-37
 239        </receiver>
 240
 241        <service
-241-->[com.google.android.gms:play-services-measurement:21.2.0] /Users/joacotome24/.gradle/caches/transforms-3/5ec3faad4c67c5d02d41a8d7d7f45ea7/transformed/jetified-play-services-measurement-21.2.0/AndroidManifest.xml:35:9-38:40
+241-->[com.google.android.gms:play-services-measurement:21.2.0] C:\Users\agush\.gradle\caches\transforms-3\5ec3faad4c67c5d02d41a8d7d7f45ea7\transformed\jetified-play-services-measurement-21.2.0\AndroidManifest.xml:35:9-38:40
 242            android:name="com.google.android.gms.measurement.AppMeasurementService"
-242-->[com.google.android.gms:play-services-measurement:21.2.0] /Users/joacotome24/.gradle/caches/transforms-3/5ec3faad4c67c5d02d41a8d7d7f45ea7/transformed/jetified-play-services-measurement-21.2.0/AndroidManifest.xml:36:13-84
+242-->[com.google.android.gms:play-services-measurement:21.2.0] C:\Users\agush\.gradle\caches\transforms-3\5ec3faad4c67c5d02d41a8d7d7f45ea7\transformed\jetified-play-services-measurement-21.2.0\AndroidManifest.xml:36:13-84
 243            android:enabled="true"
-243-->[com.google.android.gms:play-services-measurement:21.2.0] /Users/joacotome24/.gradle/caches/transforms-3/5ec3faad4c67c5d02d41a8d7d7f45ea7/transformed/jetified-play-services-measurement-21.2.0/AndroidManifest.xml:37:13-35
+243-->[com.google.android.gms:play-services-measurement:21.2.0] C:\Users\agush\.gradle\caches\transforms-3\5ec3faad4c67c5d02d41a8d7d7f45ea7\transformed\jetified-play-services-measurement-21.2.0\AndroidManifest.xml:37:13-35
 244            android:exported="false" />
-244-->[com.google.android.gms:play-services-measurement:21.2.0] /Users/joacotome24/.gradle/caches/transforms-3/5ec3faad4c67c5d02d41a8d7d7f45ea7/transformed/jetified-play-services-measurement-21.2.0/AndroidManifest.xml:38:13-37
+244-->[com.google.android.gms:play-services-measurement:21.2.0] C:\Users\agush\.gradle\caches\transforms-3\5ec3faad4c67c5d02d41a8d7d7f45ea7\transformed\jetified-play-services-measurement-21.2.0\AndroidManifest.xml:38:13-37
 245        <service
-245-->[com.google.android.gms:play-services-measurement:21.2.0] /Users/joacotome24/.gradle/caches/transforms-3/5ec3faad4c67c5d02d41a8d7d7f45ea7/transformed/jetified-play-services-measurement-21.2.0/AndroidManifest.xml:39:9-43:72
+245-->[com.google.android.gms:play-services-measurement:21.2.0] C:\Users\agush\.gradle\caches\transforms-3\5ec3faad4c67c5d02d41a8d7d7f45ea7\transformed\jetified-play-services-measurement-21.2.0\AndroidManifest.xml:39:9-43:72
 246            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
-246-->[com.google.android.gms:play-services-measurement:21.2.0] /Users/joacotome24/.gradle/caches/transforms-3/5ec3faad4c67c5d02d41a8d7d7f45ea7/transformed/jetified-play-services-measurement-21.2.0/AndroidManifest.xml:40:13-87
+246-->[com.google.android.gms:play-services-measurement:21.2.0] C:\Users\agush\.gradle\caches\transforms-3\5ec3faad4c67c5d02d41a8d7d7f45ea7\transformed\jetified-play-services-measurement-21.2.0\AndroidManifest.xml:40:13-87
 247            android:enabled="true"
-247-->[com.google.android.gms:play-services-measurement:21.2.0] /Users/joacotome24/.gradle/caches/transforms-3/5ec3faad4c67c5d02d41a8d7d7f45ea7/transformed/jetified-play-services-measurement-21.2.0/AndroidManifest.xml:41:13-35
+247-->[com.google.android.gms:play-services-measurement:21.2.0] C:\Users\agush\.gradle\caches\transforms-3\5ec3faad4c67c5d02d41a8d7d7f45ea7\transformed\jetified-play-services-measurement-21.2.0\AndroidManifest.xml:41:13-35
 248            android:exported="false"
-248-->[com.google.android.gms:play-services-measurement:21.2.0] /Users/joacotome24/.gradle/caches/transforms-3/5ec3faad4c67c5d02d41a8d7d7f45ea7/transformed/jetified-play-services-measurement-21.2.0/AndroidManifest.xml:42:13-37
+248-->[com.google.android.gms:play-services-measurement:21.2.0] C:\Users\agush\.gradle\caches\transforms-3\5ec3faad4c67c5d02d41a8d7d7f45ea7\transformed\jetified-play-services-measurement-21.2.0\AndroidManifest.xml:42:13-37
 249            android:permission="android.permission.BIND_JOB_SERVICE" />
-249-->[com.google.android.gms:play-services-measurement:21.2.0] /Users/joacotome24/.gradle/caches/transforms-3/5ec3faad4c67c5d02d41a8d7d7f45ea7/transformed/jetified-play-services-measurement-21.2.0/AndroidManifest.xml:43:13-69
+249-->[com.google.android.gms:play-services-measurement:21.2.0] C:\Users\agush\.gradle\caches\transforms-3\5ec3faad4c67c5d02d41a8d7d7f45ea7\transformed\jetified-play-services-measurement-21.2.0\AndroidManifest.xml:43:13-69
 250
 251        <meta-data
-251-->[com.google.android.gms:play-services-basement:18.1.0] /Users/joacotome24/.gradle/caches/transforms-3/3ee0f8915dc9bf42c60f3eef0b7bd28a/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:21:9-23:69
+251-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\agush\.gradle\caches\transforms-3\3ee0f8915dc9bf42c60f3eef0b7bd28a\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:21:9-23:69
 252            android:name="com.google.android.gms.version"
-252-->[com.google.android.gms:play-services-basement:18.1.0] /Users/joacotome24/.gradle/caches/transforms-3/3ee0f8915dc9bf42c60f3eef0b7bd28a/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:22:13-58
+252-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\agush\.gradle\caches\transforms-3\3ee0f8915dc9bf42c60f3eef0b7bd28a\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:22:13-58
 253            android:value="@integer/google_play_services_version" />
-253-->[com.google.android.gms:play-services-basement:18.1.0] /Users/joacotome24/.gradle/caches/transforms-3/3ee0f8915dc9bf42c60f3eef0b7bd28a/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:23:13-66
+253-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\agush\.gradle\caches\transforms-3\3ee0f8915dc9bf42c60f3eef0b7bd28a\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:23:13-66
 254        <!--
 255         The initialization ContentProvider will call FacebookSdk.sdkInitialize automatically
 256         with the application context. This config is merged in with the host app's manifest,
@@ -453,38 +453,38 @@
 261         a completely different provider.
 262        -->
 263        <provider
-263-->[com.facebook.android:facebook-core:14.1.1] /Users/joacotome24/.gradle/caches/transforms-3/9507d4d6e596bbe89f8f581eca37f452/transformed/jetified-facebook-core-14.1.1/AndroidManifest.xml:41:9-44:40
+263-->[com.facebook.android:facebook-core:14.1.1] C:\Users\agush\.gradle\caches\transforms-3\9507d4d6e596bbe89f8f581eca37f452\transformed\jetified-facebook-core-14.1.1\AndroidManifest.xml:41:9-44:40
 264            android:name="com.facebook.internal.FacebookInitProvider"
-264-->[com.facebook.android:facebook-core:14.1.1] /Users/joacotome24/.gradle/caches/transforms-3/9507d4d6e596bbe89f8f581eca37f452/transformed/jetified-facebook-core-14.1.1/AndroidManifest.xml:42:13-70
+264-->[com.facebook.android:facebook-core:14.1.1] C:\Users\agush\.gradle\caches\transforms-3\9507d4d6e596bbe89f8f581eca37f452\transformed\jetified-facebook-core-14.1.1\AndroidManifest.xml:42:13-70
 265            android:authorities="com.example.course_project.FacebookInitProvider"
-265-->[com.facebook.android:facebook-core:14.1.1] /Users/joacotome24/.gradle/caches/transforms-3/9507d4d6e596bbe89f8f581eca37f452/transformed/jetified-facebook-core-14.1.1/AndroidManifest.xml:43:13-72
+265-->[com.facebook.android:facebook-core:14.1.1] C:\Users\agush\.gradle\caches\transforms-3\9507d4d6e596bbe89f8f581eca37f452\transformed\jetified-facebook-core-14.1.1\AndroidManifest.xml:43:13-72
 266            android:exported="false" />
-266-->[com.facebook.android:facebook-core:14.1.1] /Users/joacotome24/.gradle/caches/transforms-3/9507d4d6e596bbe89f8f581eca37f452/transformed/jetified-facebook-core-14.1.1/AndroidManifest.xml:44:13-37
+266-->[com.facebook.android:facebook-core:14.1.1] C:\Users\agush\.gradle\caches\transforms-3\9507d4d6e596bbe89f8f581eca37f452\transformed\jetified-facebook-core-14.1.1\AndroidManifest.xml:44:13-37
 267
 268        <receiver
-268-->[com.facebook.android:facebook-core:14.1.1] /Users/joacotome24/.gradle/caches/transforms-3/9507d4d6e596bbe89f8f581eca37f452/transformed/jetified-facebook-core-14.1.1/AndroidManifest.xml:46:9-52:20
+268-->[com.facebook.android:facebook-core:14.1.1] C:\Users\agush\.gradle\caches\transforms-3\9507d4d6e596bbe89f8f581eca37f452\transformed\jetified-facebook-core-14.1.1\AndroidManifest.xml:46:9-52:20
 269            android:name="com.facebook.CurrentAccessTokenExpirationBroadcastReceiver"
-269-->[com.facebook.android:facebook-core:14.1.1] /Users/joacotome24/.gradle/caches/transforms-3/9507d4d6e596bbe89f8f581eca37f452/transformed/jetified-facebook-core-14.1.1/AndroidManifest.xml:47:13-86
+269-->[com.facebook.android:facebook-core:14.1.1] C:\Users\agush\.gradle\caches\transforms-3\9507d4d6e596bbe89f8f581eca37f452\transformed\jetified-facebook-core-14.1.1\AndroidManifest.xml:47:13-86
 270            android:exported="false" >
-270-->[com.facebook.android:facebook-core:14.1.1] /Users/joacotome24/.gradle/caches/transforms-3/9507d4d6e596bbe89f8f581eca37f452/transformed/jetified-facebook-core-14.1.1/AndroidManifest.xml:48:13-37
+270-->[com.facebook.android:facebook-core:14.1.1] C:\Users\agush\.gradle\caches\transforms-3\9507d4d6e596bbe89f8f581eca37f452\transformed\jetified-facebook-core-14.1.1\AndroidManifest.xml:48:13-37
 271            <intent-filter>
-271-->[com.facebook.android:facebook-core:14.1.1] /Users/joacotome24/.gradle/caches/transforms-3/9507d4d6e596bbe89f8f581eca37f452/transformed/jetified-facebook-core-14.1.1/AndroidManifest.xml:49:13-51:29
+271-->[com.facebook.android:facebook-core:14.1.1] C:\Users\agush\.gradle\caches\transforms-3\9507d4d6e596bbe89f8f581eca37f452\transformed\jetified-facebook-core-14.1.1\AndroidManifest.xml:49:13-51:29
 272                <action android:name="com.facebook.sdk.ACTION_CURRENT_ACCESS_TOKEN_CHANGED" />
-272-->[com.facebook.android:facebook-core:14.1.1] /Users/joacotome24/.gradle/caches/transforms-3/9507d4d6e596bbe89f8f581eca37f452/transformed/jetified-facebook-core-14.1.1/AndroidManifest.xml:50:17-95
-272-->[com.facebook.android:facebook-core:14.1.1] /Users/joacotome24/.gradle/caches/transforms-3/9507d4d6e596bbe89f8f581eca37f452/transformed/jetified-facebook-core-14.1.1/AndroidManifest.xml:50:25-92
+272-->[com.facebook.android:facebook-core:14.1.1] C:\Users\agush\.gradle\caches\transforms-3\9507d4d6e596bbe89f8f581eca37f452\transformed\jetified-facebook-core-14.1.1\AndroidManifest.xml:50:17-95
+272-->[com.facebook.android:facebook-core:14.1.1] C:\Users\agush\.gradle\caches\transforms-3\9507d4d6e596bbe89f8f581eca37f452\transformed\jetified-facebook-core-14.1.1\AndroidManifest.xml:50:25-92
 273            </intent-filter>
 274        </receiver>
 275        <receiver
-275-->[com.facebook.android:facebook-core:14.1.1] /Users/joacotome24/.gradle/caches/transforms-3/9507d4d6e596bbe89f8f581eca37f452/transformed/jetified-facebook-core-14.1.1/AndroidManifest.xml:53:9-59:20
+275-->[com.facebook.android:facebook-core:14.1.1] C:\Users\agush\.gradle\caches\transforms-3\9507d4d6e596bbe89f8f581eca37f452\transformed\jetified-facebook-core-14.1.1\AndroidManifest.xml:53:9-59:20
 276            android:name="com.facebook.AuthenticationTokenManager$CurrentAuthenticationTokenChangedBroadcastReceiver"
-276-->[com.facebook.android:facebook-core:14.1.1] /Users/joacotome24/.gradle/caches/transforms-3/9507d4d6e596bbe89f8f581eca37f452/transformed/jetified-facebook-core-14.1.1/AndroidManifest.xml:54:13-118
+276-->[com.facebook.android:facebook-core:14.1.1] C:\Users\agush\.gradle\caches\transforms-3\9507d4d6e596bbe89f8f581eca37f452\transformed\jetified-facebook-core-14.1.1\AndroidManifest.xml:54:13-118
 277            android:exported="false" >
-277-->[com.facebook.android:facebook-core:14.1.1] /Users/joacotome24/.gradle/caches/transforms-3/9507d4d6e596bbe89f8f581eca37f452/transformed/jetified-facebook-core-14.1.1/AndroidManifest.xml:55:13-37
+277-->[com.facebook.android:facebook-core:14.1.1] C:\Users\agush\.gradle\caches\transforms-3\9507d4d6e596bbe89f8f581eca37f452\transformed\jetified-facebook-core-14.1.1\AndroidManifest.xml:55:13-37
 278            <intent-filter>
-278-->[com.facebook.android:facebook-core:14.1.1] /Users/joacotome24/.gradle/caches/transforms-3/9507d4d6e596bbe89f8f581eca37f452/transformed/jetified-facebook-core-14.1.1/AndroidManifest.xml:56:13-58:29
+278-->[com.facebook.android:facebook-core:14.1.1] C:\Users\agush\.gradle\caches\transforms-3\9507d4d6e596bbe89f8f581eca37f452\transformed\jetified-facebook-core-14.1.1\AndroidManifest.xml:56:13-58:29
 279                <action android:name="com.facebook.sdk.ACTION_CURRENT_AUTHENTICATION_TOKEN_CHANGED" />
-279-->[com.facebook.android:facebook-core:14.1.1] /Users/joacotome24/.gradle/caches/transforms-3/9507d4d6e596bbe89f8f581eca37f452/transformed/jetified-facebook-core-14.1.1/AndroidManifest.xml:57:17-103
-279-->[com.facebook.android:facebook-core:14.1.1] /Users/joacotome24/.gradle/caches/transforms-3/9507d4d6e596bbe89f8f581eca37f452/transformed/jetified-facebook-core-14.1.1/AndroidManifest.xml:57:25-100
+279-->[com.facebook.android:facebook-core:14.1.1] C:\Users\agush\.gradle\caches\transforms-3\9507d4d6e596bbe89f8f581eca37f452\transformed\jetified-facebook-core-14.1.1\AndroidManifest.xml:57:17-103
+279-->[com.facebook.android:facebook-core:14.1.1] C:\Users\agush\.gradle\caches\transforms-3\9507d4d6e596bbe89f8f581eca37f452\transformed\jetified-facebook-core-14.1.1\AndroidManifest.xml:57:25-100
 280            </intent-filter>
 281        </receiver>
 282    </application>

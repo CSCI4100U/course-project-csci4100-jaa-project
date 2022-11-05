@@ -1,9 +1,9 @@
-#Fri Nov 04 21:08:46 EDT 2022
-base.2=/Users/joacotome24/Desktop/course-project-csci4100-jaa-project/course_project/build/app/intermediates/dex/debug/mergeDexDebug/classes3.dex
+#Sat Oct 29 16:17:01 UYT 2022
+base.2=C\:\\Repos\\mobile_devices\\oblig\\course_project\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes3.dex
 path.2=classes3.dex
-base.1=/Users/joacotome24/Desktop/course-project-csci4100-jaa-project/course_project/build/app/intermediates/dex/debug/mergeDexDebug/classes2.dex
+base.1=C\:\\Repos\\mobile_devices\\oblig\\course_project\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes2.dex
 path.1=classes2.dex
-base.0=/Users/joacotome24/Desktop/course-project-csci4100-jaa-project/course_project/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+base.0=C\:\\Repos\\mobile_devices\\oblig\\course_project\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 renamed.2=classes3.dex
 renamed.1=classes2.dex
 renamed.0=classes.dex
