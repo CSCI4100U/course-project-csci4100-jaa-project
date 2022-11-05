@@ -11,18 +11,18 @@ class HomeScreen extends StatelessWidget {
     return MaterialApp(
         home: Scaffold(
       appBar: AppBar(
-        title: Text("FlutterFire UI Authentication"),
+        title: const Text("FlutterFire UI Authentication"),
       ),
       body: Container(
           color: Colors.white,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Spacer(),
+              const Spacer(),
               Text(user.email!),
-              Center(child: Text("This is Home Screen")),
-              SignOutButton(),
-              Spacer(),
+              const Center(child: Text("This is Home Screen")),
+              const SignOutButton(),
+              const Spacer(),
             ],
           )),
     ));

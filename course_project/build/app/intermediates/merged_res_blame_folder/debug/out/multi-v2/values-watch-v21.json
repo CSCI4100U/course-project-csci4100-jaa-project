@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Repos\\mobile_devices\\oblig\\course_project\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-watch-v21\\values-watch-v21.xml",
+            "outputFile": "/Users/joacotome24/Desktop/course-project-csci4100-jaa-project/course_project/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-watch-v21/values-watch-v21.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\agush\\.gradle\\caches\\transforms-3\\9346a27f47264b8c166f01f4004f0589\\transformed\\appcompat-1.1.0\\res\\values-watch-v21\\values-watch-v21.xml",
+                    "source": "/Users/joacotome24/.gradle/caches/transforms-3/9346a27f47264b8c166f01f4004f0589/transformed/appcompat-1.1.0/res/values-watch-v21/values-watch-v21.xml",
                     "from": {
                         "startLines": "2,6,10",
                         "startColumns": "4,4,4",
