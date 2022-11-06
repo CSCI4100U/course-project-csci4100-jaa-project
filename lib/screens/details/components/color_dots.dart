@@ -22,9 +22,9 @@ class ColorDots extends StatelessWidget {
       child: Row(
         children: [
           ...List.generate(
-            event.colors.length,
+            event.colors?.length ?? 0,
             (index) => ColorDot(
-              color: event.colors[index],
+              color: event.colors![index],
               isSelected: index == selectedColor,
             ),
           ),

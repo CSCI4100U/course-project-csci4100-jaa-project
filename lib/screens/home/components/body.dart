@@ -1,12 +1,11 @@
+import 'package:course_project/screens/home/components/favorite_events.dart';
 import 'package:flutter/material.dart';
 import 'package:course_project/size_config.dart';
 
 import 'categories.dart';
-import 'discount_banner.dart';
-import 'events_list.dart';
+import 'your_events_banner.dart';
 import 'home_header.dart';
-import 'popular_product.dart';
-import 'special_offers.dart';
+import 'popular_events.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -18,12 +17,12 @@ class Body extends StatelessWidget {
             SizedBox(height: getProportionateScreenHeight(20)),
             HomeHeader(),
             SizedBox(height: getProportionateScreenWidth(10)),
-            DiscountBanner(),
+            MyEventBanner(),
             Categories(),
-            //SpecialOffers(),
-            //SizedBox(height: getProportionateScreenWidth(30)),
-            //PopularProducts(),
-            EventsList(),
+            SizedBox(height: getProportionateScreenWidth(30)),
+            PopularEvents(),
+            FavoriteEvents()
+            //EventsList(),
           ],
         ),
       ),

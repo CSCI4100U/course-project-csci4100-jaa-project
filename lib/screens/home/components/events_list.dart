@@ -1,7 +1,8 @@
+import 'package:course_project/models/entities/event.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:cloud_firestore/cloud_firestore.dart'; 
-import 'package:course_project/models/db_models/event.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:course_project/models/db_models/event_model.dart';
 
 import '../../../size_config.dart';
 import 'section_title.dart';
@@ -16,29 +17,26 @@ class EventsList extends StatefulWidget {
 class _EventsListState extends State<EventsList> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Padding(
-          padding:
-              EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
-          child: SectionTitle(
-            title: "Events for you",
-            press: () {},
-          ),
+    return Column(children: [
+      Padding(
+        padding:
+            EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
+        child: SectionTitle(
+          title: "Events for you",
+          press: () {},
         ),
-        _buildProductList(context),
-      ]
-    );
+      ),
+      _buildProductList(context),
+    ]);
   }
 
-  Future getEvents() async{
+  Future getEvents() async {
     return await FirebaseFirestore.instance.collection('events').get();
   }
 
-  Widget _buildEvent(BuildContext context, DocumentSnapshot eventData){
-    final event = Event.fromMap(
-        eventData.data(),
-        reference: eventData.reference);
+  Widget _buildEvent(BuildContext context, DocumentSnapshot eventData) {
+    final event =
+        Event.fromMap(eventData.data(), reference: eventData.reference);
     return GestureDetector(
       child: ListTile(
         title: Text(event.name!),
@@ -48,23 +46,21 @@ class _EventsListState extends State<EventsList> {
     );
   }
 
-  Widget _buildProductList(BuildContext context){
+  Widget _buildProductList(BuildContext context) {
     return FutureBuilder(
         future: getEvents(),
-        builder: (BuildContext context, AsyncSnapshot snapshot){
-          if (!snapshot.hasData){
+        builder: (BuildContext context, AsyncSnapshot snapshot) {
+          if (!snapshot.hasData) {
             return CircularProgressIndicator();
           }
           return ListView(
             scrollDirection: Axis.vertical,
             shrinkWrap: true,
             padding: EdgeInsets.all(16),
-            children: snapshot.data.docs.map<Widget>( (document)
-              => _buildEvent(context, document)
-            ).toList(),
+            children: snapshot.data.docs
+                .map<Widget>((document) => _buildEvent(context, document))
+                .toList(),
           );
-        }
-    );
+        });
   }
-
 }

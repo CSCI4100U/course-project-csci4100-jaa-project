@@ -4,9 +4,9 @@ import 'package:course_project/models/entities/event.dart';
 import 'package:course_project/size_config.dart';
 
 import 'color_dots.dart';
-import 'product_description.dart';
+import 'event_description.dart';
 import 'top_rounded_container.dart';
-import 'product_images.dart';
+import 'event_images.dart';
 
 class Body extends StatelessWidget {
   final Event event;
@@ -17,12 +17,12 @@ class Body extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       children: [
-        ProductImages(event: event),
+        EventImages(event: event),
         TopRoundedContainer(
           color: Colors.white,
           child: Column(
             children: [
-              ProductDescription(
+              EventDescription(
                 event: event,
                 pressOnSeeMore: () {},
               ),

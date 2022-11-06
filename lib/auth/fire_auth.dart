@@ -1,3 +1,4 @@
+import 'package:course_project/screens/home/home_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -56,8 +57,10 @@ class FireAuth {
     return user;
   }
 
-  static Future signOut() async {
-    FirebaseAuth.instance.signOut();
+  static Future signOut(BuildContext context) async {
+    await FirebaseAuth.instance.signOut();
+    // ignore: use_build_context_synchronously
+    Navigator.popUntil(context, ModalRoute.withName(HomeScreen.routeName));
   }
 
   static Future<User?> refreshUser(User user) async {
@@ -67,5 +70,9 @@ class FireAuth {
     User? refreshedUser = auth.currentUser;
 
     return refreshedUser;
+  }
+
+  static User getCurrentUser() {
+    return FirebaseAuth.instance.currentUser!;
   }
 }

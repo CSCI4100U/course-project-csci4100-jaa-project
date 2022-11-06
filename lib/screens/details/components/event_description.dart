@@ -5,8 +5,8 @@ import 'package:course_project/models/entities/event.dart';
 import 'package:course_project/constants.dart';
 import 'package:course_project/size_config.dart';
 
-class ProductDescription extends StatelessWidget {
-  const ProductDescription({
+class EventDescription extends StatelessWidget {
+  const EventDescription({
     Key? key,
     required this.event,
     this.pressOnSeeMore,
@@ -24,7 +24,7 @@ class ProductDescription extends StatelessWidget {
           padding:
               EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
           child: Text(
-            event.title,
+            event.name,
             style: Theme.of(context).textTheme.headline6,
           ),
         ),
@@ -34,7 +34,7 @@ class ProductDescription extends StatelessWidget {
             padding: EdgeInsets.all(getProportionateScreenWidth(15)),
             width: getProportionateScreenWidth(64),
             decoration: BoxDecoration(
-              color: event.isFavourite ? Color(0xFFFFE6E6) : Color(0xFFF5F6F9),
+              color: true ? Color(0xFFFFE6E6) : Color(0xFFF5F6F9),
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(20),
                 bottomLeft: Radius.circular(20),
@@ -42,7 +42,7 @@ class ProductDescription extends StatelessWidget {
             ),
             child: SvgPicture.asset(
               "assets/icons/Heart Icon_2.svg",
-              color: event.isFavourite ? Color(0xFFFF4848) : Color(0xFFDBDEE4),
+              color: true ? Color(0xFFFF4848) : Color(0xFFDBDEE4),
               height: getProportionateScreenWidth(16),
             ),
           ),

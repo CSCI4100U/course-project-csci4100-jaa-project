@@ -1,5 +1,10 @@
+import 'package:course_project/components/menu_option.dart';
 import 'package:flutter/material.dart';
 import 'package:course_project/size_config.dart';
+
+import 'package:course_project/screens/home/components/body.dart' as homeBody;
+import 'package:course_project/screens/profile/components/body.dart'
+    as profileBody;
 
 const kPrimaryColor = Color(0xFFFF7643);
 const kPrimaryLightColor = Color(0xFFFFECDF);
@@ -21,7 +26,7 @@ final headingStyle = TextStyle(
 );
 
 const defaultDuration = Duration(milliseconds: 250);
-
+final lastDateTimeDate = DateTime(2100);
 // Form Error
 final RegExp emailValidatorRegExp =
     RegExp(r"^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
@@ -48,3 +53,17 @@ OutlineInputBorder outlineInputBorder() {
     borderSide: BorderSide(color: kTextColor),
   );
 }
+
+List<MenuOption> options = [
+  MenuOption(
+    name: "Home",
+    icon: buildIcon(Icons.home),
+    builder: () => homeBody.Body(),
+  ),
+  MenuOption(name: "Favorite", icon: buildIcon(Icons.favorite), builder: () {}),
+  MenuOption(name: "Map", icon: buildIcon(Icons.map), builder: () {}),
+  MenuOption(
+      name: "Profile",
+      icon: buildIcon(Icons.person),
+      builder: () => profileBody.Body()),
+];

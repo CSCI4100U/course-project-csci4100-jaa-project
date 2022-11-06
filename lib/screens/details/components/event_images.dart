@@ -4,8 +4,8 @@ import 'package:course_project/models/entities/event.dart';
 import 'package:course_project/constants.dart';
 import 'package:course_project/size_config.dart';
 
-class ProductImages extends StatefulWidget {
-  const ProductImages({
+class EventImages extends StatefulWidget {
+  const EventImages({
     Key? key,
     required this.event,
   }) : super(key: key);
@@ -13,10 +13,10 @@ class ProductImages extends StatefulWidget {
   final Event event;
 
   @override
-  _ProductImagesState createState() => _ProductImagesState();
+  _EventImagesState createState() => _EventImagesState();
 }
 
-class _ProductImagesState extends State<ProductImages> {
+class _EventImagesState extends State<EventImages> {
   int selectedImage = 0;
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ class _ProductImagesState extends State<ProductImages> {
             aspectRatio: 1,
             child: Hero(
               tag: widget.event.id.toString(),
-              child: Image.asset(widget.event.images[selectedImage]),
+              child: Image.asset(widget.event.images![selectedImage]),
             ),
           ),
         ),
@@ -36,7 +36,7 @@ class _ProductImagesState extends State<ProductImages> {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ...List.generate(widget.event.images.length,
+            ...List.generate(widget.event.images?.length ?? 0,
                 (index) => buildSmallProductPreview(index)),
           ],
         )
@@ -63,7 +63,7 @@ class _ProductImagesState extends State<ProductImages> {
           border: Border.all(
               color: kPrimaryColor.withOpacity(selectedImage == index ? 1 : 0)),
         ),
-        child: Image.asset(widget.event.images[index]),
+        child: Image.asset(widget.event.images![index]),
       ),
     );
   }

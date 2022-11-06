@@ -33,10 +33,10 @@ dependencies:
     sdk: flutter
 
   provider:
-  firebase_core: ^0.5.3
+  firebase_core:
   cloud_firestore:
-  firebase_auth: ^4.1.0
-  flutterfire_ui: ^0.18.3+1
+  firebase_auth:
+  flutterfire_ui:
   sqflite:
   path_provider:
   timezone:

@@ -1,4 +1,6 @@
 import 'package:course_project/auth/auth_gate.dart';
+import 'package:course_project/components/menu_option.dart';
+import 'package:course_project/constants.dart';
 import 'package:course_project/size_config.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -20,14 +22,18 @@ class HomeScreen extends StatelessWidget {
         if (snapshot.hasData) {
           User? user = snapshot.data;
           if (user != null) {
-            return Scaffold(
-              body: Body(),
-              bottomNavigationBar:
-                  CustomBottomNavBar(selectedMenu: MenuState.home),
+            return DefaultTabController(
+              length: options.length,
+              child: Scaffold(
+                body: buildTabBarView(options),
+                bottomNavigationBar: CustomBottomNavBar(
+                    selectedOption: options
+                        .firstWhere((element) => element.name == "Home")),
+              ),
             );
           }
         }
-        return AuthGate();
+        return const AuthGate();
       },
     );
   }

@@ -6,15 +6,15 @@ import 'package:course_project/screens/details/details_screen.dart';
 import '../constants.dart';
 import '../size_config.dart';
 
-class ProductCard extends StatelessWidget {
-  const ProductCard({
+class EventCard extends StatelessWidget {
+  const EventCard({
     Key? key,
     this.width = 140,
-    this.aspectRetio = 1.02,
+    this.aspectRatio = 1.02,
     required this.event,
   }) : super(key: key);
 
-  final double width, aspectRetio;
+  final double width, aspectRatio;
   final Event event;
 
   @override
@@ -42,13 +42,13 @@ class ProductCard extends StatelessWidget {
                   ),
                   child: Hero(
                     tag: event.id.toString(),
-                    child: Image.asset(event.images[0]),
+                    child: Image.asset(event.images![0]),
                   ),
                 ),
               ),
               const SizedBox(height: 10),
               Text(
-                event.title,
+                event.name,
                 style: TextStyle(color: Colors.black),
                 maxLines: 2,
               ),
@@ -71,14 +71,14 @@ class ProductCard extends StatelessWidget {
                       height: getProportionateScreenWidth(28),
                       width: getProportionateScreenWidth(28),
                       decoration: BoxDecoration(
-                        color: event.isFavourite
+                        color: true //event.isFavorite
                             ? kPrimaryColor.withOpacity(0.15)
                             : kSecondaryColor.withOpacity(0.1),
                         shape: BoxShape.circle,
                       ),
                       child: SvgPicture.asset(
                         "assets/icons/Heart Icon_2.svg",
-                        color: event.isFavourite
+                        color: true //event.isFavorite
                             ? Color(0xFFFF4848)
                             : Color(0xFFDBDEE4),
                       ),
