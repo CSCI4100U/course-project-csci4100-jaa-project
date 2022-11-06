@@ -1,18 +1,23 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+
 
 class ScheduledEvent{
   String? name;
-  DateTime? dateTime;
+  String? date;
+  String? time;
 
-  ScheduledEvent({this.dateTime, this.name});
+
+  ScheduledEvent({this.date, this.name, this.time});
 
   @override
   String toString(){
-    return "Event: $name at ($dateTime)";
+    return "Event: $name at ($date, $time)";
   }
 }
 
 class ScheduleEventPage extends StatefulWidget {
+  static String routeName = "/event_scheduler";
   const ScheduleEventPage({super.key});
 
   @override
@@ -32,11 +37,13 @@ class _ScheduleEventPageState extends State<ScheduleEventPage> {
         title: const Text("Schedule Event"),
       ),
       body: Container(
-        padding: const EdgeInsets.only(left: 20, right: 20, top: 40),
+        padding: const EdgeInsets.only(left: 20, right: 20, top: 30),
         color: Colors.white,
         child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
+          const Text("Create a new event", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+          const SizedBox(height: 30),
           TextField(
             style: const TextStyle(fontSize: 20),
             decoration: const InputDecoration(
@@ -115,12 +122,9 @@ class _ScheduleEventPageState extends State<ScheduleEventPage> {
             ],
           ),
           ElevatedButton(
-              onPressed: (){
-                Navigator.of(context).pop(
-                  ScheduledEvent(name: eventName,
-                    dateTime: eventTime
-                  )
-                );
+              onPressed: () {
+                ScheduledEvent event = ScheduledEvent(name: "Check Name", date: toDateString(eventTime!), time: toTimeString(eventTime!));
+                _addToDb(event);
               },
               child: const Text("Save", style: TextStyle(fontSize: 25),)
           ),
@@ -129,6 +133,19 @@ class _ScheduleEventPageState extends State<ScheduleEventPage> {
       ),
     );
   }
+
+Future _addToDb(ScheduledEvent newEvent) async{
+    final data = <String,Object?>{
+      "name": "Check Name",
+      "date": newEvent.date,
+      "time": newEvent.time,
+    };
+    await FirebaseFirestore.instance.collection('events').doc().set(data);
+    setState(() {
+      print("Added data: $data");
+    });
+
+}
 
 String twoDigits(int value){
   if (value > 9){
