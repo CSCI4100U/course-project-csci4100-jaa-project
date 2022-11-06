@@ -10,5 +10,4 @@ final Map<String, WidgetBuilder> routes = {
   HomeScreen.routeName: (context) => HomeScreen(),
   ProfileScreen.routeName: (context) => ProfileScreen(),
   DetailsScreen.routeName: (context) => DetailsScreen(),
-  AuthGate.routeName: (context) => AuthGate(),
 };

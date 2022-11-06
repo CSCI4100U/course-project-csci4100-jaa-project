@@ -8,13 +8,7 @@ class AuthScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SignInScreen(
       auth: FirebaseAuth.instance,
-      providerConfigs: const [
-        EmailProviderConfiguration(),
-        GoogleProviderConfiguration(
-          clientId:
-              '258703453258-0nfp60rmrl55r1vtfren3ild0asemvml.apps.googleusercontent.com',
-        ),
-      ],
+      providerConfigs: const [EmailProviderConfiguration()],
     );
   }
 }

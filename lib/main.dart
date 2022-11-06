@@ -1,4 +1,5 @@
 import 'package:course_project/routes.dart';
+import 'package:course_project/screens/home/home_screen.dart';
 import 'package:course_project/size_config.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -7,6 +8,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:course_project/firebase_options.dart';
 import 'package:course_project/theme.dart';
 import 'package:course_project/auth/auth_gate.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -27,7 +29,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: theme(),
-        initialRoute: AuthGate.routeName,
+        initialRoute: HomeScreen.routeName,
         routes: routes,
       ),
     );

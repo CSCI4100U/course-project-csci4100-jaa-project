@@ -1,3 +1,5 @@
+import 'package:course_project/screens/home/home_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import 'profile_menu.dart';
@@ -33,10 +35,13 @@ class Body extends StatelessWidget {
             press: () {},
           ),
           ProfileMenu(
-            text: "Log Out",
-            icon: "assets/icons/Log out.svg",
-            press: () {},
-          ),
+              text: "Log Out",
+              icon: "assets/icons/Log out.svg",
+              press: () async {
+                await FirebaseAuth.instance.signOut();
+                Navigator.popUntil(context,
+                    (route) => route.settings.name == HomeScreen.routeName);
+              }),
         ],
       ),
     );
