@@ -73,7 +73,6 @@ class _EventFormState extends State<EventForm> {
                     ).then((value) {
                       if (value != null) {
                         setState(() {
-                          print(value);
                           eventDate = value;
                         });
                       }
@@ -141,10 +140,10 @@ class _EventFormState extends State<EventForm> {
               onPressed: () {
                 event.date = DateTime(
                   eventDate.year,
-                  eventDate!.month,
-                  eventDate!.day,
-                  eventTime!.hour,
-                  eventTime!.minute,
+                  eventDate.month,
+                  eventDate.day,
+                  eventTime.hour,
+                  eventTime.minute,
                 );
                 Navigator.pop(context, event);
               },

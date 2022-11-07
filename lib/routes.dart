@@ -1,4 +1,5 @@
 import 'package:course_project/screens/event_form/event_form.dart';
+import 'package:course_project/screens/home/components/events_list.dart';
 import 'package:course_project/screens/profile/profile_screen.dart';
 import 'package:flutter/widgets.dart';
 import 'package:course_project/screens/details/details_screen.dart';
@@ -11,4 +12,5 @@ final Map<String, WidgetBuilder> routes = {
   ProfileScreen.routeName: (context) => ProfileScreen(),
   DetailsScreen.routeName: (context) => DetailsScreen(),
   EventForm.routeName: (context) => EventForm(),
+  EventsList.routeName: (context) => EventsList(),
 };
