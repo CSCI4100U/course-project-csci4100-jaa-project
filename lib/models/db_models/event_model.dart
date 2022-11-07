@@ -50,6 +50,19 @@ class EventModel {
     return events;
   }
 
+  Future<List<Event>> getUserEvents(User user) async {
+    var snapshot = await FirebaseFirestore.instance
+        .collection('events')
+        .orderBy('createdAt')
+        .where('userId', isEqualTo: user.uid)
+        .get();
+    var events = snapshot.docs
+        .map<Event>((doc) =>
+            Event.fromMap(FireBaseCloudUtil.generateDocumentMap((doc))))
+        .toList();
+    return events;
+  }
+
   Future updateEvent(Event event) async {
     final data = event.toMap();
     await event.reference!.update(data);

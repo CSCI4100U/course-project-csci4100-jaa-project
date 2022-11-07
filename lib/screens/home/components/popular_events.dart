@@ -22,8 +22,8 @@ class _PopularEventsState extends State<PopularEvents> {
         SizedBox(height: getProportionateScreenWidth(20)),
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
-          child: FutureBuilder(
-            future: EventModel().getPopularEvents(),
+          child: StreamBuilder(
+            stream: Stream.fromFuture(EventModel().getPopularEvents()),
             builder: (context, snapshot) {
               if (snapshot.hasData) {
                 return Row(

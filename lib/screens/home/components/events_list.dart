@@ -1,13 +1,13 @@
+import 'package:course_project/auth/fire_auth.dart';
 import 'package:course_project/models/entities/event.dart';
 import 'package:flutter/material.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:course_project/models/db_models/event_model.dart';
 
 import '../../../size_config.dart';
 import 'section_title.dart';
 
 class EventsList extends StatefulWidget {
+  static String routeName = '/eventsList';
   const EventsList({super.key});
 
   @override
@@ -17,49 +17,44 @@ class EventsList extends StatefulWidget {
 class _EventsListState extends State<EventsList> {
   @override
   Widget build(BuildContext context) {
-    return Column(children: [
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("My Events"),
+      ),
+      body: Column(children: [
       Padding(
         padding:
             EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
-        child: SectionTitle(
-          title: "Events for you",
-          press: () {},
-        ),
+        child: Text("My Events", style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
       ),
       _buildProductList(context),
-    ]);
+    ])
+    );
   }
 
-  Future getEvents() async {
-    return await FirebaseFirestore.instance.collection('events').get();
-  }
-
-  Widget _buildEvent(BuildContext context, DocumentSnapshot eventData) {
-    final event =
-        Event.fromMap(eventData.data(), reference: eventData.reference);
+  Widget _buildEvent(Event event) {
     return GestureDetector(
       child: ListTile(
-        title: Text(event.name!),
-        subtitle: Text(event.date!),
-        trailing: Text(event.time!),
+        title: Text(event.name),
+        subtitle: Text(event.date.toString()),
       ),
     );
   }
 
   Widget _buildProductList(BuildContext context) {
-    return FutureBuilder(
-        future: getEvents(),
+    return StreamBuilder(
+        stream: Stream<List<Event>>.fromFuture(EventModel().getUserEvents(FireAuth.getCurrentUser())),
         builder: (BuildContext context, AsyncSnapshot snapshot) {
           if (!snapshot.hasData) {
             return CircularProgressIndicator();
           }
-          return ListView(
+          List<Event> events = snapshot.data;
+          return ListView.builder(
+            itemCount: events.length,
             scrollDirection: Axis.vertical,
             shrinkWrap: true,
             padding: EdgeInsets.all(16),
-            children: snapshot.data.docs
-                .map<Widget>((document) => _buildEvent(context, document))
-                .toList(),
+            itemBuilder: ((context, index) => _buildEvent(events[index])),
           );
         });
   }
