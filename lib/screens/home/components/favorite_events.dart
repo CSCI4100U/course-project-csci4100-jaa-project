@@ -1,5 +1,6 @@
 import 'package:course_project/auth/fire_auth.dart';
 import 'package:course_project/models/db_models/event_model.dart';
+import 'package:course_project/models/entities/event.dart';
 import 'package:flutter/material.dart';
 import 'package:course_project/components/event_card.dart';
 import 'package:course_project/size_config.dart';
@@ -23,17 +24,19 @@ class _FavoriteEventsState extends State<FavoriteEvents> {
         SizedBox(height: getProportionateScreenWidth(20)),
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
-          child: FutureBuilder(
-            future: EventModel().getFavoriteEvents(FireAuth.getCurrentUser()),
+          child: StreamBuilder(
+            stream: Stream.fromFuture(
+                EventModel().getFavoriteEvents(FireAuth.getCurrentUser())),
             builder: (context, snapshot) {
               if (snapshot.hasData) {
+                List<Event> events = snapshot.data ?? [];
                 return Row(
                   children: [
                     ...List.generate(
-                      snapshot.data?.length ?? 0,
+                      events.length,
                       (index) {
-                        if (snapshot.data![index].isPopular) {
-                          return EventCard(event: snapshot.data![index]);
+                        if (events[index].isPopular) {
+                          return EventCard(event: events[index]);
                         }
                         return const SizedBox.shrink();
                       },
@@ -42,7 +45,7 @@ class _FavoriteEventsState extends State<FavoriteEvents> {
                   ],
                 );
               } else {
-                return CircularProgressIndicator();
+                return const CircularProgressIndicator();
               }
             },
           ),

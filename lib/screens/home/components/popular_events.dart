@@ -1,4 +1,5 @@
 import 'package:course_project/models/db_models/event_model.dart';
+import 'package:course_project/models/entities/event.dart';
 import 'package:flutter/material.dart';
 import 'package:course_project/components/event_card.dart';
 import 'package:course_project/size_config.dart';
@@ -26,22 +27,13 @@ class _PopularEventsState extends State<PopularEvents> {
             stream: Stream.fromFuture(EventModel().getPopularEvents()),
             builder: (context, snapshot) {
               if (snapshot.hasData) {
+                List<Event> events = snapshot.data ?? [];
                 return Row(
-                  children: [
-                    ...List.generate(
-                      snapshot.data?.length ?? 0,
-                      (index) {
-                        if (snapshot.data![index].isPopular) {
-                          return EventCard(event: snapshot.data![index]);
-                        }
-                        return const SizedBox.shrink();
-                      },
-                    ),
-                    SizedBox(width: getProportionateScreenWidth(20)),
-                  ],
+                  children:
+                      events.map((event) => EventCard(event: event)).toList(),
                 );
               } else {
-                return CircularProgressIndicator();
+                return const CircularProgressIndicator();
               }
             },
           ),

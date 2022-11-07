@@ -9,4 +9,9 @@ class FireBaseCloudUtil {
       'id': doc.id,
     };
   }
+
+  static DateTime parseTimeStamp(Timestamp timestamp) {
+    return DateTime.fromMillisecondsSinceEpoch(
+        timestamp.millisecondsSinceEpoch);
+  }
 }

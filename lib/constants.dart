@@ -60,7 +60,8 @@ List<MenuOption> options = [
     icon: buildIcon(Icons.home),
     builder: () => homeBody.Body(),
   ),
-  MenuOption(name: "Favorite", icon: buildIcon(Icons.favorite), builder: () {}),
+  MenuOption(
+      name: "Events", icon: buildIcon(Icons.event_available), builder: () {}),
   MenuOption(name: "Map", icon: buildIcon(Icons.map), builder: () {}),
   MenuOption(
       name: "Profile",

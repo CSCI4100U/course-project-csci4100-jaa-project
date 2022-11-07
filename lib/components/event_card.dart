@@ -42,7 +42,9 @@ class EventCard extends StatelessWidget {
                   ),
                   child: Hero(
                     tag: event.id.toString(),
-                    child: Image.asset(event.images![0]),
+                    child: event.images != null && event.images!.isNotEmpty
+                        ? Image.asset(event.images![0])
+                        : Image.asset("assets/images/No_image_available.png"),
                   ),
                 ),
               ),

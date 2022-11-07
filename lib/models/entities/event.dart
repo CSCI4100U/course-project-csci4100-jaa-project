@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:course_project/db/firebase_cloud_utils.dart';
 import 'package:flutter/material.dart';
 
 class Event {
@@ -9,10 +10,11 @@ class Event {
     Colors.white,
   ];
 
-  int capacity, assistants, price = 0;
+  int capacity, assistants;
+  int? price;
   String? id;
-  String name, description, userId = "";
-  DateTime? date;
+  String name, description, userId;
+  DateTime? date, createdAt;
   List<String>? images;
   List<Color>? colors;
   double rating;
@@ -32,27 +34,31 @@ class Event {
     this.assistants = 0,
     this.userId = "",
     this.price = 0,
-  });
+  }) {
+    colors ??= defaultColors;
+    images ??= [];
+    createdAt = DateTime.now();
+  }
 
   Event.fromMap(Map<String, dynamic> map)
       : assert(map['date'] != null),
         assert(map['rating'] != null),
         assert(map['name'] != null),
-        assert(map['description'] != null),
         assert(map['capacity'] != null),
         assert(map['assistants'] != null),
         id = map['id'],
-        images = List<String>.from(map['images']),
-        colors = List<Color>.from(map['colors']),
-        date = DateTime.parse(map['date']),
+        images = map['images'].map<String>((img) => img.toString()).toList(),
+        colors = map['colors'].map<Color>((color) => Color(color)).toList(),
         rating = map['rating'],
         isPopular = map['isPopular'],
         name = map['name'],
-        description = map['description'],
+        description = map['description'] ?? "",
         capacity = map['capacity'],
         assistants = map['assistants'],
         price = map['price'],
-        userId = map['authorId'],
+        userId = map['userId'],
+        date = FireBaseCloudUtil.parseTimeStamp(map['date']),
+        createdAt = FireBaseCloudUtil.parseTimeStamp(map['createdAt']),
         reference = map['reference'];
 
   Map<String, Object?> toMap() {
@@ -61,12 +67,14 @@ class Event {
       'date': date,
       'capacity': capacity,
       'assistants': assistants,
-      'colors': colors.toString(),
+      'price': price,
+      'colors': colors?.map((color) => color.value).toList() ?? [],
       'description': description,
-      'images': images.toString(),
+      'images': images,
       'isPopular': isPopular,
       'rating': rating,
-      'authorId': userId
+      'createdAt': createdAt,
+      'userId': userId
     };
   }
 }

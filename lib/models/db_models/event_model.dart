@@ -29,6 +29,10 @@ class EventModel {
         .orderBy('createdAt')
         .where('isPopular', isEqualTo: true)
         .get();
+
+    print(snapshot.docs
+        .map((doc) => FireBaseCloudUtil.generateDocumentMap((doc)).toString())
+        .toString());
     var events = snapshot.docs
         .map<Event>((doc) =>
             Event.fromMap(FireBaseCloudUtil.generateDocumentMap((doc))))
