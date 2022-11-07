@@ -10,7 +10,7 @@ import 'package:course_project/enums.dart';
 import 'components/body.dart';
 
 class HomeScreen extends StatelessWidget {
-  static String routeName = "/home";
+  static String routeName = "/";
 
   @override
   Widget build(BuildContext context) {

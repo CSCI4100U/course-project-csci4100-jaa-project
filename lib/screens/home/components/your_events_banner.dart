@@ -11,7 +11,7 @@ class MyEventBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => Navigator.pushNamed(context, EventsList.routeName),
+      onTap: () async => await Navigator.pushNamed(context, EventsList.routeName),
       child: Container(
         width: double.infinity,
         margin: EdgeInsets.all(getProportionateScreenWidth(20)),

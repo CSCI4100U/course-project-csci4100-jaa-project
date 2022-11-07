@@ -25,10 +25,7 @@ class _EventsListState extends State<EventsList> {
       Padding(
         padding:
             EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
-        child: SectionTitle(
-          title: "Your Events",
-          press: () {},
-        ),
+        child: Text("My Events", style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
       ),
       _buildProductList(context),
     ])
