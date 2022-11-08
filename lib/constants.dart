@@ -5,6 +5,7 @@ import 'package:course_project/size_config.dart';
 import 'package:course_project/screens/home/components/body.dart' as homeBody;
 import 'package:course_project/screens/profile/components/body.dart'
     as profileBody;
+import 'package:course_project/screens/event/components/body.dart' as eventBody;
 
 const kPrimaryColor = Color(0xFFFF7643);
 const kPrimaryLightColor = Color(0xFFFFECDF);
@@ -61,7 +62,9 @@ List<MenuOption> options = [
     builder: () => homeBody.Body(),
   ),
   MenuOption(
-      name: "Events", icon: buildIcon(Icons.event_available), builder: () {}),
+      name: "Events", 
+      icon: buildIcon(Icons.event_available), 
+      builder: () => eventBody.Body()),
   MenuOption(name: "Map", icon: buildIcon(Icons.map), builder: () {}),
   MenuOption(
       name: "Profile",
