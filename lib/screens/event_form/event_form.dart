@@ -27,7 +27,10 @@ class _EventFormState extends State<EventForm> {
 
   @override
   Widget build(BuildContext context) {
-    final eventToEdit = ModalRoute.of(context)!.settings.arguments as Event?;
+    final eventToEdit = ModalRoute
+        .of(context)!
+        .settings
+        .arguments as Event?;
     if (eventToEdit != null) {
       event = eventToEdit;
     }
@@ -44,8 +47,8 @@ class _EventFormState extends State<EventForm> {
           children: [
             // create a new event title
             const Text(
-              "Create a new event",
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)
+                "Create a new event",
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)
             ),
             const SizedBox(height: 30), // spacer
             eventNameTextField(),
@@ -53,6 +56,7 @@ class _EventFormState extends State<EventForm> {
             descriptionWidget(),
             dateWidget(),
             timeWidget(),
+            priceFieldWidget(),
             spacerBox,
             saveButton()
           ],
@@ -77,7 +81,7 @@ class _EventFormState extends State<EventForm> {
   }
 
   // used to display the date and time
-  Widget displayTextContainer(String displayString){
+  Widget displayTextContainer(String displayString) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Text(
@@ -88,7 +92,7 @@ class _EventFormState extends State<EventForm> {
   }
 
   // description widget
-  Widget descriptionWidget(){
+  Widget descriptionWidget() {
     return Container(
       padding: EdgeInsets.only(bottom: 20),
       constraints: BoxConstraints(maxHeight: 90),
@@ -96,7 +100,7 @@ class _EventFormState extends State<EventForm> {
         child: TextField(
           style: const TextStyle(fontSize: 20),
           decoration: InputDecoration(
-            hintText: "Description"
+              hintText: "Description"
           ),
           maxLines: null,
           onChanged: (value) {
@@ -109,7 +113,8 @@ class _EventFormState extends State<EventForm> {
     );
   }
 
-  Widget saveButton(){
+  // save button widget
+  Widget saveButton() {
     return Flexible(
       child: ElevatedButton(
         onPressed: () {
@@ -130,7 +135,8 @@ class _EventFormState extends State<EventForm> {
     );
   }
 
-  Widget dateWidget(){
+  // date button and date picker widget
+  Widget dateWidget() {
     return Flexible(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -162,7 +168,8 @@ class _EventFormState extends State<EventForm> {
     );
   }
 
-  Widget timeWidget(){
+  // time button and time picker widget
+  Widget timeWidget() {
     return Flexible(
       child: Row(
         children: [
@@ -199,7 +206,28 @@ class _EventFormState extends State<EventForm> {
     );
   }
 
-  Widget eventNameTextField(){
+  // event name price widget
+  Widget priceFieldWidget() {
+    return TextField(
+      style: const TextStyle(fontSize: 20),
+      decoration: const InputDecoration(
+        hintText: "Price",
+        icon: Icon(Icons.attach_money_sharp, size: 35, color: Colors.green,),
+        contentPadding: EdgeInsets.symmetric(horizontal: 50, vertical: 10)
+      ),
+      onChanged: (value) {
+        setState(() {
+          event.price = int.tryParse(value);
+          if (event.price == null) {
+            print("Invalid value for price");
+          }
+        });
+      },
+    );
+  }
+
+  // event name textfield widget
+  Widget eventNameTextField() {
     return TextField(
       style: const TextStyle(fontSize: 20),
       decoration: const InputDecoration(
