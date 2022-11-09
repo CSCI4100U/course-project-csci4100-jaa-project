@@ -174,4 +174,10 @@ class _EventFormState extends State<EventForm> {
       ),
     );
   }
+
+  Widget descriptionWidget(){
+    return Container(
+      
+    );
+  }
 }
