@@ -41,6 +41,7 @@ class _EventFormState extends State<EventForm> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
+            // create a new event
             const Text("Create a new event",
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
             const SizedBox(height: 30),
@@ -56,12 +57,14 @@ class _EventFormState extends State<EventForm> {
                 });
               },
             ),
+            // spacer
             const SizedBox(
-              height: 20,
+               height: 20,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
+                // date picker
                 ElevatedButton(
                   onPressed: () {
                     showDatePicker(
@@ -83,13 +86,7 @@ class _EventFormState extends State<EventForm> {
                     style: TextStyle(fontSize: 20),
                   ),
                 ),
-                Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  child: Text(
-                    toDateString(eventDate),
-                    style: const TextStyle(fontSize: 20),
-                  ),
-                ),
+                displayTextContainer(toDateString(eventDate))
               ],
             ),
             Row(
@@ -124,13 +121,7 @@ class _EventFormState extends State<EventForm> {
                     style: TextStyle(fontSize: 20),
                   ),
                 ),
-                Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 30),
-                  child: Text(
-                    toTimeString(eventTime!),
-                    style: const TextStyle(fontSize: 20),
-                  ),
-                ),
+                displayTextContainer(toTimeString(eventTime!))
               ],
             ),
             const SizedBox(
@@ -171,5 +162,16 @@ class _EventFormState extends State<EventForm> {
 
   String toTimeString(DateTime date) {
     return "${twoDigits(date.hour)}:${twoDigits(date.minute)}";
+  }
+
+  // used to display the date and time
+  Widget displayTextContainer(String displayString){
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: Text(
+        displayString,
+        style: const TextStyle(fontSize: 20),
+      ),
+    );
   }
 }
