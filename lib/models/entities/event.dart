@@ -10,8 +10,9 @@ class Event {
     Colors.white,
   ];
 
-  int capacity, assistants;
-  int? price;
+  int? capacity;
+  int assistants;
+  double? price;
   String? id;
   String name, description, userId;
   DateTime? date, createdAt;
@@ -67,7 +68,7 @@ class Event {
       'date': date,
       'capacity': capacity,
       'assistants': assistants,
-      'price': price,
+      'price': price ?? 0,
       'colors': colors?.map((color) => color.value).toList() ?? [],
       'description': description,
       'images': images,

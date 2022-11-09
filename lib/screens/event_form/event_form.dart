@@ -2,6 +2,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:course_project/constants.dart';
 import 'package:course_project/models/entities/event.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'decimal_formatter.dart';
 
 class EventForm extends StatefulWidget {
   static String routeName = "/event_form";
@@ -18,7 +21,17 @@ class _EventFormState extends State<EventForm> {
   DateTime rightNow = DateTime.now();
   DateTime eventTime = DateTime.now();
   DateTime eventDate = DateTime.now();
-  Widget spacerBox = const SizedBox(height: 20,);
+
+  Widget spacerBox = const Flexible(
+    child: SizedBox(height: 20,),
+  );
+  Widget spacerBox2 = const Flexible(
+    child: SizedBox(height: 15,),
+  );
+
+  static const mainIconSize = 55.0;
+  static const mainFontSize = 20.0;
+  static const mainIconPaddingAmount = 10.0;
 
   @override
   void initState() {
@@ -48,7 +61,7 @@ class _EventFormState extends State<EventForm> {
             // create a new event title
             const Text(
                 "Create a new event",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)
+                style: TextStyle(fontSize: mainFontSize, fontWeight: FontWeight.bold)
             ),
             const SizedBox(height: 30), // spacer
             eventNameTextField(),
@@ -56,7 +69,12 @@ class _EventFormState extends State<EventForm> {
             descriptionWidget(),
             dateWidget(),
             timeWidget(),
+            spacerBox2,
             priceFieldWidget(),
+            spacerBox,
+            capacityTextField(),
+            ratingField(),
+            spacerBox,
             spacerBox,
             saveButton()
           ],
@@ -86,7 +104,7 @@ class _EventFormState extends State<EventForm> {
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Text(
         displayString,
-        style: const TextStyle(fontSize: 20),
+        style: const TextStyle(fontSize: mainFontSize),
       ),
     );
   }
@@ -94,13 +112,17 @@ class _EventFormState extends State<EventForm> {
   // description widget
   Widget descriptionWidget() {
     return Container(
-      padding: EdgeInsets.only(bottom: 20),
-      constraints: BoxConstraints(maxHeight: 90),
+      padding: const EdgeInsets.only(bottom: 20),
+      constraints: const BoxConstraints(maxHeight: 90),
       child: SingleChildScrollView(
         child: TextField(
-          style: const TextStyle(fontSize: 20),
-          decoration: InputDecoration(
-              hintText: "Description"
+          style: const TextStyle(fontSize: mainFontSize),
+          decoration: const InputDecoration(
+            hintText: "Description",
+            icon: Padding(
+              padding: EdgeInsets.symmetric(horizontal: mainIconPaddingAmount),
+              child: Icon(Icons.description, color: Colors.amber, size: mainIconSize,),
+            )
           ),
           maxLines: null,
           onChanged: (value) {
@@ -159,7 +181,7 @@ class _EventFormState extends State<EventForm> {
             },
             child: const Text(
               "Date",
-              style: TextStyle(fontSize: 20),
+              style: TextStyle(fontSize: mainFontSize),
             ),
           ),
           displayTextContainer(toDateString(eventDate))
@@ -197,7 +219,7 @@ class _EventFormState extends State<EventForm> {
               );
             },
             child: const Text("Time",
-              style: TextStyle(fontSize: 20),
+              style: TextStyle(fontSize: mainFontSize),
             ),
           ),
           displayTextContainer(toTimeString(eventTime!))
@@ -212,27 +234,44 @@ class _EventFormState extends State<EventForm> {
       style: const TextStyle(fontSize: 20),
       decoration: const InputDecoration(
         hintText: "Price",
-        icon: Icon(Icons.attach_money_sharp, size: 35, color: Colors.green,),
+        icon: Padding(
+          padding: EdgeInsets.symmetric(horizontal: mainIconPaddingAmount),
+          child: Icon(Icons.attach_money_sharp, size: mainIconSize, color: Colors.green,),
+        ),
         contentPadding: EdgeInsets.symmetric(horizontal: 50, vertical: 10)
       ),
       onChanged: (value) {
         setState(() {
-          event.price = int.tryParse(value);
+          event.price = double.tryParse(value);
           if (event.price == null) {
             print("Invalid value for price");
           }
         });
       },
+        // keyboard type to number with options
+      keyboardType: const TextInputType.numberWithOptions(decimal: true, signed: false),
+      inputFormatters: [
+        // only allowing numbers with a max of 2 decimals
+        DecimalTextInputFormatter(decimalRange: 2),
+
+        // not allowing the user to use the invalid characters on the keyboard
+        FilteringTextInputFormatter.deny(","),
+        FilteringTextInputFormatter.deny("_"),
+        FilteringTextInputFormatter.deny("-")]
     );
   }
 
   // event name textfield widget
   Widget eventNameTextField() {
     return TextField(
-      style: const TextStyle(fontSize: 20),
+      style: const TextStyle(fontSize: mainFontSize),
       decoration: const InputDecoration(
         hintText: "Event Name",
         border: OutlineInputBorder(),
+        icon: Padding(
+          padding: EdgeInsets.symmetric(horizontal: mainIconPaddingAmount),
+          child: Icon(Icons.drive_file_rename_outline, color: Colors.brown, size: mainIconSize,)
+        )
       ),
       onChanged: (value) {
         setState(() {
@@ -241,4 +280,52 @@ class _EventFormState extends State<EventForm> {
       },
     );
   }
+
+  Widget capacityTextField(){
+    return TextField(
+        style: const TextStyle(fontSize: 20),
+        decoration: const InputDecoration(
+            hintText: "Capacity",
+            icon: Padding(
+              padding: EdgeInsets.symmetric(horizontal: mainIconPaddingAmount),
+              child: Icon(Icons.reduce_capacity, size: mainIconSize, color: Color.fromRGBO(153, 0, 0, 100.0)),
+            ),
+            contentPadding: EdgeInsets.symmetric(horizontal: 50, vertical: 10)
+        ),
+        onChanged: (value) {
+          setState(() {
+            event.capacity = int.tryParse(value);
+          });
+        },
+        // keyboard type to number keyboard
+        keyboardType: TextInputType.number,
+        inputFormatters: [
+          FilteringTextInputFormatter.digitsOnly] // only allowing the user to enter digits
+    );
+  }
+
+  // star rating field (0.5 to 5.0 rating)
+  Widget ratingField(){
+    return Flexible(
+      child: RatingBar.builder(
+        initialRating: event.rating,
+        minRating: 0.5,
+        allowHalfRating: true,
+        itemCount: 5,
+        itemPadding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 15),
+        itemBuilder: (context, _) => const Icon(
+          Icons.star,
+          color: Colors.amber,
+          size: mainIconSize,
+        ),
+        onRatingUpdate: (rating) {
+          setState(() {
+            event.rating = rating;
+          });
+        },
+      ),
+    );
+  }
 }
+
+
