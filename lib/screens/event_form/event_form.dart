@@ -62,7 +62,7 @@ class _EventFormState extends State<EventForm> {
                height: 20,
             ),
             descriptionWidget(),
-            Expanded(
+            Flexible(
               child:
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -93,59 +93,65 @@ class _EventFormState extends State<EventForm> {
                   ],
                 ),
             ),
-            Row(
-              children: [
-                ElevatedButton(
-                  onPressed: () {
-                    showTimePicker(
-                      context: context,
-                      initialTime: TimeOfDay(
-                        hour: eventTime.hour,
-                        minute: eventTime.minute,
-                      ),
-                    ).then(
-                      (value) {
-                        if (value != null) {
-                          setState(
-                            () {
-                              eventTime = DateTime(
-                                  eventDate.day,
-                                  eventDate.month,
-                                  eventDate.day,
-                                  value.hour,
-                                  value.minute);
-                            },
-                          );
-                        }
+            Flexible(
+              child:
+                Row(
+                  children: [
+                    ElevatedButton(
+                      onPressed: () {
+                        showTimePicker(
+                          context: context,
+                          initialTime: TimeOfDay(
+                            hour: eventTime.hour,
+                            minute: eventTime.minute,
+                          ),
+                        ).then(
+                          (value) {
+                            if (value != null) {
+                              setState(
+                                () {
+                                  eventTime = DateTime(
+                                      eventDate.day,
+                                      eventDate.month,
+                                      eventDate.day,
+                                      value.hour,
+                                      value.minute);
+                                },
+                              );
+                            }
+                          },
+                        );
                       },
-                    );
-                  },
-                  child: const Text(
-                    "Time",
-                    style: TextStyle(fontSize: 20),
-                  ),
+                      child: const Text(
+                        "Time",
+                        style: TextStyle(fontSize: 20),
+                      ),
+                    ),
+                    displayTextContainer(toTimeString(eventTime!))
+                  ],
                 ),
-                displayTextContainer(toTimeString(eventTime!))
-              ],
             ),
             const SizedBox(
               height: 20,
             ),
-            ElevatedButton(
-              onPressed: () {
-                event.date = DateTime(
-                  eventDate.year,
-                  eventDate.month,
-                  eventDate.day,
-                  eventTime.hour,
-                  eventTime.minute,
-                );
-                Navigator.pop(context, event);
-              },
-              child: const Text(
-                "Save",
-                style: TextStyle(fontSize: 25),
-              ),
+            Flexible(
+              child:
+                ElevatedButton(
+                  onPressed: () {
+                    event.date = DateTime(
+                      eventDate.year,
+                      eventDate.month,
+                      eventDate.day,
+                      eventTime.hour,
+                      eventTime.minute,
+                    );
+                    Navigator.pop(context, event);
+                  },
+                  child: const Text(
+                    "Save",
+                    style: TextStyle(fontSize: 25),
+                  ),
+                ),
             ),
           ],
         ),
@@ -179,7 +185,7 @@ class _EventFormState extends State<EventForm> {
     );
   }
 
-  //
+  // description widget
   Widget descriptionWidget(){
     return Container(
       padding: EdgeInsets.only(bottom: 20),
