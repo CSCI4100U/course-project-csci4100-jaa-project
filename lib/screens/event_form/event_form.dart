@@ -18,6 +18,7 @@ class _EventFormState extends State<EventForm> {
   DateTime rightNow = DateTime.now();
   DateTime eventTime = DateTime.now();
   DateTime eventDate = DateTime.now();
+  Widget spacerBox = const SizedBox(height: 20,);
 
   @override
   void initState() {
@@ -41,118 +42,19 @@ class _EventFormState extends State<EventForm> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            // create a new event
-            const Text("Create a new event",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-            const SizedBox(height: 30),
-            TextField(
-              style: const TextStyle(fontSize: 20),
-              decoration: const InputDecoration(
-                hintText: "Event Name",
-                border: OutlineInputBorder(),
-              ),
-              onChanged: (value) {
-                setState(() {
-                  event.name = value;
-                });
-              },
+            // create a new event title
+            const Text(
+              "Create a new event",
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)
             ),
-            // spacer
-            const SizedBox(
-               height: 20,
-            ),
+            const SizedBox(height: 30), // spacer
+            eventNameTextField(),
+            spacerBox,
             descriptionWidget(),
-            Flexible(
-              child:
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    // date picker
-                    ElevatedButton(
-                      onPressed: () {
-                        showDatePicker(
-                          context: context,
-                          initialDate: rightNow,
-                          firstDate:
-                              rightNow.isBefore(eventDate) ? rightNow : eventDate,
-                          lastDate: lastDateTimeDate,
-                        ).then((value) {
-                          if (value != null) {
-                            setState(() {
-                              eventDate = value;
-                            });
-                          }
-                        });
-                      },
-                      child: const Text(
-                        "Date",
-                        style: TextStyle(fontSize: 20),
-                      ),
-                    ),
-                    displayTextContainer(toDateString(eventDate))
-                  ],
-                ),
-            ),
-            Flexible(
-              child:
-                Row(
-                  children: [
-                    ElevatedButton(
-                      onPressed: () {
-                        showTimePicker(
-                          context: context,
-                          initialTime: TimeOfDay(
-                            hour: eventTime.hour,
-                            minute: eventTime.minute,
-                          ),
-                        ).then(
-                          (value) {
-                            if (value != null) {
-                              setState(
-                                () {
-                                  eventTime = DateTime(
-                                      eventDate.day,
-                                      eventDate.month,
-                                      eventDate.day,
-                                      value.hour,
-                                      value.minute);
-                                },
-                              );
-                            }
-                          },
-                        );
-                      },
-                      child: const Text(
-                        "Time",
-                        style: TextStyle(fontSize: 20),
-                      ),
-                    ),
-                    displayTextContainer(toTimeString(eventTime!))
-                  ],
-                ),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            Flexible(
-              child:
-                ElevatedButton(
-                  onPressed: () {
-                    event.date = DateTime(
-                      eventDate.year,
-                      eventDate.month,
-                      eventDate.day,
-                      eventTime.hour,
-                      eventTime.minute,
-                    );
-                    Navigator.pop(context, event);
-                  },
-                  child: const Text(
-                    "Save",
-                    style: TextStyle(fontSize: 25),
-                  ),
-                ),
-            ),
+            dateWidget(),
+            timeWidget(),
+            spacerBox,
+            saveButton()
           ],
         ),
       ),
@@ -204,6 +106,111 @@ class _EventFormState extends State<EventForm> {
           },
         ),
       ),
+    );
+  }
+
+  Widget saveButton(){
+    return Flexible(
+      child: ElevatedButton(
+        onPressed: () {
+          event.date = DateTime(
+            eventDate.year,
+            eventDate.month,
+            eventDate.day,
+            eventTime.hour,
+            eventTime.minute,
+          );
+          Navigator.pop(context, event);
+        },
+        child: const Text(
+          "Save",
+          style: TextStyle(fontSize: 25),
+        ),
+      ),
+    );
+  }
+
+  Widget dateWidget(){
+    return Flexible(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          ElevatedButton(
+            onPressed: () {
+              showDatePicker(
+                context: context,
+                initialDate: rightNow,
+                firstDate:
+                rightNow.isBefore(eventDate) ? rightNow : eventDate,
+                lastDate: lastDateTimeDate,
+              ).then((value) {
+                if (value != null) {
+                  setState(() {
+                    eventDate = value;
+                  });
+                }
+              });
+            },
+            child: const Text(
+              "Date",
+              style: TextStyle(fontSize: 20),
+            ),
+          ),
+          displayTextContainer(toDateString(eventDate))
+        ],
+      ),
+    );
+  }
+
+  Widget timeWidget(){
+    return Flexible(
+      child: Row(
+        children: [
+          ElevatedButton(
+            onPressed: () {
+              showTimePicker(
+                context: context,
+                initialTime: TimeOfDay(
+                  hour: eventTime.hour,
+                  minute: eventTime.minute,
+                ),
+              ).then((value) {
+                if (value != null) {
+                  setState(() {
+                    eventTime = DateTime(
+                        eventDate.day,
+                        eventDate.month,
+                        eventDate.day,
+                        value.hour,
+                        value.minute);
+                  },
+                  );
+                }
+              },
+              );
+            },
+            child: const Text("Time",
+              style: TextStyle(fontSize: 20),
+            ),
+          ),
+          displayTextContainer(toTimeString(eventTime!))
+        ],
+      ),
+    );
+  }
+
+  Widget eventNameTextField(){
+    return TextField(
+      style: const TextStyle(fontSize: 20),
+      decoration: const InputDecoration(
+        hintText: "Event Name",
+        border: OutlineInputBorder(),
+      ),
+      onChanged: (value) {
+        setState(() {
+          event.name = value;
+        });
+      },
     );
   }
 }
