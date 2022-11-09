@@ -61,33 +61,37 @@ class _EventFormState extends State<EventForm> {
             const SizedBox(
                height: 20,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                // date picker
-                ElevatedButton(
-                  onPressed: () {
-                    showDatePicker(
-                      context: context,
-                      initialDate: rightNow,
-                      firstDate:
-                          rightNow.isBefore(eventDate) ? rightNow : eventDate,
-                      lastDate: lastDateTimeDate,
-                    ).then((value) {
-                      if (value != null) {
-                        setState(() {
-                          eventDate = value;
+            descriptionWidget(),
+            Expanded(
+              child:
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    // date picker
+                    ElevatedButton(
+                      onPressed: () {
+                        showDatePicker(
+                          context: context,
+                          initialDate: rightNow,
+                          firstDate:
+                              rightNow.isBefore(eventDate) ? rightNow : eventDate,
+                          lastDate: lastDateTimeDate,
+                        ).then((value) {
+                          if (value != null) {
+                            setState(() {
+                              eventDate = value;
+                            });
+                          }
                         });
-                      }
-                    });
-                  },
-                  child: const Text(
-                    "Date",
-                    style: TextStyle(fontSize: 20),
-                  ),
+                      },
+                      child: const Text(
+                        "Date",
+                        style: TextStyle(fontSize: 20),
+                      ),
+                    ),
+                    displayTextContainer(toDateString(eventDate))
+                  ],
                 ),
-                displayTextContainer(toDateString(eventDate))
-              ],
             ),
             Row(
               children: [
@@ -175,9 +179,25 @@ class _EventFormState extends State<EventForm> {
     );
   }
 
+  //
   Widget descriptionWidget(){
     return Container(
-      
+      padding: EdgeInsets.only(bottom: 20),
+      constraints: BoxConstraints(maxHeight: 90),
+      child: SingleChildScrollView(
+        child: TextField(
+          style: const TextStyle(fontSize: 20),
+          decoration: InputDecoration(
+            hintText: "Description"
+          ),
+          maxLines: null,
+          onChanged: (value) {
+            setState(() {
+              event.description = value;
+            });
+          },
+        ),
+      ),
     );
   }
 }
