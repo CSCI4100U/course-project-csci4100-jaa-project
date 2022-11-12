@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:course_project/models/entities/category.dart';
 import 'package:course_project/models/entities/event.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:course_project/db/firebase_cloud_utils.dart';
@@ -12,11 +13,14 @@ class EventModel {
   }
 
   //Gets all events from the database
-  Future<List<Event>> getAllEvents() async {
-    var snapshot = await FirebaseFirestore.instance
-        .collection('events')
-        .orderBy('createdAt')
-        .get();
+  Future<List<Event>> getAllEvents({Category? categoryFilter: null}) async {
+    var eventsQuery =
+        FirebaseFirestore.instance.collection('events').orderBy('createdAt');
+    if (categoryFilter != null) {
+      eventsQuery =
+          eventsQuery.where('categoryId', isEqualTo: categoryFilter.id);
+    }
+    var snapshot = await eventsQuery.get();
     var events = snapshot.docs
         .map<Event>((doc) =>
             Event.fromMap(FireBaseCloudUtil.generateDocumentMap((doc))))

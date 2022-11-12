@@ -20,7 +20,7 @@ class HomeHeader extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           IconBtnWithCounter(
-            svgSrc: "assets/icons/Cart Icon.svg",
+            icon: const Icon(Icons.add),
             press: () async => await _showEventForm(context),
           ),
           const SizedBox(width: 10),

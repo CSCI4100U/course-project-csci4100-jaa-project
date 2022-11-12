@@ -1,20 +1,23 @@
+import 'package:course_project/models/db_models/category_model.dart';
 import 'package:course_project/routes.dart';
 import 'package:course_project/screens/home/home_screen.dart';
-import 'package:course_project/size_config.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 import 'package:course_project/firebase_options.dart';
 import 'package:course_project/theme.dart';
-import 'package:course_project/auth/auth_gate.dart';
-import 'package:google_sign_in/google_sign_in.dart';
+import 'package:course_project/constants.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
+  var categoryModel = CategoryModel();
+  for (var category in defaultCategories) {
+    await categoryModel.insertCategory(category);
+  }
 
   runApp(MyApp());
 }
