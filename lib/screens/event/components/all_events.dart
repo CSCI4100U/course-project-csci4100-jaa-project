@@ -1,5 +1,7 @@
 import 'package:course_project/models/db_models/event_model.dart';
+import 'package:course_project/models/entities/category.dart';
 import 'package:course_project/models/entities/event.dart';
+import 'package:course_project/screens/event/components/grid_events.dart';
 import 'package:course_project/screens/event/components/search_field.dart';
 import 'package:course_project/screens/event/components/section_title.dart';
 import 'package:flutter/material.dart';
@@ -7,6 +9,10 @@ import 'package:course_project/components/event_card.dart';
 import 'package:course_project/size_config.dart';
 
 class AllEvents extends StatefulWidget {
+  AllEvents({Key? key, required this.categoryFilter}) : super(key: key);
+
+  final Category? categoryFilter;
+
   @override
   State<AllEvents> createState() => _AllEventsState();
 }
@@ -33,36 +39,26 @@ class _AllEventsState extends State<AllEvents> {
             Padding(
               padding: EdgeInsets.symmetric(
                   horizontal: getProportionateScreenWidth(20)),
-              child: SectionTitle(title: "All Events", press: () {}),
+              child: SectionTitle(
+                  title: "All ${widget.categoryFilter?.name ?? ""} Events",
+                  press: () {}),
             ),
             SizedBox(height: getProportionateScreenWidth(20)),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
+            Container(
+              height: getProportionateScreenHeight(60000),
               child: StreamBuilder(
-                stream: Stream.fromFuture(EventModel().getAllEvents()),
+                stream: Stream.fromFuture(EventModel()
+                    .getAllEvents(categoryFilter: widget.categoryFilter)),
                 builder: (context, snapshot) {
                   if (snapshot.hasData) {
-                    List<Event> events = snapshot.data ?? [];
-                    return Row(
-                      children: [
-                        ...List.generate(
-                          events.length,
-                          (index) {
-                            if (events[index].isPopular) {
-                              return EventCard(event: events[index]);
-                            }
-                            return const SizedBox.shrink();
-                          },
-                        ),
-                        SizedBox(width: getProportionateScreenWidth(20)),
-                      ],
-                    );
+                    List<Event> events = snapshot.data as List<Event>;
+                    return GridEvents(events: events);
                   } else {
                     return const CircularProgressIndicator();
                   }
                 },
               ),
-            )
+            ),
           ],
         ),
       ],

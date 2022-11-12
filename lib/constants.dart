@@ -74,38 +74,45 @@ List<MenuOption> options = [
       builder: () => profileBody.Body()),
 ];
 
-List<CategoryEntity.Category> categories = [
+List<CategoryEntity.Category> defaultCategories = [
   CategoryEntity.Category(
+    id: 1,
     name: "Music",
     icon: buildIcon(Icons.music_note),
     description: "Events related to music",
   ),
   CategoryEntity.Category(
+    id: 2,
     name: "Sport",
     icon: buildIcon(Icons.sports_baseball),
     description: "Events related to sport",
   ),
   CategoryEntity.Category(
+    id: 3,
     name: "Art",
     icon: buildIcon(Icons.art_track),
     description: "Events related to art",
   ),
   CategoryEntity.Category(
+    id: 4,
     name: "Food",
     icon: buildIcon(Icons.fastfood),
     description: "Events related to food",
   ),
   CategoryEntity.Category(
+    id: 5,
     name: "Games",
     icon: buildIcon(Icons.sports_esports),
     description: "Events related to games",
   ),
   CategoryEntity.Category(
+    id: 6,
     name: "Movies",
     icon: buildIcon(Icons.movie),
     description: "Events related to movies",
   ),
   CategoryEntity.Category(
+    id: 7,
     name: "Other",
     icon: buildIcon(Icons.more_horiz),
     description: "Events related to other topics",

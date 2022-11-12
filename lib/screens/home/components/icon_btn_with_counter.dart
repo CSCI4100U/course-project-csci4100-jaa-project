@@ -7,12 +7,14 @@ import 'package:course_project/size_config.dart';
 class IconBtnWithCounter extends StatelessWidget {
   const IconBtnWithCounter({
     Key? key,
-    required this.svgSrc,
+    this.svgSrc,
+    this.icon,
     this.numOfitem = 0,
     required this.press,
   }) : super(key: key);
 
-  final String svgSrc;
+  final Widget? icon;
+  final String? svgSrc;
   final int numOfitem;
   final GestureTapCallback press;
 
@@ -32,7 +34,7 @@ class IconBtnWithCounter extends StatelessWidget {
               color: kSecondaryColor.withOpacity(0.1),
               shape: BoxShape.circle,
             ),
-            child: SvgPicture.asset(svgSrc),
+            child: svgSrc == null ? icon : SvgPicture.asset(svgSrc!),
           ),
           if (numOfitem != 0)
             Positioned(

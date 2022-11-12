@@ -6,10 +6,10 @@ class DBUtils {
     //Set up the database
     //Set up the categories table
     var database = openDatabase(
-      path.join(await getDatabasesPath(), 'events_app.db'),
+      path.join(await getDatabasesPath(), 'events_application.db'),
       onCreate: (db, version) {
         db.execute(
-            'CREATE TABLE categories(id INTEGER PRIMARY KEY, name TEXT, description TEXT, icon TEXT, eventsIds TEXT, images TEXT)');
+            'CREATE TABLE categories(id INTEGER PRIMARY KEY, name TEXT, description TEXT, icon INTEGER, eventsIds TEXT, images TEXT)');
       },
       version: 1,
     );
