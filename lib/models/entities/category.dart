@@ -1,27 +1,39 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/material.dart';
+import 'dart:convert';
 
 class Category {
-  String id, name, description = "";
+  int? id;
+  String name, description, icon = "";
+  List<String>? images = [];
   List<String> eventsIds = [];
-  DocumentReference? reference;
+
+  Category({
+    this.id,
+    this.name = "",
+    this.description = "",
+    this.icon = "",
+    this.images = const [],
+    this.eventsIds = const [],
+  });
 
   Category.fromMap(Map<String, dynamic> map)
-      : assert(map['id'] != null),
-        assert(map['name'] != null),
+      : assert(map['name'] != null),
         assert(map['description'] != null),
         assert(map['eventsIds'] != null),
         id = map['id'],
         name = map['name'],
         description = map['description'],
-        eventsIds = List<String>.from(map['eventsIds']),
-        reference = map['reference'];
+        icon = map['icon'],
+        eventsIds = jsonDecode(map['eventsIds']),
+        images = jsonDecode(map['images']);
 
   Map<String, Object?> toMap() {
     return {
+      'id': id,
       'name': name,
       'description': description,
-      'eventsIds': eventsIds,
+      'icon': icon,
+      'eventsIds': jsonEncode(eventsIds),
+      'images': jsonEncode(images),
     };
   }
 }

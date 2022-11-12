@@ -1,4 +1,5 @@
 import 'package:course_project/components/menu_option.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:course_project/size_config.dart';
 
@@ -6,6 +7,7 @@ import 'package:course_project/screens/home/components/body.dart' as homeBody;
 import 'package:course_project/screens/profile/components/body.dart'
     as profileBody;
 import 'package:course_project/screens/event/components/body.dart' as eventBody;
+import 'package:course_project/models/entities/category.dart' as CategoryEntity;
 
 const kPrimaryColor = Color(0xFFFF7643);
 const kPrimaryLightColor = Color(0xFFFFECDF);
@@ -62,12 +64,50 @@ List<MenuOption> options = [
     builder: () => homeBody.Body(),
   ),
   MenuOption(
-      name: "Events", 
-      icon: buildIcon(Icons.event_available), 
+      name: "Events",
+      icon: buildIcon(Icons.event_available),
       builder: () => eventBody.Body()),
   MenuOption(name: "Map", icon: buildIcon(Icons.map), builder: () {}),
   MenuOption(
       name: "Profile",
       icon: buildIcon(Icons.person),
       builder: () => profileBody.Body()),
+];
+
+List<CategoryEntity.Category> categories = [
+  CategoryEntity.Category(
+    name: "Music",
+    icon: buildIcon(Icons.music_note),
+    description: "Events related to music",
+  ),
+  CategoryEntity.Category(
+    name: "Sport",
+    icon: buildIcon(Icons.sports_baseball),
+    description: "Events related to sport",
+  ),
+  CategoryEntity.Category(
+    name: "Art",
+    icon: buildIcon(Icons.art_track),
+    description: "Events related to art",
+  ),
+  CategoryEntity.Category(
+    name: "Food",
+    icon: buildIcon(Icons.fastfood),
+    description: "Events related to food",
+  ),
+  CategoryEntity.Category(
+    name: "Games",
+    icon: buildIcon(Icons.sports_esports),
+    description: "Events related to games",
+  ),
+  CategoryEntity.Category(
+    name: "Movies",
+    icon: buildIcon(Icons.movie),
+    description: "Events related to movies",
+  ),
+  CategoryEntity.Category(
+    name: "Other",
+    icon: buildIcon(Icons.more_horiz),
+    description: "Events related to other topics",
+  ),
 ];

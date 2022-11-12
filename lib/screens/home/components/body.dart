@@ -1,4 +1,3 @@
-import 'package:course_project/screens/home/components/favorite_events.dart';
 import 'package:flutter/material.dart';
 import 'package:course_project/size_config.dart';
 
@@ -21,8 +20,6 @@ class Body extends StatelessWidget {
             Categories(),
             SizedBox(height: getProportionateScreenWidth(30)),
             PopularEvents(),
-            FavoriteEvents()
-            //EventsList(),
           ],
         ),
       ),

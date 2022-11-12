@@ -44,7 +44,7 @@ class EventCard extends StatelessWidget {
                     tag: event.id.toString(),
                     child: event.images != null && event.images!.isNotEmpty
                         ? Image.asset(event.images![0])
-                        : Image.asset("assets/images/No_image_available.png"),
+                        : Container(),
                   ),
                 ),
               ),
@@ -63,27 +63,6 @@ class EventCard extends StatelessWidget {
                       fontSize: getProportionateScreenWidth(18),
                       fontWeight: FontWeight.w600,
                       color: kPrimaryColor,
-                    ),
-                  ),
-                  InkWell(
-                    borderRadius: BorderRadius.circular(50),
-                    onTap: () {},
-                    child: Container(
-                      padding: EdgeInsets.all(getProportionateScreenWidth(8)),
-                      height: getProportionateScreenWidth(28),
-                      width: getProportionateScreenWidth(28),
-                      decoration: BoxDecoration(
-                        color: true //event.isFavorite
-                            ? kPrimaryColor.withOpacity(0.15)
-                            : kSecondaryColor.withOpacity(0.1),
-                        shape: BoxShape.circle,
-                      ),
-                      child: SvgPicture.asset(
-                        "assets/icons/Heart Icon_2.svg",
-                        color: true //event.isFavorite
-                            ? Color(0xFFFF4848)
-                            : Color(0xFFDBDEE4),
-                      ),
                     ),
                   ),
                 ],
