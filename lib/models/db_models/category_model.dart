@@ -7,18 +7,28 @@ class CategoryModel {
   //Inserts a category into the local database
   Future<int> insertCategory(Category category) async {
     final db = await DBUtils.init();
-    return db.insert(
-      'categories',
-      category.toMap(),
-      conflictAlgorithm: ConflictAlgorithm.replace,
-    );
+    try {
+      category.toMap();
+      return await db.insert(
+        'categories',
+        category.toMap(),
+        conflictAlgorithm: ConflictAlgorithm.replace,
+      );
+    } catch (e) {
+      print(e);
+    }
+    return 5;
   }
 
   //Gets all categories from the local database
   Future getAllCategories() async {
     final db = await DBUtils.init();
     final List maps = await db.query('categories');
-    return maps.map((map) => Category.fromMap(map)).toList();
+    try {
+      return maps.map((map) => Category.fromMap(map)).toList();
+    } catch (e) {
+      print(e);
+    }
   }
 
   //Updates a category in the local database

@@ -1,3 +1,4 @@
+import 'package:course_project/screens/event/event_screen.dart';
 import 'package:course_project/screens/event_form/event_form.dart';
 import 'package:course_project/screens/home/components/events_list.dart';
 import 'package:course_project/screens/profile/profile_screen.dart';
@@ -13,4 +14,5 @@ final Map<String, WidgetBuilder> routes = {
   DetailsScreen.routeName: (context) => DetailsScreen(),
   EventForm.routeName: (context) => EventForm(),
   EventsList.routeName: (context) => EventsList(),
+  EventScreen.routeName: (context) => EventScreen(),
 };
