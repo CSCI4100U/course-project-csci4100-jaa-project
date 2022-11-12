@@ -10,7 +10,7 @@ class Event {
     Colors.white,
   ];
 
-  int? capacity;
+  int? capacity, categoryId;
   int assistants;
   double? price;
   String? id;
@@ -22,20 +22,20 @@ class Event {
   bool isPopular;
   DocumentReference? reference;
 
-  Event({
-    this.id,
-    this.images,
-    this.colors,
-    this.date,
-    this.rating = 0.0,
-    this.isPopular = false,
-    this.name = "",
-    this.description = "",
-    this.capacity = 0,
-    this.assistants = 0,
-    this.userId = "",
-    this.price = 0,
-  }) {
+  Event(
+      {this.id,
+      this.images,
+      this.colors,
+      this.date,
+      this.rating = 0.0,
+      this.isPopular = false,
+      this.name = "",
+      this.description = "",
+      this.capacity = 0,
+      this.assistants = 0,
+      this.userId = "",
+      this.price = 0,
+      this.categoryId}) {
     colors ??= defaultColors;
     images ??= [];
     createdAt = DateTime.now();
@@ -60,6 +60,7 @@ class Event {
         userId = map['userId'],
         date = FireBaseCloudUtil.parseTimeStamp(map['date']),
         createdAt = FireBaseCloudUtil.parseTimeStamp(map['createdAt']),
+        categoryId = map['categoryId'],
         reference = map['reference'];
 
   Map<String, Object?> toMap() {
@@ -75,6 +76,7 @@ class Event {
       'isPopular': isPopular,
       'rating': rating,
       'createdAt': createdAt,
+      'categoryId': categoryId,
       'userId': userId
     };
   }
