@@ -35,7 +35,6 @@ class EventCard extends StatelessWidget {
               AspectRatio(
                 aspectRatio: aspectRatio,
                 child: Container(
-                  padding: EdgeInsets.all(getProportionateScreenWidth(30)),
                   decoration: BoxDecoration(
                     color: kSecondaryColor.withOpacity(0.1),
                     borderRadius: BorderRadius.circular(15),

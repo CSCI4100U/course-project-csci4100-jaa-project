@@ -1,13 +1,9 @@
-import 'package:course_project/models/db_models/event_model.dart';
 import 'package:course_project/models/entities/event.dart';
-import 'package:course_project/screens/event/components/search_field.dart';
-import 'package:course_project/screens/event/components/section_title.dart';
 import 'package:flutter/material.dart';
 import 'package:course_project/components/event_card.dart';
-import 'package:course_project/size_config.dart';
 
 class GridEvents extends StatefulWidget {
-  GridEvents({Key? key, required this.events}) : super(key: key);
+  const GridEvents({Key? key, required this.events}) : super(key: key);
 
   final List<Event> events;
 
