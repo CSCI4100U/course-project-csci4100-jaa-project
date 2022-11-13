@@ -17,6 +17,7 @@ class Body extends StatelessWidget {
             HomeHeader(),
             SizedBox(height: getProportionateScreenWidth(10)),
             MyEventBanner(),
+            Categories(),
             SizedBox(height: getProportionateScreenWidth(30)),
             PopularEvents(),
           ],
