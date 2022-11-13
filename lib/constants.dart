@@ -57,6 +57,8 @@ OutlineInputBorder outlineInputBorder() {
   );
 }
 
+final NO_AVAILABLE_IMAGE_PATH = 'assets/images/No_image_available.png';
+
 List<MenuOption> options = [
   MenuOption(
     name: "Home",

@@ -28,7 +28,9 @@ class _EventImagesState extends State<EventImages> {
             aspectRatio: 1,
             child: Hero(
               tag: widget.event.id.toString(),
-              child: Image.asset(widget.event.images![selectedImage]),
+              child: widget.event.images == null || widget.event.images!.isEmpty
+                  ? Image.asset(NO_AVAILABLE_IMAGE_PATH)
+                  : Image.asset(widget.event.images![selectedImage]),
             ),
           ),
         ),
@@ -37,14 +39,14 @@ class _EventImagesState extends State<EventImages> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ...List.generate(widget.event.images?.length ?? 0,
-                (index) => buildSmallProductPreview(index)),
+                (index) => buildEventPreview(index)),
           ],
         )
       ],
     );
   }
 
-  GestureDetector buildSmallProductPreview(int index) {
+  GestureDetector buildEventPreview(int index) {
     return GestureDetector(
       onTap: () {
         setState(() {

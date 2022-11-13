@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:math';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:course_project/db/firebase_cloud_utils.dart';
@@ -10,13 +11,6 @@ import 'package:path_provider/path_provider.dart';
 import 'package:path/path.dart' as p;
 
 class Event {
-  static List<Color> defaultColors = [
-    Color(0xFFF6625E),
-    Color(0xFF836DB8),
-    Color(0xFFDECB9C),
-    Colors.white,
-  ];
-
   int? capacity, _categoryId;
   int assistants;
   double? price;
@@ -24,25 +18,23 @@ class Event {
   String name, description, userId;
   DateTime? date, createdAt;
   List<String>? images;
-  List<Color>? colors;
   double rating;
   bool isPopular;
   DocumentReference? reference;
 
-  Event(
-      {this.id,
-      this.images,
-      this.colors,
-      this.date,
-      this.rating = 0.0,
-      this.isPopular = false,
-      this.name = "",
-      this.description = "",
-      this.capacity = 0,
-      this.assistants = 0,
-      this.userId = "",
-      this.price = 0}) {
-    colors ??= defaultColors;
+  Event({
+    this.id,
+    this.images,
+    this.date,
+    this.rating = 0.0,
+    this.isPopular = false,
+    this.name = "",
+    this.description = "",
+    this.capacity = 0,
+    this.assistants = 0,
+    this.userId = "",
+    this.price = 0,
+  }) {
     if (images == null) {
       _getImagesFromCategory().then((value) => images = value);
     }
@@ -63,7 +55,6 @@ class Event {
         assert(map['assistants'] != null),
         id = map['id'],
         images = map['images'].map<String>((img) => img.toString()).toList(),
-        colors = map['colors'].map<Color>((color) => Color(color)).toList(),
         rating = map['rating'],
         isPopular = map['isPopular'],
         name = map['name'],
@@ -84,7 +75,6 @@ class Event {
       'capacity': capacity,
       'assistants': assistants,
       'price': price ?? 0,
-      'colors': colors?.map((color) => color.value).toList() ?? [],
       'description': description,
       'images': images,
       'isPopular': isPopular,
@@ -95,7 +85,7 @@ class Event {
     };
   }
 
-  Future<List<String>> _getImagesFromCategory({int totalImages: 3}) async {
+  Future<List<String>> _getImagesFromCategory({int? totalImages}) async {
     String imagesDirectoryPath = "assets/images/categories/no_category";
     if (categoryId != null) {
       var category = await CategoryModel().getCategoryWithId(categoryId!);
@@ -103,6 +93,7 @@ class Event {
     }
     List<String> imagesPath = await _listOfPaths(imagesDirectoryPath);
     imagesPath.shuffle();
+    totalImages ??= Random().nextInt(5);
     return imagesPath.take(totalImages).toList();
   }
 

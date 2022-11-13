@@ -3,7 +3,6 @@ import 'package:course_project/components/default_button.dart';
 import 'package:course_project/models/entities/event.dart';
 import 'package:course_project/size_config.dart';
 
-import 'color_dots.dart';
 import 'event_description.dart';
 import 'top_rounded_container.dart';
 import 'event_images.dart';
@@ -30,7 +29,6 @@ class Body extends StatelessWidget {
                 color: Color(0xFFF6F7F9),
                 child: Column(
                   children: [
-                    ColorDots(event: event),
                     TopRoundedContainer(
                       color: Colors.white,
                       child: Padding(
@@ -41,7 +39,7 @@ class Body extends StatelessWidget {
                           top: getProportionateScreenWidth(15),
                         ),
                         child: DefaultButton(
-                          text: "Add To Cart",
+                          text: "Assist to Event",
                           press: () {},
                         ),
                       ),
