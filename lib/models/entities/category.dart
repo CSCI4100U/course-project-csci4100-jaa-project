@@ -1,6 +1,8 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 
+// category of events (sports, music, art, food, games, movies, other)
+
 class Category {
   int? id;
   String name, description, imagesPath = "";

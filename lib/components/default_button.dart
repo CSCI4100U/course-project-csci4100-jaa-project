@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-
 import '../constants.dart';
 import '../size_config.dart';
+
+// DefaultButton used in the app.  Takes text and a function used for when the
+// button is pressed
 
 class DefaultButton extends StatelessWidget {
   const DefaultButton({
@@ -19,8 +21,9 @@ class DefaultButton extends StatelessWidget {
       height: getProportionateScreenHeight(56),
       child: TextButton(
         style: TextButton.styleFrom(
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20)
+          ),
           primary: Colors.white,
           backgroundColor: kPrimaryColor,
         ),

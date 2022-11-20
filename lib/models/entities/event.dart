@@ -10,6 +10,18 @@ import 'dart:io' as io;
 import 'package:path_provider/path_provider.dart';
 import 'package:path/path.dart' as p;
 
+// Event takes in the information needed for an event:
+// - capacity (amount of people that can be at the event)
+// - category id (id of the category such as sports, music, etc)
+// - assistants
+// - price
+// - id
+// - name, description
+// - user id
+// - date
+// - rating
+// - if it is a popular event
+// - reference
 class Event {
   int? capacity, _categoryId;
   int assistants;
@@ -85,6 +97,7 @@ class Event {
     };
   }
 
+  // getting the images from that category of event
   Future<List<String>> _getImagesFromCategory({int? totalImages}) async {
     String imagesDirectoryPath = "assets/images/categories/no_category";
     if (categoryId != null) {

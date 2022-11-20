@@ -15,6 +15,6 @@ class CustomBottomNavBar extends StatefulWidget {
 class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
   @override
   Widget build(BuildContext context) {
-    return buildTabBar(options);
+    return buildTabBar(options); // build tab bar using options from the constants.dart
   }
 }
