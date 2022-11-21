@@ -1,16 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:course_project/components/coustom_bottom_nav_bar.dart';
+import 'package:course_project/enums.dart';
+import 'package:course_project/constants.dart';
 
-class MapScreen extends StatefulWidget {
-    static String routeName = "/map_screen";
-  const MapScreen({super.key});
+import 'components/body.dart';
 
-  @override
-  State<MapScreen> createState() => _MapScreenState();
-}
-
-class _MapScreenState extends State<MapScreen> {
+class MapScreen extends StatelessWidget {
+  static String routeName = "/Map";
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Map"),
+      ),
+      body: Body(),
+      bottomNavigationBar: CustomBottomNavBar(
+          selectedOption:
+              options.firstWhere((element) => element.name == "Map")),
+    );
   }
 }

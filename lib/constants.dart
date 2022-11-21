@@ -7,6 +7,7 @@ import 'package:course_project/screens/home/components/body.dart' as homeBody;
 import 'package:course_project/screens/profile/components/body.dart'
     as profileBody;
 import 'package:course_project/screens/event/components/body.dart' as eventBody;
+import 'package:course_project/screens/map/components/body.dart' as mapBody;
 import 'package:course_project/models/entities/category.dart' as CategoryEntity;
 
 const kPrimaryColor = Color(0xFFFF7643);
@@ -69,7 +70,7 @@ List<MenuOption> options = [
       name: "Events",
       icon: buildIcon(Icons.event_available),
       builder: () => eventBody.Body()),
-  MenuOption(name: "Map", icon: buildIcon(Icons.map), builder: () {}),
+  MenuOption(name: "Map", icon: buildIcon(Icons.map), builder: () => mapBody.Body()),
   MenuOption(
       name: "Profile",
       icon: buildIcon(Icons.person),
