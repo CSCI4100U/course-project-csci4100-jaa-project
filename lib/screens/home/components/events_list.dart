@@ -1,5 +1,6 @@
 import 'package:course_project/auth/fire_auth.dart';
 import 'package:course_project/models/entities/event.dart';
+import 'package:course_project/screens/home/components/events_grid.dart';
 import 'package:flutter/material.dart';
 import 'package:course_project/models/db_models/event_model.dart';
 
@@ -32,30 +33,20 @@ class _EventsListState extends State<EventsList> {
     );
   }
 
-  Widget _buildEvent(Event event) {
-    return GestureDetector(
-      child: ListTile(
-        title: Text(event.name),
-        subtitle: Text(event.date.toString()),
-      ),
-    );
-  }
-
   Widget _buildProductList(BuildContext context) {
-    return StreamBuilder(
-        stream: Stream<List<Event>>.fromFuture(EventModel().getUserEvents(FireAuth.getCurrentUser())),
-        builder: (BuildContext context, AsyncSnapshot snapshot) {
-          if (!snapshot.hasData) {
-            return CircularProgressIndicator();
-          }
-          List<Event> events = snapshot.data;
-          return ListView.builder(
-            itemCount: events.length,
-            scrollDirection: Axis.vertical,
-            shrinkWrap: true,
-            padding: EdgeInsets.all(16),
-            itemBuilder: ((context, index) => _buildEvent(events[index])),
-          );
-        });
+    return Container(
+      height: getProportionateScreenHeight(695),
+      padding: EdgeInsets.all(20),
+      child: StreamBuilder(
+          stream: Stream<List<Event>>.fromFuture(EventModel().getUserEvents(FireAuth.getCurrentUser())),
+          builder: (BuildContext context, AsyncSnapshot snapshot) {
+            if (!snapshot.hasData) {
+              return CircularProgressIndicator();
+            }
+            List<Event> events = snapshot.data as List<Event>;
+            print(events.length);
+            return GridEvents(events: events);
+          }),
+    );
   }
 }
