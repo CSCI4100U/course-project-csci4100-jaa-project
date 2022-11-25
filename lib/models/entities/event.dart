@@ -21,6 +21,7 @@ class Event {
   double rating;
   bool isPopular;
   DocumentReference? reference;
+  GeoPoint? location;
 
   Event({
     this.id,
@@ -34,6 +35,7 @@ class Event {
     this.assistants = 0,
     this.userId = "",
     this.price = 0,
+    this.location,
   }) {
     if (images == null) {
       _getImagesFromCategory().then((value) => images = value);
@@ -66,7 +68,8 @@ class Event {
         date = FireBaseCloudUtil.parseTimeStamp(map['date']),
         createdAt = FireBaseCloudUtil.parseTimeStamp(map['createdAt']),
         _categoryId = map['categoryId'],
-        reference = map['reference'];
+        reference = map['reference'],
+        location = map['location'];
 
   Map<String, Object?> toMap() {
     return {
@@ -81,7 +84,8 @@ class Event {
       'rating': rating,
       'createdAt': createdAt,
       'categoryId': categoryId,
-      'userId': userId
+      'userId': userId,
+      'location': location,
     };
   }
 
