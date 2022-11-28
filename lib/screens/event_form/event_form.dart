@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:course_project/constants.dart';
 import 'package:course_project/models/db_models/category_model.dart';
 import 'package:course_project/models/entities/category.dart';
@@ -6,6 +7,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'decimal_formatter.dart';
+import 'package:latlong2/latlong.dart';
+
+import 'location_map.dart';
 
 class EventForm extends StatefulWidget {
   static String routeName = "/event_form";
@@ -80,6 +84,7 @@ class _EventFormState extends State<EventForm> {
                   spacerBox,
                   capacityTextField(),
                   spacerBox,
+                  mapScreenButton(),
                   categoriesDropdown(categories),
                   ratingField(),
                   saveButton()
@@ -144,6 +149,27 @@ class _EventFormState extends State<EventForm> {
             });
           },
         ),
+      ),
+    );
+  }
+
+  Widget mapScreenButton() {
+    return Container(
+      padding: const EdgeInsets.only(bottom: 20),
+      child: ElevatedButton(
+        onPressed: () {
+            Navigator.pushNamed(context, LocationMap.routeName).then((value) {
+              setState(() {
+                var latlng = value as LatLng;
+                double lat = latlng.latitude;
+                double lng = latlng.longitude;
+                GeoPoint geoPoint = GeoPoint(lat, lng);
+                event.location = geoPoint;
+              });
+          });
+
+        },
+        child: const Text("Select Location"),
       ),
     );
   }
