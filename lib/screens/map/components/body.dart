@@ -18,28 +18,23 @@ class Body extends StatefulWidget {
 }
 
 class _BodyState extends State<Body> {
+  final MapController mapController = MapController();
+  LatLng _currentLocation = LatLng(0.0, 0.0);
+  int selectedIndex = 0;
+  final pageController = PageController();
+
+  @override
+  void initState() {
+    super.initState();
+    Geolocator.getCurrentPosition().then((position){
+      setState(() {
+        _currentLocation = LatLng(position.latitude, position.longitude);
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    final MapController mapController = MapController();
-    Position? _currentPosition;
-
-    int selectedIndex = 0;
-    final pageController = PageController();
-
-    _updateLocationStream(Position userLocation) async{
-      setState(() {
-        _currentPosition = userLocation;
-      });
-    }
-
-    Geolocator.getPositionStream(
-      locationSettings: const LocationSettings(
-        accuracy: LocationAccuracy.best
-      ),
-    ).listen(_updateLocationStream);
-
-    var currentLocation = LatLng(_currentPosition?.latitude ?? 0.0, _currentPosition?.longitude ?? 0.0);
-
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 20),
       child: FutureBuilder(
@@ -53,7 +48,7 @@ class _BodyState extends State<Body> {
                       minZoom: 5,
                       maxZoom: 18,
                       zoom: 13,
-                      center: currentLocation,
+                      center: _currentLocation,
                     ),
                     layers: [
                       TileLayerOptions(
@@ -78,13 +73,13 @@ class _BodyState extends State<Body> {
                                       curve: Curves.easeInOut,
                                     );
                                   setState(() {
-                                      currentLocation = LatLng(
+                                      _currentLocation = LatLng(
                                         event.location!.latitude,
                                         event.location!.longitude);
                                     selectedIndex =
                                         snapshot.data!.indexOf(event);
                                   });
-                                    mapController.move(currentLocation, 11.5);
+                                    mapController.move(_currentLocation, 11.5);
 
                                   },
                                   child: AnimatedScale(
@@ -122,10 +117,10 @@ class _BodyState extends State<Body> {
                     child: PageView.builder(
                       controller: pageController,
                       onPageChanged: (value) {
-                          currentLocation = LatLng(
+                          _currentLocation = LatLng(
                               snapshot.data![value].location!.latitude,
                               snapshot.data![value].location!.longitude);
-                          mapController.move(currentLocation, 11.5);
+                          mapController.move(_currentLocation, 11.5);
                           selectedIndex = value;
                           setState(() {});
                       },
