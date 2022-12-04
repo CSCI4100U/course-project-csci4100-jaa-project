@@ -4,6 +4,7 @@ import 'package:course_project/screens/home/home_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:latlong2/latlong.dart';
 
 import '../../../models/db_models/event_model.dart';
@@ -20,9 +21,24 @@ class _BodyState extends State<Body> {
   @override
   Widget build(BuildContext context) {
     final MapController mapController = MapController();
+    Position? _currentPosition;
+
     int selectedIndex = 0;
     final pageController = PageController();
-    var currentLocation = LatLng(0, 0);
+
+    _updateLocationStream(Position userLocation) async{
+      setState(() {
+        _currentPosition = userLocation;
+      });
+    }
+
+    Geolocator.getPositionStream(
+      locationSettings: const LocationSettings(
+        accuracy: LocationAccuracy.best
+      ),
+    ).listen(_updateLocationStream);
+
+    var currentLocation = LatLng(_currentPosition?.latitude ?? 0.0, _currentPosition?.longitude ?? 0.0);
 
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 20),
@@ -61,13 +77,15 @@ class _BodyState extends State<Body> {
                                           const Duration(milliseconds: 500),
                                       curve: Curves.easeInOut,
                                     );
-                                    selectedIndex =
-                                        snapshot.data!.indexOf(event);
-                                    currentLocation = LatLng(
+                                  setState(() {
+                                      currentLocation = LatLng(
                                         event.location!.latitude,
                                         event.location!.longitude);
+                                    selectedIndex =
+                                        snapshot.data!.indexOf(event);
+                                  });
                                     mapController.move(currentLocation, 11.5);
-                                    setState(() {});
+
                                   },
                                   child: AnimatedScale(
                                     duration: const Duration(milliseconds: 500),
@@ -104,12 +122,12 @@ class _BodyState extends State<Body> {
                     child: PageView.builder(
                       controller: pageController,
                       onPageChanged: (value) {
-                        selectedIndex = value;
-                        currentLocation = LatLng(
-                            snapshot.data![value].location!.latitude,
-                            snapshot.data![value].location!.longitude);
-                        mapController.move(currentLocation, 13);
-                        setState(() {});
+                          currentLocation = LatLng(
+                              snapshot.data![value].location!.latitude,
+                              snapshot.data![value].location!.longitude);
+                          mapController.move(currentLocation, 11.5);
+                          selectedIndex = value;
+                          setState(() {});
                       },
                       itemCount: snapshot.data!.length,
                       itemBuilder: (_, index) {

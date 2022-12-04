@@ -1,6 +1,7 @@
 import 'package:course_project/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:timezone/timezone.dart' as tz;
 import 'package:timezone/data/latest.dart' as tz;
 
@@ -25,6 +26,20 @@ void main() async {
   tz.initializeTimeZones();
   final _notifications = Notifications();
   await _notifications.init();
+
+  Geolocator.isLocationServiceEnabled().then((value) async {
+    if (!value) {
+      await Geolocator.requestPermission();
+    }
+  });
+
+  var permission = await Geolocator.checkPermission();
+  if (permission == LocationPermission.denied) {
+    permission = await Geolocator.requestPermission();
+    if (permission == LocationPermission.denied) {
+      return Future.error('Location permissions are denied');
+    }
+  }
 
   runApp(MyApp());
 }
