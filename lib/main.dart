@@ -1,12 +1,15 @@
-import 'package:course_project/models/db_models/category_model.dart';
 import 'package:course_project/routes.dart';
-import 'package:course_project/screens/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:timezone/timezone.dart' as tz;
+import 'package:timezone/data/latest.dart' as tz;
 
 import 'package:course_project/firebase_options.dart';
 import 'package:course_project/theme.dart';
 import 'package:course_project/constants.dart';
+import 'models/db_models/notifications.dart';
+import 'package:course_project/models/db_models/category_model.dart';
+import 'package:course_project/screens/home/home_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,6 +22,10 @@ void main() async {
     await categoryModel.insertCategory(category);
   }
 
+  tz.initializeTimeZones();
+  final _notifications = Notifications();
+  await _notifications.init();
+
   runApp(MyApp());
 }
 
@@ -27,10 +34,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MediaQuery(
-      data: MediaQueryData(),
+      data: const MediaQueryData(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
+        title: 'Event App',
         theme: theme(),
         initialRoute: HomeScreen.routeName,
         routes: routes,

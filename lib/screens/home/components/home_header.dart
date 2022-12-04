@@ -1,5 +1,6 @@
 import 'package:course_project/auth/fire_auth.dart';
 import 'package:course_project/models/db_models/event_model.dart';
+import 'package:course_project/models/db_models/notifications.dart';
 import 'package:course_project/models/entities/event.dart';
 import 'package:flutter/material.dart';
 import 'package:course_project/size_config.dart';
@@ -13,24 +14,47 @@ class HomeHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding:
-          EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          IconBtnWithCounter(
-            icon: const Icon(Icons.add),
-            press: () async => await _showEventForm(context),
+    return StreamBuilder(
+      stream: Stream.fromFuture(Notifications().getNotificationsCount()),
+      builder: (context, snapshot) {
+        int? notificationsTotal =
+            snapshot.hasData ? snapshot.data as int : null;
+        return Padding(
+          padding:
+              EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              IconBtnWithCounter(
+                icon: const Icon(
+                  semanticLabel: "Add an Event",
+                  Icons.add,
+                ),
+                press: () async => await _showEventForm(context),
+              ),
+              const SizedBox(width: 10),
+              notificationsTotal != null
+                  ? IconBtnWithCounter(
+                      icon: const Icon(
+                        semanticLabel: "View Notifications",
+                        Icons.notifications,
+                      ),
+                      numOfitem: notificationsTotal,
+                      press: () async =>
+                          await Navigator.pushNamed(context, "/notifications"),
+                    )
+                  : IconButton(
+                      icon: const Icon(
+                        semanticLabel: "View Notifications",
+                        Icons.notifications,
+                      ),
+                      onPressed: () async =>
+                          await Navigator.pushNamed(context, "/notifications"),
+                    )
+            ],
           ),
-          const SizedBox(width: 10),
-          IconBtnWithCounter(
-            svgSrc: "assets/icons/Bell.svg",
-            numOfitem: 3,
-            press: () {},
-          ),
-        ],
-      ),
+        );
+      },
     );
   }
 
