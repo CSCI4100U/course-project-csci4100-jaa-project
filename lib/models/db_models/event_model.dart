@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:course_project/models/db_models/notifications.dart';
 import 'package:course_project/models/entities/category.dart';
 import 'package:course_project/models/entities/event.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -10,22 +11,36 @@ class EventModel {
     final data = event.toMap();
     data.addAll({'userId': author.uid});
     await FirebaseFirestore.instance.collection('events').doc().set(data);
+    Notifications().sendNotificationNow(
+      'New event added',
+      'New event ${event.name} added',
+      "Event $event",
+    );
   }
 
   //Gets all events from the database
-  Future<List<Event>> getAllEvents({Category? categoryFilter: null}) async {
-    var eventsQuery =
-        FirebaseFirestore.instance.collection('events').orderBy('createdAt');
-    if (categoryFilter != null) {
-      eventsQuery =
-          eventsQuery.where('categoryId', isEqualTo: categoryFilter.id);
+  Future<List<Event>> getAllEvents(
+      {Category? categoryFilter: null, bool withLocation: false}) async {
+    try {
+      var eventsQuery =
+          FirebaseFirestore.instance.collection('events').orderBy('createdAt');
+      if (categoryFilter != null) {
+        eventsQuery =
+            eventsQuery.where('categoryId', isEqualTo: categoryFilter.id);
+      }
+      var snapshot = await eventsQuery.get();
+      var events = snapshot.docs
+          .map<Event>((doc) =>
+              Event.fromMap(FireBaseCloudUtil.generateDocumentMap((doc))))
+          .toList();
+      if (withLocation) {
+        events = events.where((event) => event.location != null).toList();
+      }
+      return events;
+    } catch (e) {
+      print(e);
     }
-    var snapshot = await eventsQuery.get();
-    var events = snapshot.docs
-        .map<Event>((doc) =>
-            Event.fromMap(FireBaseCloudUtil.generateDocumentMap((doc))))
-        .toList();
-    return events;
+    return [];
   }
 
   //Gets all popular events from the database

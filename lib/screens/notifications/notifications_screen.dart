@@ -12,7 +12,7 @@ class NotificationsScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Notifications"),
       ),
-      body: Body(),
+      body: const Body(),
     );
   }
 }
