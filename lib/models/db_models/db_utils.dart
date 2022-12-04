@@ -6,8 +6,9 @@ class DBUtils {
     //Set up the database
     //Set up the categories table
     // Set up the data visualizations table
+    /// first run with version 1, then restart and run again with version 2
     var database = openDatabase(
-      path.join(await getDatabasesPath(), 'events_project_application_10.db'),
+      path.join(await getDatabasesPath(), 'events_project_application.db'),
       onCreate: (db, version) {
         db.execute(
             //'CREATE TABLE IF NOT EXISTS visualizations (id INTEGER PRIMARY KEY, name TEXT, description TEXT, icon INTEGER)');
