@@ -1,11 +1,12 @@
-import 'package:course_project/models/entities/category.dart';
 import 'package:course_project/screens/event/event_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:course_project/size_config.dart';
 import '../../../models/db_models/data_visualization_model.dart';
 import '../../../models/entities/data_visualization.dart';
+import '../../table/event_table.dart';
 
 class DataVisualizationsDisplay extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     //add data to db
@@ -46,7 +47,7 @@ class DataVisualizationsDisplay extends StatelessWidget {
                   icon: dataVisualizations[index].icon,
                   text: dataVisualizations[index].name,
                   press: () async => Navigator.pushNamed(
-                      context, EventScreen.routeName,
+                      context, EventTable.routeName,
                       arguments: dataVisualizations[index]),
                 ),
               ),
