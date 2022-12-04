@@ -44,6 +44,9 @@ dependencies:
   flutter_rating_bar: ^4.0.1
   flutter_map: ^1.1.1
   charts_flutter_new:
+  image_picker: 
+  firebase_storage:
+
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
