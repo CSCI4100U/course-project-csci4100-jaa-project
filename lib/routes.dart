@@ -1,3 +1,5 @@
+import 'package:course_project/screens/charts/horizontal_bar_chart.dart';
+import 'package:course_project/screens/charts/vertical_bar_chart.dart';
 import 'package:course_project/screens/event/event_screen.dart';
 import 'package:course_project/screens/event_form/event_form.dart';
 import 'package:course_project/screens/event_form/location_map.dart';
@@ -21,4 +23,6 @@ final Map<String, WidgetBuilder> routes = {
   EventScreen.routeName: (context) => EventScreen(),
   LocationMap.routeName: (context) => LocationMap(),
   EventTable.routeName: (context) => EventTable(),
+  HorizontalChart.routeName: (context) => HorizontalChart(),
+  VerticalChart.routeName: (context) => VerticalChart(),
 };
