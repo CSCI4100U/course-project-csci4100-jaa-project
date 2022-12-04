@@ -17,14 +17,9 @@ class CategoryModel {
 
   //Gets all categories from the local database
   Future getAllCategories() async {
-    try {
-      final db = await DBUtils.init();
-      final List maps = await db.query('categories');
-      print(maps.length);
-      return maps.map((map) => Category.fromMap(map)).toList();
-    } catch (e) {
-      print(e);
-    }
+    final db = await DBUtils.init();
+    final List maps = await db.query('categories');
+    return maps.map((map) => Category.fromMap(map)).toList();
   }
 
   //Updates a category in the local database
