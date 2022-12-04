@@ -1,3 +1,4 @@
+import 'package:course_project/screens/charts/horizontal_bar_chart.dart';
 import 'package:course_project/screens/event/event_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:course_project/size_config.dart';
@@ -6,6 +7,10 @@ import '../../../models/entities/data_visualization.dart';
 import '../../table/event_table.dart';
 
 class DataVisualizationsDisplay extends StatelessWidget {
+  List<String> routeNames = [
+    EventTable.routeName,
+    HorizontalChart.routeName,
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -47,8 +52,10 @@ class DataVisualizationsDisplay extends StatelessWidget {
                   icon: dataVisualizations[index].icon,
                   text: dataVisualizations[index].name,
                   press: () async => Navigator.pushNamed(
-                      context, EventTable.routeName,
-                      arguments: dataVisualizations[index]),
+                      context,
+                      routeNames[index],
+                      arguments: dataVisualizations[index]
+                  ),
                 ),
               ),
             ),

@@ -18,29 +18,6 @@ class _EventTableState extends State<EventTable> {
   int currentId= 0;
   late List<Map> dataItems = List.empty(growable: true);
 
-  Future<List<Map>> edekd () async {
-      var info = await _eventModel.getAllEvents();
-      late List<Map> dataItems = List.empty();
-      for (int i=0; i < info.length; i++)
-      {
-          dataItems.add({
-            columnNames[0]: i,
-            columnNames[1]: info[i].name,
-            columnNames[2]: info[i].price,
-            columnNames[3]: info[i].rating,
-            columnNames[4]: info[i].date,
-            columnNames[5]: info[i].createdAt,
-        });
-          currentId++;
-      }
-
-      setState(() {
-      });
-
-      return dataItems;
-  }
-
-
   @override
   void initState() {
     if (dataItems.isNotEmpty) {
