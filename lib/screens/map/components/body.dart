@@ -181,7 +181,7 @@ class _BodyState extends State<Body> {
                   )
                 ],
               )
-            : const CircularProgressIndicator(),
+            : const Center(child: CircularProgressIndicator()),
       ),
     );
   }

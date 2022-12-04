@@ -22,14 +22,14 @@ class _AllEventsState extends State<AllEvents> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(height: getProportionateScreenHeight(20)),
+        //SizedBox(height: getProportionateScreenHeight(20)),
         Padding(
           padding:
               EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: const [
-              SearchField(),
+              //SearchField(),
             ],
           ),
         ),
