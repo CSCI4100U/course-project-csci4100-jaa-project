@@ -1,21 +1,28 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:course_project/models/db_models/notifications.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
+import 'package:course_project/models/db_models/notifications_model.dart';
+import 'package:course_project/models/entities/notification.dart';
+import 'package:course_project/models/notifications.dart';
 import 'package:course_project/models/entities/category.dart';
 import 'package:course_project/models/entities/event.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:course_project/db/firebase_cloud_utils.dart';
 
 class EventModel {
+  final _notifications = Notifications();
+
   //Inserts an event into the database
   Future insertEvent(Event event, User author) async {
     final data = event.toMap();
     data.addAll({'userId': author.uid});
     await FirebaseFirestore.instance.collection('events').doc().set(data);
-    Notifications().sendNotificationNow(
-      'New event added',
-      'New event ${event.name} added',
-      "Event $event",
+
+    var createdEvent = Notification(
+      title: 'Event ${event.name} created',
+      body: 'Starting in ${event.stringDate()}',
+      payload: 'Event id: ${event.id}',
     );
+    await NotificationModel().insertNotification(createdEvent, now: true);
   }
 
   //Gets all events from the database

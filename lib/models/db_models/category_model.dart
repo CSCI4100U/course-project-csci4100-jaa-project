@@ -7,7 +7,6 @@ class CategoryModel {
   //Inserts a category into the local database
   Future<int> insertCategory(Category category) async {
     final db = await DBUtils.init();
-    category.toMap();
     return await db.insert(
       'categories',
       category.toMap(),

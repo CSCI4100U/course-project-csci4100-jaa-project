@@ -15,11 +15,18 @@ class DBUtils {
             'CREATE TABLE categories(id INTEGER PRIMARY KEY, name TEXT, description TEXT, imagesPath TEXT, icon INTEGER, eventsIds TEXT, images TEXT)');
       },
       onUpgrade: ((db, oldVersion, newVersion) => {
-        if (oldVersion < 2) {
-          db.execute('CREATE TABLE visualizations (id INTEGER PRIMARY KEY, name TEXT, description TEXT, icon INTEGER)')
-        }
-      }),
-      version: 2,
+            if (oldVersion < 2)
+              {
+                db.execute(
+                    'CREATE TABLE visualizations (id INTEGER PRIMARY KEY, name TEXT, description TEXT, icon INTEGER)')
+              },
+            if (oldVersion < 3)
+              {
+                db.execute(
+                    'CREATE TABLE IF NOT EXISTS notifications(id INTEGER PRIMARY KEY, title TEXT, body TEXT, payload TEXT, createdAt TEXT, scheduledAt TEXT)')
+              }
+          }),
+      version: 3,
     );
 
     return database;

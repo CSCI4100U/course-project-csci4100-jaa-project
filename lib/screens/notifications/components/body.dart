@@ -1,4 +1,7 @@
 import 'package:course_project/constants.dart';
+import 'package:course_project/models/db_models/notifications_model.dart';
+import 'package:course_project/models/entities/notification.dart'
+    as notification;
 import 'package:flutter/material.dart';
 
 class Body extends StatefulWidget {
@@ -24,24 +27,35 @@ class _BodyState extends State<Body> {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            _generateNotificationsListView([]),
+            StreamBuilder(
+              stream:
+                  Stream.fromFuture(NotificationModel().getAllNotifications()),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  List<notification.Notification> notifications =
+                      snapshot.data as List<notification.Notification>;
+                  return _notificationsListView(notifications);
+                }
+                return const Center(child: CircularProgressIndicator());
+              },
+            ),
           ],
         ),
       ),
-      // child: StreamBuilder(
-      //   stream: ,
-      //   body:
-      // );
     );
   }
 
-  Widget _generateNotificationsListView(List<Notification> notifications) {
+  Widget _notificationsListView(List<notification.Notification> notifications) {
     return ListView.builder(
       shrinkWrap: true,
       itemCount: notifications.length,
       itemBuilder: (context, index) {
+        var notification = notifications[index];
         return ListTile(
-          title: Text("Notification $index"),
+          title: Text(notification.title),
+          subtitle: Text(notification.body),
+          trailing:
+              Text(DateFormatDisplayShort.format(notification.createdAt!)),
         );
       },
     );
