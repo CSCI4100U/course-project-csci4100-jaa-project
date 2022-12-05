@@ -2,6 +2,7 @@ import 'package:course_project/screens/charts/vertical_bar_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:charts_flutter_new/flutter.dart' as charts;
 import 'package:course_project/models/db_models/event_model.dart';
+import 'package:zoom_widget/zoom_widget.dart';
 import '../../components/chart_widgets.dart';
 
 /// Horizontal Bar Chart screen
@@ -15,14 +16,16 @@ class HorizontalChart extends StatefulWidget {
 
   HorizontalChart({Key? key, this.dataItems, this.isVertical = false,
     this.rotationValue = 0, this.appBarTitle = "Horizontal Bar Chart",
-    this.chartButtonIcon = const Icon(Icons.align_vertical_bottom)}) : super(key: key);
+    this.chartButtonIcon = const Icon(Icons.align_vertical_bottom_outlined)}) : super(key: key);
 
   @override
   State<HorizontalChart> createState() => _HorizontalChartState();
 }
 
 class _HorizontalChartState extends State<HorizontalChart> {
-  final List<String> columnNames = ['id', 'Name', 'Price', 'Rating', 'Rating/Price', 'Capacity'];
+  final List<String> columnNames = ['id', 'Name', 'Price', 'Rating',
+    'Capacity', 'Rating/Price', 'Capacity/Price'
+  ];
   final EventModel _eventModel = EventModel();
   int currentId= 0;
   late List<Map> dataItems = List.empty(growable: true);
@@ -39,8 +42,9 @@ class _HorizontalChartState extends State<HorizontalChart> {
   Widget build(BuildContext context) {
     List<ChartData> priceData = [];
     List<ChartData> ratingData = [];
-    List<ChartData> ratingValuePerPrice = [];
     List<ChartData> capacityData = [];
+    List<ChartData> ratingValuePerPrice = [];
+    List<ChartData> capacityPerPriceData = [];
 
     /// adding chart data
     priceData = ChartWidgets().addChartData(
@@ -53,23 +57,29 @@ class _HorizontalChartState extends State<HorizontalChart> {
         Colors.red,
         columnNames[3]
     );
-    ratingValuePerPrice = ChartWidgets().addChartData(
-        dataItems,
-        Colors.green,
-        columnNames[4]
-    );
     capacityData = ChartWidgets().addChartData(
         dataItems,
         Colors.orange,
+        columnNames[4]
+    );
+    ratingValuePerPrice = ChartWidgets().addChartData(
+        dataItems,
+        Colors.green,
         columnNames[5]
+    );
+    capacityPerPriceData = ChartWidgets().addChartData(
+        dataItems,
+        Colors.purple,
+        columnNames[6]
     );
 
 
     List<charts.Series<ChartData, String>> series = ChartWidgets().fillChartSeries(
         priceData,
         ratingData,
-        ratingValuePerPrice,
         capacityData,
+        ratingValuePerPrice,
+        capacityPerPriceData,
     );
 
     return Scaffold(
@@ -79,8 +89,9 @@ class _HorizontalChartState extends State<HorizontalChart> {
           /// vertical bar chart button (brings user to the vertical bar chart
           /// screen to see that chart)
           IconButton(
+            iconSize: 30,
             onPressed: () {
-              //go to the vertical chart screen
+              // go to the vertical chart screen
               Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -94,21 +105,29 @@ class _HorizontalChartState extends State<HorizontalChart> {
           ),
         ],
       ),
-      /// horizontal scrolling
-      body: SingleChildScrollView(
-        scrollDirection: Axis.horizontal,
-        /// vertical scrolling
+      /// for zooming in and out
+      /// (since certain parts of the chart are too long or too small to see
+      /// well without any zoom options)
+      body: Zoom(
+        backgroundColor: Colors.white54,
+
+        /// horizontal scrolling
         child: SingleChildScrollView(
-          scrollDirection: Axis.vertical,
-            child: Padding(
-              padding: const EdgeInsets.only(left: 15, right: 15, bottom: 20),
-              child: SizedBox(
-                height: dataItems.length * 90,
-                width: dataItems.length * 100,
-                /// the bar chart
-                child: ChartWidgets().barChartWidget(series, widget.isVertical, widget.rotationValue),
-              ),
-            )
+            scrollDirection: Axis.horizontal,
+
+          /// vertical scrolling
+          child: SingleChildScrollView(
+            scrollDirection: Axis.vertical,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 15, right: 15, bottom: 20),
+                child: SizedBox(
+                  width: 2000,
+                  height: 1000,
+                  /// the bar chart
+                  child: ChartWidgets().barChartWidget(series, widget.isVertical, widget.rotationValue),
+                ),
+              )
+            ),
           ),
       ),
     );
@@ -123,8 +142,21 @@ class _HorizontalChartState extends State<HorizontalChart> {
       newDataItem[columnNames[1]] = events[i].name;
       newDataItem[columnNames[2]] = events[i].price;
       newDataItem[columnNames[3]] = (events[i].rating) * 100;
-      newDataItem[columnNames[4]] = ((events[i].rating) / (events[i].price!)) * 100;
-      newDataItem[columnNames[5]] = events[i].capacity;
+      newDataItem[columnNames[4]] = events[i].capacity;
+
+      /// if statement to check if rating and price are 0.  And capacity.
+      if (events[i].rating > 0 && events[i].price! > 0) {
+        newDataItem[columnNames[5]] = ((events[i].rating) / (events[i].price!)) * 100;
+      }
+      else {
+        newDataItem[columnNames[5]] = 0.0;
+      }
+      if (events[i].capacity! > 0 && events[i].price! > 0) {
+        newDataItem[columnNames[6]] = (events[i].capacity!) / (events[i].price!);
+      }
+      else {
+        newDataItem[columnNames[6]] = 0.0;
+      }
 
       setState(() {
         dataItems.add(newDataItem);

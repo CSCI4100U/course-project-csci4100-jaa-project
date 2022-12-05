@@ -2,12 +2,13 @@ import 'package:charts_flutter_new/flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:charts_flutter_new/flutter.dart' as charts;
 
-/// widgets/methods that are used mutliple times in other files, so I have
+/// widgets/methods that are used multiple times in other files, so I have
 /// placed them here to organize the code
 
 class ChartWidgets {
   List<String> seriesNames = [
-    "Name", "Price", "Rating x 100", "Rating/Price x 100", "Capacity", "Date", "Date Created"
+    "Name", "Price", "Rating x 100", "Capacity", "Rating/Price x 100",
+    "Capacity/Price", "Date", "Date Created"
   ];
   barChartWidget(List<Series<ChartData, String>> series, bool isVertical,
       int rotationValue) {
@@ -45,37 +46,31 @@ class ChartWidgets {
 
       /// to show a legend
       behaviors: [charts.SeriesLegend(desiredMaxColumns: series.length)],
-      selectionModels: [
-        // only prints to the console right now (prints value of the selected bar)
-        // not useful at the moment
-        SelectionModelConfig(
-          changedListener: (SelectionModel model) {
-            if(model.hasDatumSelection) {
-              print(model.selectedSeries[0].measureFn(model.selectedDatum[0].index));
-            }
-          }
-        )
-      ],
+
+      // selectionModels: [
+      //   //only prints to the console right now (prints value of the selected bar)
+      //   //not useful at the moment
+      //   SelectionModelConfig(
+      //     changedListener: (SelectionModel model) {
+      //       if(model.hasDatumSelection) {
+      //         print(model.selectedSeries[0].measureFn(model.selectedDatum[0].index));
+      //       }
+      //     }
+      //   )
+      // ],
     );
   }
 
-  pieChartWidget(List<Series<ChartData, String>> series, bool isVertical,
-      int rotationValue) {
-    return charts.PieChart(
-      series,
-    );
-  }
-
-  /// to add the data for either upvotes or downvotes (voteType specifies which)
-  List<ChartData> addChartData(var dataItems, MaterialColor selectedColour, String voteType) {
+  /// to add the data for certain value (eventDataType specifies which)
+  List<ChartData> addChartData(var dataItems, MaterialColor selectedColour, String eventDataType) {
     final List<ChartData> chartData =[];
     for (int i=0; i < dataItems!.length; i++)
     {
-      // upvotes/downvotes for this post
+      // price, rating, etc for this event
       chartData.add(
           ChartData(
               name: dataItems?.elementAt(i)[seriesNames[0]],
-              value: (dataItems?.elementAt(i)[voteType]).toDouble(),
+              value: (dataItems?.elementAt(i)[eventDataType]).toDouble(),
               barColor: charts.ColorUtil.fromDartColor(selectedColour)
           )
       );
@@ -88,7 +83,8 @@ class ChartWidgets {
       List<ChartData> priceData,
       List<ChartData> ratingData,
       List<ChartData> ratingValuePerPriceData,
-      List<ChartData> capacityData) {
+      List<ChartData> capacityData,
+      List<ChartData> capacityPerPriceData) {
     return [
       // price series
       charts.Series(
@@ -104,42 +100,33 @@ class ChartWidgets {
         domainFn: (ChartData series, _) => series.name,
         measureFn: (ChartData series, _) =>series.value,
         colorFn: (ChartData series, _) =>series.barColor,),
-      // ratingValuePerPrice series
+      // capacity series
       charts.Series(
         id: seriesNames[3],
+        data: capacityData,
+        domainFn: (ChartData series, _) => series.name,
+        measureFn: (ChartData series, _) =>series.value,
+        colorFn: (ChartData series, _) =>series.barColor,),
+      // ratingValuePerPrice series
+      charts.Series(
+        id: seriesNames[4],
         data: ratingValuePerPriceData,
         domainFn: (ChartData series, _) => series.name,
         measureFn: (ChartData series, _) =>series.value,
         colorFn: (ChartData series, _) =>series.barColor,),
-      // capacity series
+      // capacityPerPriceData series
       charts.Series(
-        id: seriesNames[4],
-        data: capacityData,
+        id: seriesNames[5],
+        data: capacityPerPriceData,
         domainFn: (ChartData series, _) => series.name,
         measureFn: (ChartData series, _) =>series.value,
-        colorFn: (ChartData series, _) =>series.barColor,)
+        colorFn: (ChartData series, _) =>series.barColor,),
     ];
   }
-
-  /// for pie chart
-  List<charts.Series<ChartData, String>> fillPieChartSeries (
-      List<ChartData> voteData, String voteType) {
-    return [
-      //
-      charts.Series(
-        id: voteType,
-        data: voteData,
-        domainFn: (ChartData series, _) => series.name,
-        measureFn: (ChartData series, _) =>series.value,
-        colorFn: (ChartData series, _) =>series.barColor,
-        //labelAccessorFn: (ChartData series, _) => series.title
-      ),
-    ];
-  }
-
 
 }
 
+/// ChartData class to store for the chart data series
 class ChartData {
   late final String name;
   late final double value;
