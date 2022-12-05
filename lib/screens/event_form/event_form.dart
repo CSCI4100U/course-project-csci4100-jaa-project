@@ -71,8 +71,11 @@ class _EventFormState extends State<EventForm> {
                 children: [
                   // create a new event title
                   const Text("Create a new event",
-                      style: TextStyle(
-                          fontSize: mainFontSize, fontWeight: FontWeight.bold)),
+                    style: TextStyle(
+                      fontSize: mainFontSize, fontWeight: FontWeight.bold,
+                      color: kPrimaryColor
+                    )
+                  ),
                   spacerBox,
                   eventNameTextField(),
                   spacerBox,
@@ -118,7 +121,7 @@ class _EventFormState extends State<EventForm> {
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Text(
         displayString,
-        style: const TextStyle(fontSize: mainFontSize),
+        style: const TextStyle(fontSize: mainFontSize, color: kBorderOutline),
       ),
     );
   }

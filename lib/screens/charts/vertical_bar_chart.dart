@@ -1,3 +1,4 @@
+import 'package:course_project/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:charts_flutter_new/flutter.dart' as charts;
 import 'package:course_project/models/db_models/event_model.dart';
@@ -70,7 +71,12 @@ class _VerticalChartState extends State<VerticalChart> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.appBarTitle), // not seen right now
+        title: Text(
+          widget.appBarTitle,
+          style: const TextStyle(
+            color: kPrimaryColor
+          ),
+        ), // not seen right now
       ),
       /// for zooming in and out
       /// (since certain parts of the chart are too long or too small to see

@@ -9,6 +9,7 @@ import 'package:timezone/data/latest.dart' as tz;
 import 'package:course_project/firebase_options.dart';
 import 'package:course_project/theme.dart';
 import 'package:course_project/constants.dart';
+import 'dark_theme.dart';
 import 'models/notifications.dart';
 import 'package:course_project/models/db_models/category_model.dart';
 import 'package:course_project/screens/home/home_screen.dart';
@@ -53,6 +54,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Event App',
         theme: theme(),
+        darkTheme: darkTheme(),
         initialRoute: HomeScreen.routeName,
         routes: routes,
       ),

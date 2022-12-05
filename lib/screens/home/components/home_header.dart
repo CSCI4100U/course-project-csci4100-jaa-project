@@ -1,4 +1,5 @@
 import 'package:course_project/auth/fire_auth.dart';
+import 'package:course_project/constants.dart';
 import 'package:course_project/models/db_models/event_model.dart';
 import 'package:course_project/models/db_models/notifications_model.dart';
 import 'package:course_project/models/notifications.dart';
@@ -29,6 +30,7 @@ class HomeHeader extends StatelessWidget {
             children: [
               IconBtnWithCounter(
                 icon: const Icon(
+                  color: kPrimaryColor,
                   semanticLabel: "Add an Event",
                   Icons.add,
                 ),
@@ -38,6 +40,7 @@ class HomeHeader extends StatelessWidget {
               notificationsTotal != null
                   ? IconBtnWithCounter(
                       icon: const Icon(
+                        color: kPrimaryColor,
                         semanticLabel: "View Notifications",
                         Icons.notifications,
                       ),
