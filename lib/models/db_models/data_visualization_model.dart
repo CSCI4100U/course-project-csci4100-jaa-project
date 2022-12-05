@@ -22,7 +22,6 @@ class DataVisualizationModel {
     try {
       final db = await DBUtils.init();
       final List maps = await db.query(tableName);
-      print(maps.length);
       return maps.map((map) => DataVisualization.fromMap(map)).toList();
     } catch (e) {
       print(e);
