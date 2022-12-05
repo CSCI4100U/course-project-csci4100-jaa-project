@@ -62,7 +62,7 @@ class _CalendarViewState extends State<CalendarView> {
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
+          children: [
             TableCalendar(
               rowHeight: 70,
               events: eventDateTimes,
