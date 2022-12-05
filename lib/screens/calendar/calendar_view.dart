@@ -17,7 +17,6 @@ class _CalendarViewState extends State<CalendarView> {
   late CalendarController _controller;
   EventModel _eventModel = EventModel();
   List<dynamic> selectedEvents = [];
-  List<dynamic> allEvents = [];
   final eventDateTimes = Map<DateTime, List<dynamic>>();
 
   @override
@@ -29,43 +28,19 @@ class _CalendarViewState extends State<CalendarView> {
     getAllEventsDateTimes();
   }
 
+
+
   void getAllEventsDateTimes () async {
     var events = await _eventModel.getAllEvents();
-
-    setState(() {
-      for (int i=0; i < events.length; i++) {
-        bool? dateAlreadyThere = false;
-        List<Event> listOfEvents = List.empty(growable: true);
-        listOfEvents.add(events[i]);
-        int j = 0;
-
-        while (dateAlreadyThere == false || j >= eventDateTimes.length)
-        {
-          dateAlreadyThere = eventDateTimes[j]?.contains(simplifyDateTime(events[i].date!));
-          //dateAlreadyThere = eventDateTimes.keys.toList().contains(simplifyDateTime(events.asMap()[i]!.date!));
-          j++;
-        }
-        if (dateAlreadyThere == true) {
-          print("YOOOO");
-          //eventDateTimes[j]?.add(events[i]);
-          // print(events[i].date);
-          // print(eventDateTimes.values.elementAt(j));
-          // eventDateTimes.values.elementAt(j).add(events[i]);
-          // print(eventDateTimes.values.elementAt(j));
-          List currentVals = eventDateTimes.values.elementAt(j);
-          currentVals.add(events[i]);
-          eventDateTimes.update(simplifyDateTime(events[i].date!), (value) => currentVals);
-          //print(eventDateTimes.update(simplifyDateTime(events.asMap()[i]!.date!), (value) => eventDateTimes.values.elementAt(j).length));
-        }
-        else {
-          eventDateTimes.addEntries([
-            MapEntry(simplifyDateTime(events.asMap()[i]!.date!), listOfEvents)
-          ]);
-        }
+    for (var event in events) {
+      var eventDateTime = event.date!.toLocal();
+      var eventDate = DateTime(eventDateTime.year, eventDateTime.month, eventDateTime.day);
+      if (eventDateTimes.containsKey(eventDate)) {
+        eventDateTimes[eventDate]!.add(event);
+      } else {
+        eventDateTimes[eventDate] = [event];
       }
-    });
-    allEvents = events;
-    //print(eventDateTimes);
+    }
   }
   @override
   Widget build(BuildContext context) {
@@ -83,6 +58,7 @@ class _CalendarViewState extends State<CalendarView> {
               initialCalendarFormat: CalendarFormat.month,
               weekendDays: [],
               calendarStyle: CalendarStyle(
+                  markersMaxAmount: 3,
                   canEventMarkersOverflow: true,
                   eventDayStyle: const TextStyle(
                       color: Colors.red,
@@ -105,10 +81,11 @@ class _CalendarViewState extends State<CalendarView> {
                 formatButtonShowsNext: false,
               ),
               startingDayOfWeek: StartingDayOfWeek.sunday,
-              onDaySelected: (date,events ,something) {
-                setState(() {
-                  selectedEvents = events;
-                });
+              onDaySelected: 
+                  (date, events, _) {
+                  setState(() {
+                    selectedEvents = events;
+                  });
               },
               builders: CalendarBuilders(
                 selectedDayBuilder: (context, date, events) => Container(
