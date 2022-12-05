@@ -36,20 +36,22 @@ class _CalendarViewState extends State<CalendarView> {
     var events = await _eventModel.getAllEvents();
     for (var event in events) {
       var eventDateTime = event.date!.toLocal();
-      var eventDate = DateTime(eventDateTime.year, eventDateTime.month, eventDateTime.day);
+      var eventDate = DateTime(
+          eventDateTime.year, eventDateTime.month, eventDateTime.day
+      );
+
       if (eventDateTimes.containsKey(eventDate)) {
         eventDateTimes[eventDate]!.add(event);
       }
       else {
         eventDateTimes[eventDate] = [event];
       }
-
-      // just using a set state so that the calendar has the events added to
-      // it right away
-      setState(() {
-        print("Calendar started");
-      });
     }
+    // just using a set state so that the calendar has the events added to
+    // it right away
+    setState(() {
+      print("Calendar started");
+    });
   }
   @override
   Widget build(BuildContext context) {
