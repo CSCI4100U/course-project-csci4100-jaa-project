@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:course_project/auth/fire_auth.dart';
+import 'package:course_project/screens/details/details_screen.dart';
 import 'package:course_project/screens/home/home_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -26,11 +27,10 @@ class _BodyState extends State<Body> {
   @override
   void initState() {
     super.initState();
-    Geolocator.getCurrentPosition().then((position){
-      setState(() {
-        _currentLocation = LatLng(position.latitude, position.longitude);
-      });
+    Geolocator.getCurrentPosition().then((position) {
+      _currentLocation = LatLng(position.latitude, position.longitude);
     });
+    setState(() {});
   }
 
   @override
@@ -72,15 +72,14 @@ class _BodyState extends State<Body> {
                                           const Duration(milliseconds: 500),
                                       curve: Curves.easeInOut,
                                     );
-                                  setState(() {
+                                    setState(() {
                                       _currentLocation = LatLng(
-                                        event.location!.latitude,
-                                        event.location!.longitude);
-                                    selectedIndex =
-                                        snapshot.data!.indexOf(event);
-                                  });
+                                          event.location!.latitude,
+                                          event.location!.longitude);
+                                      selectedIndex =
+                                          snapshot.data!.indexOf(event);
+                                    });
                                     mapController.move(_currentLocation, 11.5);
-
                                   },
                                   child: AnimatedScale(
                                     duration: const Duration(milliseconds: 500),
@@ -117,75 +116,85 @@ class _BodyState extends State<Body> {
                     child: PageView.builder(
                       controller: pageController,
                       onPageChanged: (value) {
-                          _currentLocation = LatLng(
-                              snapshot.data![value].location!.latitude,
-                              snapshot.data![value].location!.longitude);
-                          mapController.move(_currentLocation, 11.5);
-                          selectedIndex = value;
-                          setState(() {});
+                        _currentLocation = LatLng(
+                            snapshot.data![value].location!.latitude,
+                            snapshot.data![value].location!.longitude);
+                        mapController.move(_currentLocation, 11.5);
+                        selectedIndex = value;
+                        setState(() {});
                       },
                       itemCount: snapshot.data!.length,
                       itemBuilder: (_, index) {
                         final item = snapshot.data![index];
                         return Padding(
                           padding: const EdgeInsets.all(15.0),
-                          child: Card(
-                            elevation: 5,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            color: const Color.fromARGB(255, 30, 29, 29),
-                            child: Row(
-                              children: [
-                                const SizedBox(width: 10),
-                                Expanded(
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Expanded(
-                                        flex: 2,
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Text(
-                                              item.name ?? '',
-                                              style: const TextStyle(
-                                                fontSize: 20,
-                                                fontWeight: FontWeight.bold,
+                          child: GestureDetector(
+                            onTap: () async => {
+                              Navigator.pushNamed(
+                                context,
+                                DetailsScreen.routeName,
+                                arguments: EventDetailsArguments(event: item),
+                              )
+                            },
+                            child: Card(
+                              elevation: 5,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              color: const Color.fromARGB(255, 30, 29, 29),
+                              child: Row(
+                                children: [
+                                  const SizedBox(width: 10),
+                                  Expanded(
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Expanded(
+                                          flex: 2,
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                item.name,
+                                                style: const TextStyle(
+                                                  fontSize: 20,
+                                                  fontWeight: FontWeight.bold,
+                                                ),
                                               ),
-                                            ),
-                                            const SizedBox(height: 10),
-                                            Text(
-                                              item.description ?? '',
-                                              style: const TextStyle(
-                                                fontSize: 14,
-                                                color: Colors.grey,
+                                              const SizedBox(height: 10),
+                                              Text(
+                                                item.description,
+                                                style: const TextStyle(
+                                                  fontSize: 14,
+                                                  color: Colors.grey,
+                                                ),
                                               ),
-                                            ),
-                                          ],
+                                            ],
+                                          ),
                                         ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
-                                ),
-                                const SizedBox(width: 10),
-                                Expanded(
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(4.0),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(10),
-                                      child: Image.asset(
-                                        item.images!.isNotEmpty
-                                            ? item.images!.first
-                                            : 'assets/images/No_image_available.png',
-                                        fit: BoxFit.contain,
+                                  const SizedBox(width: 10),
+                                  Expanded(
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(4.0),
+                                      child: ClipRRect(
+                                        borderRadius: BorderRadius.circular(10),
+                                        child: Image.asset(
+                                          item.images!.isNotEmpty
+                                              ? item.images!.first
+                                              : 'assets/images/No_image_available.png',
+                                          fit: BoxFit.contain,
+                                        ),
                                       ),
                                     ),
                                   ),
-                                ),
-                                const SizedBox(width: 10),
-                              ],
+                                  const SizedBox(width: 10),
+                                ],
+                              ),
                             ),
                           ),
                         );
