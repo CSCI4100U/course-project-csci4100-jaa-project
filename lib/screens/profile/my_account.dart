@@ -1,4 +1,6 @@
 import 'package:course_project/auth/fire_auth.dart';
+import 'package:course_project/main.dart';
+import 'package:course_project/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import '/constants.dart';

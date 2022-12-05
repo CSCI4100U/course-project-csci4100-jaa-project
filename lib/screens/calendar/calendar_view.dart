@@ -1,3 +1,4 @@
+import 'package:course_project/constants.dart';
 import 'package:course_project/models/entities/event.dart';
 import 'package:flutter/material.dart';
 import 'package:course_project/models/db_models/event_model.dart';
@@ -95,7 +96,7 @@ class _CalendarViewState extends State<CalendarView> {
               headerStyle: HeaderStyle(
                 centerHeaderTitle: true,
                 formatButtonDecoration: BoxDecoration(
-                  color: Colors.blueGrey,
+                  color: kPrimaryColor,
                   borderRadius: BorderRadius.circular(30.0),
                 ),
                 formatButtonTextStyle: const TextStyle(color: Colors.white),
@@ -115,12 +116,12 @@ class _CalendarViewState extends State<CalendarView> {
                   margin: const EdgeInsets.all(5.0),
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
-                    color: Theme.of(context).primaryColor,
+                    color: Theme.of(context).backgroundColor,
                     borderRadius: BorderRadius.circular(8.0)
                   ),
                   child: Text(
                     date.day.toString(),
-                    style: const TextStyle(color: Colors.white),
+                    style: const TextStyle(color: Colors.black),
                   ),
                 ),
 
@@ -143,7 +144,12 @@ class _CalendarViewState extends State<CalendarView> {
 
             /// show all the events (if any) at the bottom, for the selected day
             ...selectedEvents.map((event) => ListTile(
-                title: Text(convertDateTimeToDate(event.date)),
+                title: Text(
+                  convertDateTimeToDate(event.date),
+                  style: const TextStyle(
+                    color: kPrimaryColor
+                  ),
+                ),
                 subtitle: Text(event.name),
                 trailing: Text(convertDateTimeToTime(event.date)),
               )

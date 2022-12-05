@@ -1,3 +1,4 @@
+import 'package:course_project/constants.dart';
 import 'package:course_project/screens/charts/vertical_bar_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:charts_flutter_new/flutter.dart' as charts;
@@ -84,7 +85,12 @@ class _HorizontalChartState extends State<HorizontalChart> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.appBarTitle),
+        title: Text(
+          widget.appBarTitle,
+          style: const TextStyle(
+            color: kPrimaryColor
+          ),
+        ),
         actions: [
           /// vertical bar chart button (brings user to the vertical bar chart
           /// screen to see that chart)

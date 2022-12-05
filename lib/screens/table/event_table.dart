@@ -1,3 +1,4 @@
+import 'package:course_project/constants.dart';
 import 'package:flutter/material.dart';
 import '../../models/db_models/event_model.dart';
 
@@ -40,9 +41,7 @@ class _EventTableState extends State<EventTable> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title!), // not shown at the moment
-      ),
+      appBar: AppBar(), // empty app bar
       body:
       /// so the user can scroll through the datatable items horizontally
       SingleChildScrollView(
@@ -82,6 +81,9 @@ class _EventTableState extends State<EventTable> {
                   ),
                   /// data table
                   DataTable(
+                    headingRowColor: MaterialStateProperty.resolveWith((states) {
+                      return kPrimaryColor;
+                    }),
                     columnSpacing: 10,
                     sortAscending: isAscending,
                     sortColumnIndex: currentSortCol,
