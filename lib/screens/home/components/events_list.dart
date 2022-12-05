@@ -19,32 +19,32 @@ class _EventsListState extends State<EventsList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("My Events"),
-      ),
-      body: Column(children: [
-      Padding(
-        padding:
-            EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
-        child: Text("My Events", style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-      ),
-      _buildProductList(context),
-    ])
-    );
+        appBar: AppBar(
+          title: const Text("My Events"),
+        ),
+        body: Column(children: [
+          Padding(
+            padding: EdgeInsets.symmetric(
+                horizontal: getProportionateScreenWidth(20)),
+            child: const Text("My Events",
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+          ),
+          _buildProductList(context),
+        ]));
   }
 
   Widget _buildProductList(BuildContext context) {
     return Container(
       height: getProportionateScreenHeight(695),
-      padding: EdgeInsets.all(20),
+      padding: const EdgeInsets.all(20),
       child: StreamBuilder(
-          stream: Stream<List<Event>>.fromFuture(EventModel().getUserEvents(FireAuth.getCurrentUser())),
+          stream: Stream<List<Event>>.fromFuture(
+              EventModel().getUserEvents(FireAuth.getCurrentUser())),
           builder: (BuildContext context, AsyncSnapshot snapshot) {
             if (!snapshot.hasData) {
               return CircularProgressIndicator();
             }
             List<Event> events = snapshot.data as List<Event>;
-            print(events.length);
             return GridEvents(events: events);
           }),
     );

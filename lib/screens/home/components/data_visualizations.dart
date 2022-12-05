@@ -19,17 +19,32 @@ class DataVisualizationsDisplay extends StatelessWidget {
     //add data to db
     DataVisualizationModel _model = new DataVisualizationModel();
     List<List> info = [
-      [0, "Table", "Table displaying the events data", const Icon(Icons.table_chart_rounded)],
-      [1, "Charts", "Charts dispplaying the events data", const Icon(Icons.insert_chart)],
-      [2, "Calendar", "Calendar displaying the events data", const Icon(Icons.calendar_month)]
+      [
+        0,
+        "Table",
+        "Table displaying the events data",
+        const Icon(Icons.table_chart_rounded)
+      ],
+      [
+        1,
+        "Charts",
+        "Charts dispplaying the events data",
+        const Icon(Icons.insert_chart)
+      ],
+      [
+        2,
+        "Calendar",
+        "Calendar displaying the events data",
+        const Icon(Icons.calendar_month)
+      ]
     ];
 
-    for (int i =0; i < 3; i++) {
+    for (int i = 0; i < 3; i++) {
       DataVisualization newDataVisualization = DataVisualization(
-          id: info[i][0],
-          name: info[i][1],
-          description: info[i][2],
-          icon: info[i][3],
+        id: info[i][0],
+        name: info[i][1],
+        description: info[i][2],
+        icon: info[i][3],
       );
       _model.insertDataVisualization(newDataVisualization);
     }
@@ -37,7 +52,8 @@ class DataVisualizationsDisplay extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.all(getProportionateScreenWidth(20)),
       child: StreamBuilder(
-        stream: Stream.fromFuture(DataVisualizationModel().getAllDataVisualizations()),
+        stream: Stream.fromFuture(
+            DataVisualizationModel().getAllDataVisualizations()),
         builder: (context, snapshot) {
           if (!snapshot.hasData) {
             return const Center(child: CircularProgressIndicator());
@@ -50,14 +66,12 @@ class DataVisualizationsDisplay extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: List.generate(
                 dataVisualizations.length,
-                    (index) => DataVisualizationsCard(
+                (index) => DataVisualizationsCard(
                   icon: dataVisualizations[index].icon,
                   text: dataVisualizations[index].name,
                   press: () async => Navigator.pushNamed(
-                      context,
-                      routeNames[index],
-                      arguments: dataVisualizations[index]
-                  ),
+                      context, routeNames[index],
+                      arguments: dataVisualizations[index]),
                 ),
               ),
             ),
