@@ -9,7 +9,7 @@ import 'package:timezone/data/latest.dart' as tz;
 import 'package:course_project/firebase_options.dart';
 import 'package:course_project/theme.dart';
 import 'package:course_project/constants.dart';
-import 'models/db_models/notifications.dart';
+import 'models/notifications.dart';
 import 'package:course_project/models/db_models/category_model.dart';
 import 'package:course_project/screens/home/home_screen.dart';
 
@@ -23,10 +23,8 @@ void main() async {
   for (var category in defaultCategories) {
     await categoryModel.insertCategory(category);
   }
-
   tz.initializeTimeZones();
-  final _notifications = Notifications();
-  await _notifications.init();
+  await NotificationsConst.init();
 
   Geolocator.isLocationServiceEnabled().then((value) async {
     if (!value) {

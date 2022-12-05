@@ -1,6 +1,7 @@
 import 'package:course_project/auth/fire_auth.dart';
 import 'package:course_project/models/db_models/event_model.dart';
-import 'package:course_project/models/db_models/notifications.dart';
+import 'package:course_project/models/db_models/notifications_model.dart';
+import 'package:course_project/models/notifications.dart';
 import 'package:course_project/models/entities/event.dart';
 import 'package:flutter/material.dart';
 import 'package:course_project/size_config.dart';
@@ -15,10 +16,11 @@ class HomeHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder(
-      stream: Stream.fromFuture(Notifications().getNotificationsCount()),
+      stream: Stream.fromFuture(NotificationModel().getNotificationsCount()),
       builder: (context, snapshot) {
         int? notificationsTotal =
             snapshot.hasData ? snapshot.data as int : null;
+
         return Padding(
           padding:
               EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
@@ -45,9 +47,8 @@ class HomeHeader extends StatelessWidget {
                     )
                   : IconButton(
                       icon: const Icon(
-                        semanticLabel: "View Notifications",
-                        Icons.notifications,
-                      ),
+                          semanticLabel: "View Notifications",
+                          Icons.notifications),
                       onPressed: () async =>
                           await Navigator.pushNamed(context, "/notifications"),
                     )

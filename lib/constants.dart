@@ -9,6 +9,9 @@ import 'package:course_project/screens/profile/components/body.dart'
 import 'package:course_project/screens/event/components/body.dart' as eventBody;
 import 'package:course_project/screens/map/components/body.dart' as mapBody;
 import 'package:course_project/models/entities/category.dart' as CategoryEntity;
+import 'package:intl/intl.dart';
+
+import 'models/notifications.dart';
 
 const kPrimaryColor = Color(0xFFFF7643);
 const kPrimaryLightColor = Color(0xFFFFECDF);
@@ -58,7 +61,11 @@ OutlineInputBorder outlineInputBorder() {
   );
 }
 
-final NO_AVAILABLE_IMAGE_PATH = 'assets/images/No_image_available.png';
+const NO_AVAILABLE_IMAGE_PATH = 'assets/images/No_image_available.png';
+final DateFormatDisplay = DateFormat("yyyy-MM-dd hh:mm:ss");
+final DateFormatDisplayShort = DateFormat("yyyy-MM-dd");
+
+final NotificationsConst = Notifications();
 
 List<MenuOption> options = [
   MenuOption(
@@ -70,7 +77,8 @@ List<MenuOption> options = [
       name: "Events",
       icon: buildIcon(Icons.event_available),
       builder: () => eventBody.Body()),
-  MenuOption(name: "Map", icon: buildIcon(Icons.map), builder: () => mapBody.Body()),
+  MenuOption(
+      name: "Map", icon: buildIcon(Icons.map), builder: () => mapBody.Body()),
   MenuOption(
       name: "Profile",
       icon: buildIcon(Icons.person),
