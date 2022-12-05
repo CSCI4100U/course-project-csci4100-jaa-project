@@ -1,7 +1,7 @@
-import 'dart:math';
 import 'package:flutter/material.dart';
 import '../../models/db_models/event_model.dart';
 
+/// Data Table Screen
 class EventTable extends StatefulWidget {
   static String routeName = "/events";
   String? title;
@@ -17,12 +17,17 @@ class _EventTableState extends State<EventTable> {
     'Rating per Price', 'Capacity per Price','Date', 'Date Created'
   ];
   final EventModel _eventModel = EventModel();
-  int currentId= 0;
-  late List<Map> dataItems = List.empty(growable: true);
   final TextStyle tableTitleTextStyle = const TextStyle(
     color: Colors.indigo,
     fontSize: 25,
   );
+
+  int currentId= 0;
+  int currentSortCol = 0;
+  bool isAscending = true;  // for column sorting
+
+  /// List of Maps to store the data for each event
+  late List<Map> dataItems = List.empty(growable: true);
 
   @override
   void initState() {
@@ -32,14 +37,11 @@ class _EventTableState extends State<EventTable> {
     getAllEventsFromDb();
   }
 
-  int currentSortCol = 0;
-  bool isAscending = true;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title!),
+        title: Text(widget.title!), // not shown at the moment
       ),
       body:
       /// so the user can scroll through the datatable items horizontally
@@ -159,7 +161,7 @@ class _EventTableState extends State<EventTable> {
               isAscending = false;
 
               // change the sort from descending to ascending,
-              // order by dataname (Name, Price, Rating, Date or Date created)
+              // order by dataname (Name, Price, Rating, Date, Capacity, etc)
               dataItems.sort((itemA, itemB) =>
                   itemB[dataName].compareTo(itemA[dataName]));
             }
@@ -168,7 +170,7 @@ class _EventTableState extends State<EventTable> {
               isAscending = true;
 
               // change the sort from ascending to descending,
-              // order by upvotes (Name, Price, Rating, Date or Date created)
+              // order by dataname (Name, Price, Rating, Capacity, etc)
               dataItems.sort((itemA, itemB) =>
                   itemA[dataName].compareTo(itemB[dataName]));
             }
@@ -177,6 +179,7 @@ class _EventTableState extends State<EventTable> {
     );
   }
 
+  /// storing information about each event into the dataItems List of Maps
   void getAllEventsFromDb() async {
     var events = await _eventModel.getAllEvents();
     for (int i = 0; i < events.length; i++){
@@ -186,8 +189,20 @@ class _EventTableState extends State<EventTable> {
       newDataItem[columnNames[2]] = events[i].price;
       newDataItem[columnNames[3]] = events[i].rating;
       newDataItem[columnNames[4]] = events[i].capacity;
-      newDataItem[columnNames[5]] = events[i].rating / events[i].price!;
-      newDataItem[columnNames[6]] = events[i].capacity!.toDouble() / events[i].price!;
+
+      /// if statements for if there are ratings, prices, or capacities of 0
+      if (events[i].rating != 0 && events[i].price != 0) {
+        newDataItem[columnNames[5]] = events[i].rating / events[i].price!;
+      }
+      else {
+        newDataItem[columnNames[5]] = 0.0;
+      }
+      if (events[i].capacity != 0 && events[i].price != 0) {
+        newDataItem[columnNames[6]] = events[i].capacity!.toDouble() / events[i].price!;
+      }
+      else {
+        newDataItem[columnNames[6]] = 0.0;
+      }
       newDataItem[columnNames[7]] = events[i].date;
       newDataItem[columnNames[8]] = events[i].createdAt;
 
