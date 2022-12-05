@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:course_project/models/entities/notification.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:timezone/timezone.dart';
 
@@ -7,11 +8,11 @@ class Notifications {
   final channelName = "Events Application Notifications";
   final channelDescription =
       "Channel for notifications of the events application";
+  bool isInitialized = false;
 
   //Configure plugin using platform specific details
   var _flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
   NotificationDetails? _platformChannelInfo;
-  var _notificationID = 100;
 
   // Request permission to show notifications
   Future init() async {
@@ -24,9 +25,7 @@ class Notifications {
 
     var initializationSettingsIOS = DarwinInitializationSettings(
       onDidReceiveLocalNotification:
-          (int id, String? title, String? body, String? payload) {
-        return null;
-      },
+          (int id, String? title, String? body, String? payload) {},
     );
 
     var initializationSettings = InitializationSettings(
@@ -46,27 +45,34 @@ class Notifications {
       android: androidChannelInfo,
       iOS: iosChannelInfo,
     );
+    isInitialized = true;
   }
 
-  void sendNotificationNow(String title, String body, String payload) {
-    print(_flutterLocalNotificationsPlugin.toString());
+  void sendNotificationNow(Notification notification) {
     _flutterLocalNotificationsPlugin.show(
-        _notificationID++, title, body, _platformChannelInfo,
-        payload: payload);
+      notification.id!,
+      notification.title,
+      notification.body,
+      _platformChannelInfo,
+      payload: notification.payload,
+    );
   }
 
-  Future sendNotificationLater(
-      String title, String body, String payload, TZDateTime when) {
+  Future sendNotificationLater(Notification notification) {
+    var when = TZDateTime.from(
+      notification.scheduledAt!,
+      getLocation('Canada/Eastern'),
+    );
     return _flutterLocalNotificationsPlugin.zonedSchedule(
-      _notificationID++,
-      title,
-      body,
+      notification.id!,
+      notification.title,
+      notification.body,
       when,
       _platformChannelInfo!,
       uiLocalNotificationDateInterpretation:
           UILocalNotificationDateInterpretation.absoluteTime,
       androidAllowWhileIdle: true,
-      payload: payload,
+      payload: notification.payload,
     );
   }
 
@@ -81,10 +87,6 @@ class Notifications {
       print("NotificationResponse::payload = "
           "${notificationResponse.payload}");
     }
-  }
-
-  Future<int> getNotificationsCount() async {
-    return (await getPendingNotificationRequests()).length;
   }
 
   _requestIOSPermission() {

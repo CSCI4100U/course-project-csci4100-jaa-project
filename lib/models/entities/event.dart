@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:math';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:course_project/constants.dart';
 import 'package:course_project/db/firebase_cloud_utils.dart';
 import 'package:course_project/models/db_models/category_model.dart';
 import 'package:flutter/material.dart';
@@ -87,6 +88,10 @@ class Event {
       'userId': userId,
       'location': location,
     };
+  }
+
+  String stringDate() {
+    return DateFormatDisplay.format(date!);
   }
 
   Future<List<String>> _getImagesFromCategory({int? totalImages}) async {
