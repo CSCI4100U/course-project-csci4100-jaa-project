@@ -1,3 +1,4 @@
+import 'package:course_project/screens/calendar/calendar_view.dart';
 import 'package:course_project/screens/charts/horizontal_bar_chart.dart';
 import 'package:course_project/screens/charts/vertical_bar_chart.dart';
 import 'package:course_project/screens/event/event_screen.dart';
@@ -29,4 +30,5 @@ final Map<String, WidgetBuilder> routes = {
   VerticalChart.routeName: (context) => VerticalChart(),
   NotificationsScreen.routeName: (context) => NotificationsScreen(),
   MyAccount.routeName: (context) => MyAccount(),
+  CalendarView.routeName: (context) => CalendarView(),
 };

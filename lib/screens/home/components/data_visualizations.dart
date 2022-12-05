@@ -1,3 +1,4 @@
+import 'package:course_project/screens/calendar/calendar_view.dart';
 import 'package:course_project/screens/charts/horizontal_bar_chart.dart';
 import 'package:course_project/screens/event/event_screen.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +11,7 @@ class DataVisualizationsDisplay extends StatelessWidget {
   List<String> routeNames = [
     EventTable.routeName,
     HorizontalChart.routeName,
+    CalendarView.routeName,
   ];
 
   @override
