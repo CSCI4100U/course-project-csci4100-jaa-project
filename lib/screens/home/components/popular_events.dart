@@ -29,8 +29,12 @@ class _PopularEventsState extends State<PopularEvents> {
               if (snapshot.hasData) {
                 List<Event> events = snapshot.data ?? [];
                 return Row(
-                  children:
-                      events.map((event) => EventCard(event: event)).toList(),
+                  children: events
+                      .map((event) => EventCard(
+                            event: event,
+                            whenReturn: whenReturn,
+                          ))
+                      .toList(),
                 );
               } else {
                 return const CircularProgressIndicator();
@@ -40,5 +44,9 @@ class _PopularEventsState extends State<PopularEvents> {
         )
       ],
     );
+  }
+
+  void whenReturn() {
+    setState(() {});
   }
 }

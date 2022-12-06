@@ -15,7 +15,6 @@ class NotificationModel {
       conflictAlgorithm: ConflictAlgorithm.replace,
     );
     notification.id = id;
-    print('id: $id');
     if (now) {
       NotificationsConst.sendNotificationNow(notification);
     }
