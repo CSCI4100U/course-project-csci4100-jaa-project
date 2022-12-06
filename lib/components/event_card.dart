@@ -36,7 +36,7 @@ class EventCard extends StatelessWidget {
                 aspectRatio: aspectRatio,
                 child: Container(
                   decoration: BoxDecoration(
-                    color: kSecondaryColor.withOpacity(0.1),
+                    color: Colors.blueGrey.withOpacity(0.3),
                     borderRadius: BorderRadius.circular(15),
                   ),
                   child: Hero(
@@ -50,7 +50,7 @@ class EventCard extends StatelessWidget {
               const SizedBox(height: 15),
               Text(
                 event.name,
-                style: TextStyle(color: Colors.black),
+                style: TextStyle(color: Colors.grey),
                 maxLines: 2,
               ),
               Row(

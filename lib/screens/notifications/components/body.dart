@@ -52,8 +52,8 @@ class _BodyState extends State<Body> {
       itemBuilder: (context, index) {
         var notification = notifications[index];
         return ListTile(
-          title: Text(notification.title),
-          subtitle: Text(notification.body),
+          title: Text(notification.title, style: TextStyle(color: Colors.blueGrey),),
+          subtitle: Text(notification.body, style: TextStyle(color: Colors.grey),),
           trailing:
               Text(DateFormatDisplayShort.format(notification.createdAt!)),
         );

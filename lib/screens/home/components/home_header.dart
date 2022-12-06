@@ -4,6 +4,7 @@ import 'package:course_project/models/db_models/event_model.dart';
 import 'package:course_project/models/db_models/notifications_model.dart';
 import 'package:course_project/models/notifications.dart';
 import 'package:course_project/models/entities/event.dart';
+import 'package:course_project/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:course_project/size_config.dart';
 import '../../event_form/event_form.dart';
@@ -85,13 +86,23 @@ class HomeHeader extends StatelessWidget {
           title: const Text('Would you like to create this event?'),
           children: [
             SimpleDialogOption(
-              child: const Text("Yes, create event"),
+              child: const Text(
+                "Yes, create event",
+                style: TextStyle(
+                  color: kPrimaryColor
+                ),
+              ),
               onPressed: () {
                 Navigator.of(context).pop(true);
               },
             ),
             SimpleDialogOption(
-              child: const Text("No, cancel"),
+              child: const Text(
+                "No, cancel",
+                style: TextStyle(
+                    color: kPrimaryColor
+                ),
+              ),
               onPressed: () {
                 Navigator.of(context).pop(false);
               },
