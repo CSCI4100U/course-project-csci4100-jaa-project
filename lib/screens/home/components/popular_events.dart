@@ -28,13 +28,16 @@ class _PopularEventsState extends State<PopularEvents> {
             builder: (context, snapshot) {
               if (snapshot.hasData) {
                 List<Event> events = snapshot.data ?? [];
-                return Row(
-                  children: events
-                      .map((event) => EventCard(
-                            event: event,
-                            whenReturn: whenReturn,
-                          ))
-                      .toList(),
+                return Padding(
+                  padding: const EdgeInsets.only(right: 20),
+                  child: Row(
+                    children: events
+                        .map((event) => EventCard(
+                              event: event,
+                              whenReturn: whenReturn,
+                            ))
+                        .toList(),
+                  ),
                 );
               } else {
                 return const CircularProgressIndicator();
