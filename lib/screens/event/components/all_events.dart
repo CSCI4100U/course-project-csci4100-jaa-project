@@ -20,15 +20,12 @@ class _AllEventsState extends State<AllEvents> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        //SizedBox(height: getProportionateScreenHeight(20)),
         Padding(
           padding:
               EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
-              //SearchField(),
-            ],
+            children: const [],
           ),
         ),
         SizedBox(height: getProportionateScreenWidth(20)),
@@ -52,7 +49,7 @@ class _AllEventsState extends State<AllEvents> {
                     List<Event> events = snapshot.data as List<Event>;
                     return GridEvents(events: events, whenReturn: whenReturn);
                   } else {
-                    return const CircularProgressIndicator();
+                    return const Center(child: CircularProgressIndicator());
                   }
                 },
               ),
