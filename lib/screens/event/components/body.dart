@@ -12,6 +12,7 @@ class Body extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: SingleChildScrollView(
+        padding: const EdgeInsets.only(right: 20),
         child: AllEvents(categoryFilter: categoryFilter),
       ),
     );
