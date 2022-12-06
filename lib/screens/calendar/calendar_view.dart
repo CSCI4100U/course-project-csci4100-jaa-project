@@ -150,7 +150,7 @@ class _CalendarViewState extends State<CalendarView> {
                     color: kPrimaryColor
                   ),
                 ),
-                subtitle: Text(event.name),
+                subtitle: Text(event.name, style: TextStyle(color: Colors.blueGrey),),
                 trailing: Text(convertDateTimeToTime(event.date)),
               )
             ),
