@@ -114,7 +114,7 @@ class _HorizontalChartState extends State<HorizontalChart> {
       /// for zooming in and out
       /// (since certain parts of the chart are too long or too small to see
       /// well without any zoom options)
-      body: Zoom(
+      body: dataItems.isNotEmpty ? Zoom(
         backgroundColor: Colors.white54,
 
         /// horizontal scrolling
@@ -127,7 +127,7 @@ class _HorizontalChartState extends State<HorizontalChart> {
               child: Padding(
                 padding: const EdgeInsets.only(left: 15, right: 15, bottom: 20),
                 child: SizedBox(
-                  width: 2000,
+                  width: 1200,
                   height: 1000,
                   /// the bar chart
                   child: ChartWidgets().barChartWidget(series, widget.isVertical, widget.rotationValue),
@@ -135,7 +135,8 @@ class _HorizontalChartState extends State<HorizontalChart> {
               )
             ),
           ),
-      ),
+      )
+      : const CircularProgressIndicator(),
     );
 
   }

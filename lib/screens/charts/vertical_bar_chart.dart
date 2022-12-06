@@ -81,7 +81,7 @@ class _VerticalChartState extends State<VerticalChart> {
       /// for zooming in and out
       /// (since certain parts of the chart are too long or too small to see
       /// well without any zoom options)
-      body: Zoom(
+      body: widget.dataItems!.isNotEmpty ? Zoom(
         backgroundColor: Colors.white54,
 
         /// horizontal scrolling
@@ -94,8 +94,8 @@ class _VerticalChartState extends State<VerticalChart> {
             child: Padding(
               padding: const EdgeInsets.only(left: 15, right: 15, bottom: 150),
               child: SizedBox(
-                height: widget.dataItems!.length * 30,
-                width: widget.dataItems!.length * 50,
+                height: 1200,
+                width: 1000,
                 /// the bar chart
                 child: ChartWidgets().barChartWidget(series, widget.isVertical, widget.rotationValue),
               ),
@@ -103,6 +103,7 @@ class _VerticalChartState extends State<VerticalChart> {
           ),
         ),
       )
+      : const CircularProgressIndicator(),
     );
 
   }

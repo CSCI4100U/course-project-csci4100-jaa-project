@@ -37,15 +37,22 @@ class ChartWidgets {
       ),
 
       defaultRenderer: charts.BarRendererConfig(
-        minBarLengthPx: 100,
-        maxBarWidthPx: 100,
+        minBarLengthPx: 20,
+        maxBarWidthPx: 50,
         // rounded edge on the bars
         cornerStrategy: const charts.ConstCornerStrategy(10),
-        strokeWidthPx: 40.0,
+        strokeWidthPx: 20.0,
       ),
 
-      /// to show a legend
-      behaviors: [charts.SeriesLegend(desiredMaxColumns: series.length)],
+      /// to show a legend (with a black text colour)
+      behaviors: [
+        charts.SeriesLegend(
+          desiredMaxColumns: series.length,
+          entryTextStyle: const charts.TextStyleSpec(
+            color: charts.Color(r: 41, g: 38, b: 37),
+          )
+        )
+      ],
 
       // selectionModels: [
       //   //only prints to the console right now (prints value of the selected bar)
