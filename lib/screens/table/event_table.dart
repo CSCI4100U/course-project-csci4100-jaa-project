@@ -4,18 +4,26 @@ import '../../models/db_models/event_model.dart';
 
 /// Data Table Screen
 class EventTable extends StatefulWidget {
-  static String routeName = "/events";
+  static String routeName = "/events-table";
   String? title;
 
-  EventTable({Key? key, this.title= "Table"}) : super(key: key);
+  EventTable({Key? key, this.title = "Table"}) : super(key: key);
 
   @override
   State<EventTable> createState() => _EventTableState();
 }
 
 class _EventTableState extends State<EventTable> {
-  final List<String> columnNames = ['id', 'Name', 'Price', 'Rating', 'Capacity',
-    'Rating per Price', 'Capacity per Price','Date', 'Date Created'
+  final List<String> columnNames = [
+    'id',
+    'Name',
+    'Price',
+    'Rating',
+    'Capacity',
+    'Rating per Price',
+    'Capacity per Price',
+    'Date',
+    'Date Created'
   ];
   final EventModel _eventModel = EventModel();
   final TextStyle tableTitleTextStyle = const TextStyle(
@@ -23,9 +31,9 @@ class _EventTableState extends State<EventTable> {
     fontSize: 25,
   );
 
-  int currentId= 0;
+  int currentId = 0;
   int currentSortCol = 0;
-  bool isAscending = true;  // for column sorting
+  bool isAscending = true; // for column sorting
 
   /// List of Maps to store the data for each event
   late List<Map> dataItems = List.empty(growable: true);
@@ -43,19 +51,25 @@ class _EventTableState extends State<EventTable> {
     return Scaffold(
       appBar: AppBar(), // empty app bar
       body:
-      /// so the user can scroll through the datatable items horizontally
-      SingleChildScrollView(
+
+          /// so the user can scroll through the datatable items horizontally
+          SingleChildScrollView(
         scrollDirection: Axis.horizontal,
+
         /// so the user can scroll through the datatable items vertically
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
-          child: Row (
+          child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               /// downward arrow (to show user they can scroll up and down)
               const Padding(
                 padding: EdgeInsets.only(top: 60.0, left: 10),
-                child: Icon(Icons.arrow_circle_down, size: 50, color: Colors.indigo,),
+                child: Icon(
+                  Icons.arrow_circle_down,
+                  size: 50,
+                  color: Colors.indigo,
+                ),
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -69,6 +83,7 @@ class _EventTableState extends State<EventTable> {
                           "Events Data Table    ",
                           style: tableTitleTextStyle,
                         ),
+
                         /// right arrow to show the user they can scroll right
                         /// and left)
                         const Icon(
@@ -79,6 +94,7 @@ class _EventTableState extends State<EventTable> {
                       ],
                     ),
                   ),
+
                   /// data table
                   DataTable(
                     headingRowColor: MaterialStateProperty.resolveWith((states) {
@@ -105,7 +121,7 @@ class _EventTableState extends State<EventTable> {
                       // CREATED AT DATE COLUMN
                       sortedColumnWidget(columnNames[8], columnNames[8]),
                     ],
-                    rows: dataItems.map((item){
+                    rows: dataItems.map((item) {
                       return generateData(
                         item[columnNames[1]],
                         item[columnNames[2]],
@@ -127,29 +143,48 @@ class _EventTableState extends State<EventTable> {
     );
   }
 
-  DataRow generateData(String? name, double? price, double? rating, int? capacity,
-      double? ratingPerPrice, double? capacityPerPrice, DateTime date,
-      DateTime createdDate){
-    return DataRow(
-        cells: [
-          /// name
-          DataCell(Text(name!)),
-          /// price
-          DataCell(Text(price.toString()),),
-          /// rating
-          DataCell(Text(rating.toString()),),
-          /// capacity
-          DataCell(Text(capacity.toString())),
-          /// rating per price
-          DataCell(Text(ratingPerPrice!.toStringAsFixed(2)),),
-          /// capacity per price
-          DataCell(Text(capacityPerPrice!.toStringAsFixed(2)),),
-          /// date
-          DataCell(Text(condenseDateTime(date))),
-          /// date created
-          DataCell(Text(condenseDateTime(createdDate))),
-        ]
-    );
+  DataRow generateData(
+      String? name,
+      double? price,
+      double? rating,
+      int? capacity,
+      double? ratingPerPrice,
+      double? capacityPerPrice,
+      DateTime date,
+      DateTime createdDate) {
+    return DataRow(cells: [
+      /// name
+      DataCell(Text(name!)),
+
+      /// price
+      DataCell(
+        Text(price.toString()),
+      ),
+
+      /// rating
+      DataCell(
+        Text(rating.toString()),
+      ),
+
+      /// capacity
+      DataCell(Text(capacity.toString())),
+
+      /// rating per price
+      DataCell(
+        Text(ratingPerPrice!.toStringAsFixed(2)),
+      ),
+
+      /// capacity per price
+      DataCell(
+        Text(capacityPerPrice!.toStringAsFixed(2)),
+      ),
+
+      /// date
+      DataCell(Text(condenseDateTime(date))),
+
+      /// date created
+      DataCell(Text(condenseDateTime(createdDate))),
+    ]);
   }
 
   DataColumn sortedColumnWidget(String? title, String? dataName) {
@@ -164,27 +199,25 @@ class _EventTableState extends State<EventTable> {
 
               // change the sort from descending to ascending,
               // order by dataname (Name, Price, Rating, Date, Capacity, etc)
-              dataItems.sort((itemA, itemB) =>
-                  itemB[dataName].compareTo(itemA[dataName]));
-            }
-            else {
+              dataItems.sort(
+                  (itemA, itemB) => itemB[dataName].compareTo(itemA[dataName]));
+            } else {
               // update isAscending
               isAscending = true;
 
               // change the sort from ascending to descending,
               // order by dataname (Name, Price, Rating, Capacity, etc)
-              dataItems.sort((itemA, itemB) =>
-                  itemA[dataName].compareTo(itemB[dataName]));
+              dataItems.sort(
+                  (itemA, itemB) => itemA[dataName].compareTo(itemB[dataName]));
             }
           });
-        }
-    );
+        });
   }
 
   /// storing information about each event into the dataItems List of Maps
   void getAllEventsFromDb() async {
     var events = await _eventModel.getAllEvents();
-    for (int i = 0; i < events.length; i++){
+    for (int i = 0; i < events.length; i++) {
       Map newDataItem = {};
       newDataItem[columnNames[0]] = currentId;
       newDataItem[columnNames[1]] = events[i].name;
@@ -195,14 +228,13 @@ class _EventTableState extends State<EventTable> {
       /// if statements for if there are ratings, prices, or capacities of 0
       if (events[i].rating != 0 && events[i].price != 0) {
         newDataItem[columnNames[5]] = events[i].rating / events[i].price!;
-      }
-      else {
+      } else {
         newDataItem[columnNames[5]] = 0.0;
       }
       if (events[i].capacity != 0 && events[i].price != 0) {
-        newDataItem[columnNames[6]] = events[i].capacity!.toDouble() / events[i].price!;
-      }
-      else {
+        newDataItem[columnNames[6]] =
+            events[i].capacity!.toDouble() / events[i].price!;
+      } else {
         newDataItem[columnNames[6]] = 0.0;
       }
       newDataItem[columnNames[7]] = events[i].date;
@@ -218,7 +250,7 @@ class _EventTableState extends State<EventTable> {
   /// change DateTime to a string in just YYYY-MM-DD format.  (Used for better
   /// viewing for the user, because the user does not need to see the minutes,
   /// seconds, etc)
-  String condenseDateTime (DateTime date) {
+  String condenseDateTime(DateTime date) {
     return "${date.year}-${date.month}-${date.day}";
   }
 }

@@ -1,3 +1,4 @@
+import 'package:course_project/auth/fire_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../../models/entities/event.dart';
@@ -9,15 +10,18 @@ class DetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final EventDetailsArguments agrs =
+    final EventDetailsArguments args =
         ModalRoute.of(context)!.settings.arguments as EventDetailsArguments;
     return Scaffold(
-      backgroundColor: Color(0xFFF5F6F9),
+      backgroundColor: const Color(0xFFF5F6F9),
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(AppBar().preferredSize.height),
-        child: CustomAppBar(rating: agrs.event.rating),
+        child: CustomAppBar(rating: args.event.rating),
       ),
-      body: Body(event: agrs.event),
+      body: Body(
+        event: args.event,
+        currentUser: FireAuth.getCurrentUser(),
+      ),
     );
   }
 }

@@ -1,3 +1,4 @@
+import 'package:course_project/models/db_models/event_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:course_project/models/entities/event.dart';
@@ -9,11 +10,9 @@ class EventDescription extends StatelessWidget {
   const EventDescription({
     Key? key,
     required this.event,
-    this.pressOnSeeMore,
   }) : super(key: key);
 
   final Event event;
-  final GestureTapCallback? pressOnSeeMore;
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +32,7 @@ class EventDescription extends StatelessWidget {
           child: Container(
             padding: EdgeInsets.all(getProportionateScreenWidth(15)),
             width: getProportionateScreenWidth(64),
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: true ? Color(0xFFFFE6E6) : Color(0xFFF5F6F9),
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(20),
@@ -47,9 +46,32 @@ class EventDescription extends StatelessWidget {
             left: getProportionateScreenWidth(20),
             right: getProportionateScreenWidth(64),
           ),
-          child: Text(
-            event.description,
-            maxLines: 3,
+          child: StreamBuilder(
+            stream: Stream.fromFuture(EventModel.getTotalAssistants(event)),
+            builder: (context, snapshot) {
+              if (!snapshot.hasData) {
+                return const Center(child: CircularProgressIndicator());
+              }
+              int totalAssistants = snapshot.data ?? 0;
+              return Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    event.description,
+                    maxLines: 3,
+                  ),
+                  Text(
+                    "Price: \$${event.price}",
+                  ),
+                  Text(
+                    "Date: ${event.date}",
+                  ),
+                  Text(
+                    "Assistants: $totalAssistants/${event.capacity}",
+                  )
+                ],
+              );
+            },
           ),
         ),
       ],

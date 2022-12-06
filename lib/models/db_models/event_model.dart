@@ -88,4 +88,29 @@ class EventModel {
   Future deleteEvent(Event event) async {
     await event.reference!.delete();
   }
+
+  //Returns if user assist to an event
+  static bool userAssists(Event event, User currentUser) {
+    return event.assistantsIds.contains(currentUser.uid);
+  }
+
+  static Future addAssistant(Event event, User currentUser) async {
+    event.assistantsIds.add(currentUser.uid);
+    await event.reference!.update({'assistantsIds': event.assistantsIds});
+  }
+
+  static Future removeAssistant(Event event, User currentUser) async {
+    event.assistantsIds.remove(currentUser.uid);
+    await event.reference!.update({'assistantsIds': event.assistantsIds});
+  }
+
+  static Future<int> getTotalAssistants(Event event) async {
+    var data = (await event.reference!.get()).data() as Map<String, dynamic>;
+    return data['assistantsIds'].length;
+  }
+
+  static Future<bool> isFull(Event event) async {
+    var data = (await event.reference!.get()).data() as Map<String, dynamic>;
+    return data['assistantsIds'].length >= data['capacity'];
+  }
 }

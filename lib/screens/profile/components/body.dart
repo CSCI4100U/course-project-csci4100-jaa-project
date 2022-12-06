@@ -1,5 +1,6 @@
 import 'package:course_project/auth/fire_auth.dart';
 import 'package:course_project/screens/home/home_screen.dart';
+import 'package:course_project/screens/notifications/notifications_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -11,22 +12,24 @@ class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      padding: EdgeInsets.symmetric(vertical: 70),
+      padding: const EdgeInsets.symmetric(vertical: 70),
       child: Column(
         children: [
-          ProfilePic(),
-          SizedBox(height: 50),
+          const ProfilePic(),
+          const SizedBox(height: 50),
           ProfileMenu(
             text: "My Account",
             icon: "assets/icons/User Icon.svg",
-            press: () => {
-              Navigator.pushNamed(context, MyAccount.routeName),
-            },
+            press: () async =>
+                await Navigator.pushNamed(context, MyAccount.routeName),
           ),
           ProfileMenu(
             text: "Notifications",
             icon: "assets/icons/Bell.svg",
-            press: () {},
+            press: () async => await Navigator.pushNamed(
+              context,
+              NotificationsScreen.routeName,
+            ),
           ),
           ProfileMenu(
             text: "Log Out",
