@@ -27,7 +27,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
       stream: Stream.fromFuture(EventModel.getEventById(args.event.id!)),
       builder: (context, snapshot) {
         Event event = snapshot.data as Event;
-        if (!snapshot.hasData) return const CircularProgressIndicator();
+        if (!snapshot.hasData) return const Center(child: CircularProgressIndicator());
         return Scaffold(
           backgroundColor: const Color(0xFFF5F6F9),
           appBar: PreferredSize(

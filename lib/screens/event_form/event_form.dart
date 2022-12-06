@@ -65,7 +65,7 @@ class _EventFormState extends State<EventForm> {
           stream: Stream.fromFuture(CategoryModel().getAllCategories()),
           builder: (context, snapshot) {
             if (!snapshot.hasData) {
-              return const CircularProgressIndicator();
+              return const Center(child: CircularProgressIndicator());
             }
             List<Category> categories = snapshot.data;
             return Container(
