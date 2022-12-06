@@ -39,18 +39,18 @@ class _BodyState extends State<Body> {
       children: [
         EventImages(event: widget.event),
         TopRoundedContainer(
-          color: Theme.of(context).scaffoldBackgroundColor,//Colors.white,
+          color: Theme.of(context).scaffoldBackgroundColor,
           child: Column(
             children: [
               EventDescription(
                 event: widget.event,
               ),
               TopRoundedContainer(
-                color: Theme.of(context).scaffoldBackgroundColor,//const Color(0xFFF6F7F9),
+                color: Theme.of(context).scaffoldBackgroundColor,
                 child: Column(
                   children: [
                     TopRoundedContainer(
-                      color: Theme.of(context).scaffoldBackgroundColor,//Colors.white,
+                      color: Theme.of(context).scaffoldBackgroundColor,
                       child: Padding(
                           padding: EdgeInsets.only(
                             left: SizeConfig.screenWidth * 0.15,

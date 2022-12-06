@@ -29,7 +29,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
         Event event = snapshot.data as Event;
         if (!snapshot.hasData) return const Center(child: CircularProgressIndicator());
         return Scaffold(
-          backgroundColor: Theme.of(context).scaffoldBackgroundColor,//const Color(0xFFF5F6F9),
+          backgroundColor: Theme.of(context).scaffoldBackgroundColor,
           appBar: PreferredSize(
             preferredSize: Size.fromHeight(AppBar().preferredSize.height),
             child: CustomAppBar(
