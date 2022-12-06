@@ -20,7 +20,7 @@ class _AssistedEventsDisplayState extends State<AssistedEventsDisplay> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Events I'm Assisting"),
+        title: const Text("Events I'm Attending"),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -28,7 +28,7 @@ class _AssistedEventsDisplayState extends State<AssistedEventsDisplay> {
             Padding(
               padding: EdgeInsets.symmetric(
                   horizontal: getProportionateScreenWidth(20)),
-              child: const Text("Events I'm Assisting",
+              child: const Text("Events I'm Attending",
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
