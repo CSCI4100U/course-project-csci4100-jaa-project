@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:course_project/size_config.dart';
 
+import 'assisted_events_banner.dart';
 import 'categories.dart';
 import 'data_visualizations.dart';
 import 'your_events_banner.dart';
@@ -20,6 +21,7 @@ class Body extends StatelessWidget {
             MyEventBanner(),
             Categories(),
             DataVisualizationsDisplay(),
+            AssistedEventsBanner(),
             SizedBox(height: getProportionateScreenWidth(30)),
             PopularEvents(),
           ],

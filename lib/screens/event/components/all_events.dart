@@ -52,7 +52,7 @@ class _AllEventsState extends State<AllEvents> {
                     List<Event> events = snapshot.data as List<Event>;
                     return GridEvents(events: events, whenReturn: whenReturn);
                   } else {
-                    return const CircularProgressIndicator();
+                    return const Center(child: CircularProgressIndicator());
                   }
                 },
               ),

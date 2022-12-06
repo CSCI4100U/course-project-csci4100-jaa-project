@@ -7,20 +7,20 @@ import 'package:course_project/models/db_models/event_model.dart';
 import '../../../size_config.dart';
 import 'section_title.dart';
 
-class EventsDisplay extends StatefulWidget {
-  static String routeName = '/eventsList';
-  const EventsDisplay({super.key});
+class AssistedEventsDisplay extends StatefulWidget {
+  static String routeName = '/assistedEventsList';
+  AssistedEventsDisplay({super.key});
 
   @override
-  State<EventsDisplay> createState() => _EventsDisplayState();
+  State<AssistedEventsDisplay> createState() => _AssistedEventsDisplayState();
 }
 
-class _EventsDisplayState extends State<EventsDisplay> {
+class _AssistedEventsDisplayState extends State<AssistedEventsDisplay> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("My Events"),
+        title: const Text("Events I'm Assisting"),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -28,7 +28,7 @@ class _EventsDisplayState extends State<EventsDisplay> {
             Padding(
               padding: EdgeInsets.symmetric(
                   horizontal: getProportionateScreenWidth(20)),
-              child: const Text("My Events",
+              child: const Text("Events I'm Assisting",
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
@@ -40,15 +40,14 @@ class _EventsDisplayState extends State<EventsDisplay> {
         ),
       ),
     );
-  }
-
+}
   Widget _buildProductList(BuildContext context) {
     return Container(
       height: getProportionateScreenHeight(695),
       padding: const EdgeInsets.all(20),
       child: StreamBuilder(
         stream: Stream.fromFuture(
-            EventModel().getUserEvents(FireAuth.getCurrentUser())),
+            EventModel().getAssistedEvents(FireAuth.getCurrentUser())),
         builder: (context, snapshot) {
           if (!snapshot.hasData) {
             return const Center(child: CircularProgressIndicator());
@@ -63,4 +62,5 @@ class _EventsDisplayState extends State<EventsDisplay> {
   void whenReturn() {
     setState(() {});
   }
+
 }
