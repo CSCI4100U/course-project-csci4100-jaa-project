@@ -27,9 +27,9 @@ class AssistedEventsBanner extends StatelessWidget {
           TextSpan(
             style: const TextStyle(color: Colors.white),
             children: [
-              const TextSpan(text: "Events you assisted\n"),
+              const TextSpan(text: "Events to assist\n"),
               TextSpan(
-                text: "View assisted events",
+                text: "View attended events",
                 style: TextStyle(
                   fontSize: getProportionateScreenWidth(24),
                   fontWeight: FontWeight.bold,
