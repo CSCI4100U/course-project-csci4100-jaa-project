@@ -16,13 +16,16 @@ ThemeData darkTheme() {
 InputDecorationTheme inputDecorationTheme() {
   OutlineInputBorder outlineInputBorder = OutlineInputBorder(
     borderRadius: BorderRadius.circular(28),
-    borderSide: BorderSide(color: kBorderOutline),
+    borderSide: BorderSide(color: Colors.grey),
     gapPadding: 10,
   );
   return InputDecorationTheme(
     // If  you are using latest version of flutter then lable text and hint text shown like this
     // if you r using flutter less then 1.20.* then maybe this is not working properly
     // if we are define our floatingLabelBehavior in our theme then it's not applayed
+    filled: true,
+    fillColor: Colors.grey.withOpacity(0.4),
+    labelStyle: TextStyle(color: kPrimaryColor),
     floatingLabelBehavior: FloatingLabelBehavior.always,
     contentPadding: EdgeInsets.symmetric(horizontal: 42, vertical: 20),
     enabledBorder: outlineInputBorder,
