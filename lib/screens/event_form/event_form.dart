@@ -6,6 +6,7 @@ import 'package:course_project/models/entities/event.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:geolocator/geolocator.dart';
 import 'decimal_formatter.dart';
 import 'package:latlong2/latlong.dart';
 
@@ -75,11 +76,10 @@ class _EventFormState extends State<EventForm> {
                 children: [
                   // create a new event title
                   const Text("Create a new event",
-                    style: TextStyle(
-                      fontSize: mainFontSize, fontWeight: FontWeight.bold,
-                      color: kPrimaryColor
-                    )
-                  ),
+                      style: TextStyle(
+                          fontSize: mainFontSize,
+                          fontWeight: FontWeight.bold,
+                          color: kPrimaryColor)),
                   spacerBox,
                   eventNameTextField(),
                   spacerBox,
@@ -165,19 +165,32 @@ class _EventFormState extends State<EventForm> {
   Widget mapScreenButton() {
     return Container(
       padding: const EdgeInsets.only(bottom: 20),
-      child: ElevatedButton(
-        onPressed: () {
-          Navigator.pushNamed(context, LocationMap.routeName).then((value) {
-            setState(() {
-              var latlng = value as LatLng;
-              double lat = latlng.latitude;
-              double lng = latlng.longitude;
-              GeoPoint geoPoint = GeoPoint(lat, lng);
-              event.location = geoPoint;
-            });
-          });
+      child: FutureBuilder(
+        future: Geolocator.getCurrentPosition(),
+        builder: (context, snapshot) {
+          if (!snapshot.hasData && event.location == null) {
+            return const CircularProgressIndicator();
+          }
+          return ElevatedButton(
+            onPressed: () async {
+              event.location ??=
+                  GeoPoint(snapshot.data!.latitude, snapshot.data!.longitude);
+              var locationSelected = await Navigator.pushNamed(
+                context,
+                LocationMap.routeName,
+                arguments: event.location,
+              );
+              if (locationSelected != null) {
+                var location = locationSelected as LatLng;
+                setState(() {
+                  event.location =
+                      GeoPoint(location.latitude, location.longitude);
+                });
+              }
+            },
+            child: const Text("Select Location"),
+          );
         },
-        child: const Text("Select Location"),
       ),
     );
   }
@@ -291,6 +304,7 @@ class _EventFormState extends State<EventForm> {
             });
           }
         },
+
         /// set keyboard type to number with options
         keyboardType:
             const TextInputType.numberWithOptions(decimal: true, signed: false),
