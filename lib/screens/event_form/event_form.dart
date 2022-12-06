@@ -3,6 +3,7 @@ import 'package:course_project/constants.dart';
 import 'package:course_project/models/db_models/category_model.dart';
 import 'package:course_project/models/entities/category.dart';
 import 'package:course_project/models/entities/event.dart';
+import 'package:course_project/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -70,7 +71,7 @@ class _EventFormState extends State<EventForm> {
             List<Category> categories = snapshot.data;
             return Container(
               padding: const EdgeInsets.only(left: 20, right: 20, top: 5),
-              color: Colors.white,
+              color: Theme.of(context).scaffoldBackgroundColor,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
@@ -125,7 +126,7 @@ class _EventFormState extends State<EventForm> {
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Text(
         displayString,
-        style: const TextStyle(fontSize: mainFontSize, color: kBorderOutline),
+        style: const TextStyle(fontSize: mainFontSize, color: Colors.grey),
       ),
     );
   }
@@ -376,6 +377,7 @@ class _EventFormState extends State<EventForm> {
   /// star rating field (0.5 to 5.0 rating)
   Widget ratingField() {
     return RatingBar.builder(
+      unratedColor: Colors.grey,
       initialRating: event.rating,
       minRating: 0.5,
       allowHalfRating: true,
@@ -404,7 +406,7 @@ class _EventFormState extends State<EventForm> {
           width: 35,
         ),
         DropdownButton<int?>(
-          hint: const Text("Select Category"),
+          hint: const Text("Select Category", style: TextStyle(color: Colors.grey),),
           value: categories
               .firstWhere((element) => element.id == event.categoryId,
                   orElse: () => Category(id: null, name: ""))

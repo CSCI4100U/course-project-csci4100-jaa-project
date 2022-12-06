@@ -24,7 +24,7 @@ class EventDescription extends StatelessWidget {
               EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
           child: Text(
             event.name,
-            style: Theme.of(context).textTheme.headline6,
+            style: TextStyle(color: Colors.grey),//Theme.of(context).textTheme.headline6,
           ),
         ),
         Align(

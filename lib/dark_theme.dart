@@ -24,7 +24,7 @@ InputDecorationTheme inputDecorationTheme() {
     // if you r using flutter less then 1.20.* then maybe this is not working properly
     // if we are define our floatingLabelBehavior in our theme then it's not applayed
     filled: true,
-    fillColor: Colors.grey.withOpacity(0.4),
+    fillColor: Colors.grey.withOpacity(0.3),
     labelStyle: TextStyle(color: kPrimaryColor),
     floatingLabelBehavior: FloatingLabelBehavior.always,
     contentPadding: EdgeInsets.symmetric(horizontal: 42, vertical: 20),

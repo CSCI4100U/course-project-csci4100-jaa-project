@@ -16,7 +16,7 @@ class AppBarIcon extends StatelessWidget {
       height: 40,
       padding: EdgeInsets.symmetric(horizontal: containerWidth, vertical: 5),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Theme.of(context).scaffoldBackgroundColor,//Colors.white,
         borderRadius: BorderRadius.circular(containerWidth),
       ),
       child: Row(
