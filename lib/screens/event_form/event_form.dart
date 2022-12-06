@@ -20,8 +20,7 @@ class EventForm extends StatefulWidget {
 }
 
 class _EventFormState extends State<EventForm> {
-  final _formKey = GlobalKey<FormState>();
-
+  bool firstRender = true;
   Event event = Event();
   DateTime rightNow = DateTime.now();
   DateTime eventTime = DateTime.now();
@@ -48,6 +47,11 @@ class _EventFormState extends State<EventForm> {
     final eventToEdit = ModalRoute.of(context)!.settings.arguments as Event?;
     if (eventToEdit != null) {
       event = eventToEdit;
+      if (firstRender) {
+        eventTime = event.date!;
+        eventDate = event.date!;
+        firstRender = false;
+      }
     }
 
     return Scaffold(
@@ -132,19 +136,20 @@ class _EventFormState extends State<EventForm> {
       padding: const EdgeInsets.only(bottom: 20),
       constraints: const BoxConstraints(maxHeight: 90),
       child: SingleChildScrollView(
-        child: TextField(
+        child: TextFormField(
+          initialValue: event.description,
           style: const TextStyle(fontSize: mainFontSize),
           decoration: const InputDecoration(
-              hintText: "Description",
-              icon: Padding(
-                padding:
-                    EdgeInsets.symmetric(horizontal: mainIconPaddingAmount),
-                child: Icon(
-                  Icons.description,
-                  color: Colors.amber,
-                  size: mainIconSize,
-                ),
-              )),
+            hintText: "Description",
+            icon: Padding(
+              padding: EdgeInsets.symmetric(horizontal: mainIconPaddingAmount),
+              child: Icon(
+                Icons.description,
+                color: Colors.amber,
+                size: mainIconSize,
+              ),
+            ),
+          ),
           maxLines: null,
           onChanged: (value) {
             setState(() {
@@ -161,16 +166,15 @@ class _EventFormState extends State<EventForm> {
       padding: const EdgeInsets.only(bottom: 20),
       child: ElevatedButton(
         onPressed: () {
-            Navigator.pushNamed(context, LocationMap.routeName).then((value) {
-              setState(() {
-                var latlng = value as LatLng;
-                double lat = latlng.latitude;
-                double lng = latlng.longitude;
-                GeoPoint geoPoint = GeoPoint(lat, lng);
-                event.location = geoPoint;
-              });
+          Navigator.pushNamed(context, LocationMap.routeName).then((value) {
+            setState(() {
+              var latlng = value as LatLng;
+              double lat = latlng.latitude;
+              double lng = latlng.longitude;
+              GeoPoint geoPoint = GeoPoint(lat, lng);
+              event.location = geoPoint;
+            });
           });
-
         },
         child: const Text("Select Location"),
       ),
@@ -203,19 +207,19 @@ class _EventFormState extends State<EventForm> {
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         ElevatedButton(
-          onPressed: () {
-            showDatePicker(
+          onPressed: () async {
+            var date = await showDatePicker(
               context: context,
-              initialDate: rightNow,
+              initialDate: event.date ?? rightNow,
               firstDate: rightNow.isBefore(eventDate) ? rightNow : eventDate,
               lastDate: lastDateTimeDate,
-            ).then((value) {
-              if (value != null) {
-                setState(() {
-                  eventDate = value;
-                });
-              }
-            });
+              currentDate: rightNow,
+            );
+            if (date != null) {
+              setState(() {
+                eventDate = date;
+              });
+            }
           },
           child: const Text(
             "Date",
@@ -264,7 +268,8 @@ class _EventFormState extends State<EventForm> {
 
   // event name price widget
   Widget priceFieldWidget() {
-    return TextField(
+    return TextFormField(
+        initialValue: event.price.toString(),
         style: const TextStyle(fontSize: 20),
         decoration: const InputDecoration(
             hintText: "Price",
@@ -278,12 +283,12 @@ class _EventFormState extends State<EventForm> {
             ),
             contentPadding: EdgeInsets.symmetric(horizontal: 50, vertical: 10)),
         onChanged: (value) {
-          setState(() {
-            event.price = double.tryParse(value);
-            if (event.price == null) {
-              print("Invalid value for price");
-            }
-          });
+          double? price = double.tryParse(value);
+          if (price != null) {
+            setState(() {
+              event.price = price;
+            });
+          }
         },
         // keyboard type to number with options
         keyboardType:
@@ -301,18 +306,21 @@ class _EventFormState extends State<EventForm> {
 
   // event name textfield widget
   Widget eventNameTextField() {
-    return TextField(
+    return TextFormField(
+      initialValue: event.name,
       style: const TextStyle(fontSize: mainFontSize),
       decoration: const InputDecoration(
-          hintText: "Event Name",
-          border: OutlineInputBorder(),
-          icon: Padding(
-              padding: EdgeInsets.symmetric(horizontal: mainIconPaddingAmount),
-              child: Icon(
-                Icons.drive_file_rename_outline,
-                color: Colors.brown,
-                size: mainIconSize,
-              ))),
+        hintText: "Event Name",
+        border: OutlineInputBorder(),
+        icon: Padding(
+          padding: EdgeInsets.symmetric(horizontal: mainIconPaddingAmount),
+          child: Icon(
+            Icons.drive_file_rename_outline,
+            color: Colors.brown,
+            size: mainIconSize,
+          ),
+        ),
+      ),
       onChanged: (value) {
         setState(() {
           event.name = value;
@@ -322,7 +330,8 @@ class _EventFormState extends State<EventForm> {
   }
 
   Widget capacityTextField() {
-    return TextField(
+    return TextFormField(
+        initialValue: event.capacity.toString(),
         style: const TextStyle(fontSize: 20),
         decoration: const InputDecoration(
             hintText: "Capacity",
@@ -333,9 +342,12 @@ class _EventFormState extends State<EventForm> {
             ),
             contentPadding: EdgeInsets.symmetric(horizontal: 50, vertical: 10)),
         onChanged: (value) {
-          setState(() {
-            event.capacity = int.tryParse(value);
-          });
+          int? capacity = int.tryParse(value);
+          if (capacity != null) {
+            setState(() {
+              event.capacity = capacity;
+            });
+          }
         },
         // keyboard type to number keyboard
         keyboardType: TextInputType.number,
@@ -376,7 +388,7 @@ class _EventFormState extends State<EventForm> {
           width: 35,
         ),
         DropdownButton<int?>(
-          hint: new Text("Select Category"),
+          hint: const Text("Select Category"),
           value: categories
               .firstWhere((element) => element.id == event.categoryId,
                   orElse: () => Category(id: null, name: ""))

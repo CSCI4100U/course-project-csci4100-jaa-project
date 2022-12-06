@@ -113,4 +113,10 @@ class EventModel {
     var data = (await event.reference!.get()).data() as Map<String, dynamic>;
     return data['assistantsIds'].length >= data['capacity'];
   }
+
+  static Future<Event> getEventById(String id) async {
+    var snapshot =
+        await FirebaseFirestore.instance.collection('events').doc(id).get();
+    return Event.fromMap(FireBaseCloudUtil.generateDocumentMap(snapshot));
+  }
 }

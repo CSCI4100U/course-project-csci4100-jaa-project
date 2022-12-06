@@ -96,6 +96,10 @@ class Event {
     return DateFormatDisplay.format(date!);
   }
 
+  bool isFull() {
+    return capacity! <= assistantsIds.length;
+  }
+
   Future<List<String>> _getImagesFromCategory({int? totalImages}) async {
     String imagesDirectoryPath = "assets/images/categories/no_category";
     if (categoryId != null) {

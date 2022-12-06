@@ -1,21 +1,21 @@
 import 'package:course_project/auth/fire_auth.dart';
 import 'package:course_project/models/entities/event.dart';
-import 'package:course_project/screens/home/components/events_grid.dart';
+import 'package:course_project/components/events_grid.dart';
 import 'package:flutter/material.dart';
 import 'package:course_project/models/db_models/event_model.dart';
 
 import '../../../size_config.dart';
 import 'section_title.dart';
 
-class EventsList extends StatefulWidget {
+class EventsDisplay extends StatefulWidget {
   static String routeName = '/eventsList';
-  const EventsList({super.key});
+  const EventsDisplay({super.key});
 
   @override
-  State<EventsList> createState() => _EventsListState();
+  State<EventsDisplay> createState() => _EventsDisplayState();
 }
 
-class _EventsListState extends State<EventsList> {
+class _EventsDisplayState extends State<EventsDisplay> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,9 +54,13 @@ class _EventsListState extends State<EventsList> {
             return const CircularProgressIndicator();
           }
           List<Event> events = snapshot.data as List<Event>;
-          return GridEvents(events: events);
+          return GridEvents(events: events, whenReturn: whenReturn);
         },
       ),
     );
+  }
+
+  void whenReturn() {
+    setState(() {});
   }
 }

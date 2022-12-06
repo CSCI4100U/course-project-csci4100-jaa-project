@@ -1,11 +1,9 @@
+import 'package:course_project/components/events_grid.dart';
 import 'package:course_project/models/db_models/event_model.dart';
 import 'package:course_project/models/entities/category.dart';
 import 'package:course_project/models/entities/event.dart';
-import 'package:course_project/screens/event/components/grid_events.dart';
-import 'package:course_project/screens/event/components/search_field.dart';
 import 'package:course_project/screens/event/components/section_title.dart';
 import 'package:flutter/material.dart';
-import 'package:course_project/components/event_card.dart';
 import 'package:course_project/size_config.dart';
 
 class AllEvents extends StatefulWidget {
@@ -52,7 +50,7 @@ class _AllEventsState extends State<AllEvents> {
                 builder: (context, snapshot) {
                   if (snapshot.hasData) {
                     List<Event> events = snapshot.data as List<Event>;
-                    return GridEvents(events: events);
+                    return GridEvents(events: events, whenReturn: whenReturn);
                   } else {
                     return const CircularProgressIndicator();
                   }
@@ -63,5 +61,9 @@ class _AllEventsState extends State<AllEvents> {
         ),
       ],
     );
+  }
+
+  void whenReturn() {
+    setState(() {});
   }
 }

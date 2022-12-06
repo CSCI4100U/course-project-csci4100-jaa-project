@@ -52,37 +52,24 @@ class _BodyState extends State<Body> {
                     TopRoundedContainer(
                       color: Colors.white,
                       child: Padding(
-                        padding: EdgeInsets.only(
-                          left: SizeConfig.screenWidth * 0.15,
-                          right: SizeConfig.screenWidth * 0.15,
-                          bottom: getProportionateScreenWidth(40),
-                          top: getProportionateScreenWidth(15),
-                        ),
-                        child: StreamBuilder(
-                          stream: Stream.fromFuture(
-                              EventModel.isFull(widget.event)),
-                          builder: (context, snapshot) {
-                            if (!snapshot.hasData) {
-                              return const CircularProgressIndicator();
-                            }
-
-                            bool isFull = snapshot.data as bool;
-                            if (isFull && !userAssists) {
-                              return const DefaultButton(
-                                text: "Event is full",
-                              );
-                            }
-
-                            return DefaultButton(
-                              text: userAssists
-                                  ? "Quit from Event"
-                                  : "Assist to Event",
-                              press:
-                                  userAssists ? quitFromEvent : assistToEvent,
-                            );
-                          },
-                        ),
-                      ),
+                          padding: EdgeInsets.only(
+                            left: SizeConfig.screenWidth * 0.15,
+                            right: SizeConfig.screenWidth * 0.15,
+                            bottom: getProportionateScreenWidth(40),
+                            top: getProportionateScreenWidth(15),
+                          ),
+                          child: widget.event.isFull() && !userAssists
+                              ? const DefaultButton(
+                                  text: "Event is full",
+                                )
+                              : DefaultButton(
+                                  text: userAssists
+                                      ? "Quit from Event"
+                                      : "Assist to Event",
+                                  press: userAssists
+                                      ? quitFromEvent
+                                      : assistToEvent,
+                                )),
                     ),
                   ],
                 ),

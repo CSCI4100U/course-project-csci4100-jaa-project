@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:course_project/size_config.dart';
 
-import 'events_list.dart';
+import 'events_display.dart';
 
 class MyEventBanner extends StatelessWidget {
   const MyEventBanner({
@@ -12,7 +12,7 @@ class MyEventBanner extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () async =>
-          await Navigator.pushNamed(context, EventsList.routeName),
+          await Navigator.pushNamed(context, EventsDisplay.routeName),
       child: Container(
         width: double.infinity,
         margin: EdgeInsets.all(getProportionateScreenWidth(20)),

@@ -46,32 +46,23 @@ class EventDescription extends StatelessWidget {
             left: getProportionateScreenWidth(20),
             right: getProportionateScreenWidth(64),
           ),
-          child: StreamBuilder(
-            stream: Stream.fromFuture(EventModel.getTotalAssistants(event)),
-            builder: (context, snapshot) {
-              if (!snapshot.hasData) {
-                return const Center(child: CircularProgressIndicator());
-              }
-              int totalAssistants = snapshot.data ?? 0;
-              return Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    event.description,
-                    maxLines: 3,
-                  ),
-                  Text(
-                    "Price: \$${event.price}",
-                  ),
-                  Text(
-                    "Date: ${event.date}",
-                  ),
-                  Text(
-                    "Assistants: $totalAssistants/${event.capacity}",
-                  )
-                ],
-              );
-            },
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                event.description,
+                maxLines: 3,
+              ),
+              Text(
+                "Price: \$${event.price}",
+              ),
+              Text(
+                "Date: ${DateFormatDisplay.format(event.date!)}",
+              ),
+              Text(
+                "Assistants: ${event.assistantsIds.length}/${event.capacity}",
+              )
+            ],
           ),
         ),
       ],
