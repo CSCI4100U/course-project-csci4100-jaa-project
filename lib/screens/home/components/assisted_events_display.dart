@@ -1,4 +1,5 @@
 import 'package:course_project/auth/fire_auth.dart';
+import 'package:course_project/constants.dart';
 import 'package:course_project/models/entities/event.dart';
 import 'package:course_project/components/events_grid.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +21,7 @@ class _AssistedEventsDisplayState extends State<AssistedEventsDisplay> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Events I'm Assisting"),
+        title: const Text("Events I'm Assisting", style: TextStyle(color: kPrimaryColor),),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -28,12 +29,7 @@ class _AssistedEventsDisplayState extends State<AssistedEventsDisplay> {
             Padding(
               padding: EdgeInsets.symmetric(
                   horizontal: getProportionateScreenWidth(20)),
-              child: const Text("Events I'm Assisting",
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.blueGrey)
-              ),
+              child: const Text(""),
             ),
             _buildProductList(context),
           ],
