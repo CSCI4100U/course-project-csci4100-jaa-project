@@ -29,7 +29,7 @@ class _PopularEventsState extends State<PopularEvents> {
               if (snapshot.hasData) {
                 List<Event> events = snapshot.data ?? [];
                 return Padding(
-                  padding: const EdgeInsets.only(right: 20),
+                  padding: const EdgeInsets.only(right: 20, bottom: 20),
                   child: Row(
                     children: events
                         .map((event) => EventCard(
