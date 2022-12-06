@@ -29,7 +29,11 @@ class _EventsListState extends State<EventsList> {
               padding: EdgeInsets.symmetric(
                   horizontal: getProportionateScreenWidth(20)),
               child: const Text("My Events",
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.blueGrey)
+              ),
             ),
             _buildProductList(context),
           ],
