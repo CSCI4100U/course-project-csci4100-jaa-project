@@ -1,11 +1,12 @@
 import 'package:course_project/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_i18n/flutter_i18n.dart';
 import '../../models/db_models/event_model.dart';
 
 /// Data Table Screen
 class EventTable extends StatefulWidget {
   static String routeName = "/events-table";
-  String? title;
+  final String? title;
 
   EventTable({Key? key, this.title = "Table"}) : super(key: key);
 
@@ -14,7 +15,9 @@ class EventTable extends StatefulWidget {
 }
 
 class _EventTableState extends State<EventTable> {
-  final List<String> columnNames = [
+  final i18nKey = "event_table";
+
+  late List<String> columnNames = [
     'id',
     'Name',
     'Price',
@@ -23,8 +26,12 @@ class _EventTableState extends State<EventTable> {
     'Rating per Price',
     'Capacity per Price',
     'Date',
-    'Date Created'
-  ];
+    'Date Created',
+  ]
+      .map(
+          (col) => FlutterI18n.translate(context, "$i18nKey.column_names.$col"))
+      .toList();
+
   final EventModel _eventModel = EventModel();
   final TextStyle tableTitleTextStyle = const TextStyle(
     color: Colors.indigo,
@@ -78,7 +85,7 @@ class _EventTableState extends State<EventTable> {
                     child: Row(
                       children: [
                         Text(
-                          "Events Data Table    ",
+                          FlutterI18n.translate(context, "$i18nKey.title"),
                           style: tableTitleTextStyle,
                         ),
 
@@ -95,7 +102,8 @@ class _EventTableState extends State<EventTable> {
 
                   /// data table
                   DataTable(
-                    headingRowColor: MaterialStateProperty.resolveWith((states) {
+                    headingRowColor:
+                        MaterialStateProperty.resolveWith((states) {
                       return kPrimaryColor;
                     }),
                     columnSpacing: 10,

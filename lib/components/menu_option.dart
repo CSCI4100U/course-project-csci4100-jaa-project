@@ -13,9 +13,7 @@ class MenuOption {
   MenuOption({this.builder, this.icon, this.name, this.onSelected}) {
     optionsCount++;
     id = optionsCount;
-    if (this.onSelected == null) {
-      this.onSelected = () {};
-    }
+    onSelected ??= () {};
   }
 }
 

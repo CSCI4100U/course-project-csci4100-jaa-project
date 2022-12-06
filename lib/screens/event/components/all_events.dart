@@ -5,6 +5,7 @@ import 'package:course_project/models/entities/event.dart';
 import 'package:course_project/screens/event/components/section_title.dart';
 import 'package:flutter/material.dart';
 import 'package:course_project/size_config.dart';
+import 'package:flutter_i18n/flutter_i18n.dart';
 
 class AllEvents extends StatefulWidget {
   AllEvents({Key? key, required this.categoryFilter}) : super(key: key);
@@ -16,6 +17,8 @@ class AllEvents extends StatefulWidget {
 }
 
 class _AllEventsState extends State<AllEvents> {
+  final i18nKey = "event_screen.all_events";
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -35,11 +38,18 @@ class _AllEventsState extends State<AllEvents> {
               padding: EdgeInsets.symmetric(
                   horizontal: getProportionateScreenWidth(20)),
               child: SectionTitle(
-                  title: "All ${widget.categoryFilter?.name ?? ""} Events",
+                  title: FlutterI18n.translate(
+                    context,
+                    "$i18nKey.title",
+                    translationParams: {
+                      "categoryFilter":
+                          widget.categoryFilter?.i18nName(context) ?? "",
+                    },
+                  ),
                   press: () {}),
             ),
             SizedBox(height: getProportionateScreenWidth(20)),
-            Container(
+            SizedBox(
               height: getProportionateScreenHeight(60000),
               child: StreamBuilder(
                 stream: Stream.fromFuture(EventModel()

@@ -2,6 +2,7 @@ import 'package:course_project/auth/fire_auth.dart';
 import 'package:course_project/models/db_models/event_model.dart';
 import 'package:course_project/screens/event_form/event_form.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_i18n/flutter_i18n.dart';
 
 import '../../models/entities/event.dart';
 import 'components/body.dart';
@@ -55,9 +56,11 @@ class _DetailsScreenState extends State<DetailsScreen> {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Column(
-            children: const [
-              Text("You can't delete this event"),
-              Text("You are not the owner"),
+            children: [
+              Text(FlutterI18n.translate(
+                  context, "details_screen.cant_delete.first_message")),
+              Text(FlutterI18n.translate(
+                  context, "details_screen.cant_delete.second_message")),
             ],
           ),
         ),
@@ -82,9 +85,11 @@ class _DetailsScreenState extends State<DetailsScreen> {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Column(
-            children: const [
-              Text("You can't edit this event"),
-              Text("You are not the owner"),
+            children: [
+              Text(FlutterI18n.translate(
+                  context, "details_screen.cant_edit.first_message")),
+              Text(FlutterI18n.translate(
+                  context, "details_screen.cant_edit.second_message")),
             ],
           ),
         ),

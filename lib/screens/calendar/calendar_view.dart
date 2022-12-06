@@ -31,20 +31,17 @@ class _CalendarViewState extends State<CalendarView> {
     getAllEventsDateTimes();
   }
 
-
   /// from the cloud database, get all the events for each DateTime
-  void getAllEventsDateTimes () async {
+  void getAllEventsDateTimes() async {
     var events = await _eventModel.getAllEvents();
     for (var event in events) {
       var eventDateTime = event.date!.toLocal();
-      var eventDate = DateTime(
-          eventDateTime.year, eventDateTime.month, eventDateTime.day
-      );
+      var eventDate =
+          DateTime(eventDateTime.year, eventDateTime.month, eventDateTime.day);
 
       if (eventDateTimes.containsKey(eventDate)) {
         eventDateTimes[eventDate]!.add(event);
-      }
-      else {
+      } else {
         eventDateTimes[eventDate] = [event];
       }
     }
@@ -54,11 +51,15 @@ class _CalendarViewState extends State<CalendarView> {
       print("Calendar started");
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('', style: TextStyle(color: Colors.indigo),),
+        title: const Text(
+          'Calendar',
+          style: TextStyle(color: Colors.indigo),
+        ),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -79,8 +80,8 @@ class _CalendarViewState extends State<CalendarView> {
 
                   /// text style for days with event(s) on them
                   eventDayStyle: const TextStyle(
-                      color: Colors.red,
-                      fontWeight: FontWeight.bold,
+                    color: Colors.red,
+                    fontWeight: FontWeight.bold,
                   ),
                   todayColor: Colors.blue,
                   selectedColor: Theme.of(context).primaryColor,
@@ -89,8 +90,7 @@ class _CalendarViewState extends State<CalendarView> {
                   todayStyle: const TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 30.0,
-                      color: Colors.white)
-              ),
+                      color: Colors.white)),
 
               /// header style (where it says "month", "2 weeks", or "week")
               headerStyle: HeaderStyle(
@@ -105,20 +105,18 @@ class _CalendarViewState extends State<CalendarView> {
               startingDayOfWeek: StartingDayOfWeek.sunday,
 
               /// get the current selectedEvents and store into the list
-              onDaySelected: 
-                  (date, events, _) {
-                  setState(() {
-                    selectedEvents = events;
-                  });
+              onDaySelected: (date, events, _) {
+                setState(() {
+                  selectedEvents = events;
+                });
               },
               builders: CalendarBuilders(
                 selectedDayBuilder: (context, date, events) => Container(
                   margin: const EdgeInsets.all(5.0),
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
-                    color: Theme.of(context).backgroundColor,
-                    borderRadius: BorderRadius.circular(8.0)
-                  ),
+                      color: Theme.of(context).backgroundColor,
+                      borderRadius: BorderRadius.circular(8.0)),
                   child: Text(
                     date.day.toString(),
                     style: const TextStyle(color: Colors.black),
@@ -127,45 +125,43 @@ class _CalendarViewState extends State<CalendarView> {
 
                 /// blue box for selected day
                 todayDayBuilder: (context, date, events) => Container(
-                  margin: const EdgeInsets.all(5.0),
-                  alignment: Alignment.center,
-                  decoration: BoxDecoration(
-                    color: Colors.blue,
-                    borderRadius: BorderRadius.circular(8.0)
-                  ),
-                  child: Text(
-                    date.day.toString(),
-                    style: const TextStyle(color: Colors.white),
-                  )
-                ),
+                    margin: const EdgeInsets.all(5.0),
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                        color: Colors.blue,
+                        borderRadius: BorderRadius.circular(8.0)),
+                    child: Text(
+                      date.day.toString(),
+                      style: const TextStyle(color: Colors.white),
+                    )),
               ),
               calendarController: _controller,
             ),
 
             /// show all the events (if any) at the bottom, for the selected day
             ...selectedEvents.map((event) => ListTile(
-                title: Text(
-                  convertDateTimeToDate(event.date),
-                  style: const TextStyle(
-                    color: kPrimaryColor
+                  title: Text(
+                    convertDateTimeToDate(event.date),
+                    style: const TextStyle(color: kPrimaryColor),
                   ),
-                ),
-                subtitle: Text(event.name, style: TextStyle(color: Colors.blueGrey),),
-                trailing: Text(convertDateTimeToTime(event.date)),
-              )
-            ),
+                  subtitle: Text(
+                    event.name,
+                    style: TextStyle(color: Colors.blueGrey),
+                  ),
+                  trailing: Text(convertDateTimeToTime(event.date)),
+                )),
           ],
         ),
       ),
     );
   }
 
-  String convertDateTimeToDate (DateTime date) {
+  String convertDateTimeToDate(DateTime date) {
     final dateFormat = DateFormat('EEEE MMMM dd');
     return dateFormat.format(date);
   }
 
-  String convertDateTimeToTime (DateTime date) {
+  String convertDateTimeToTime(DateTime date) {
     final dateFormat = DateFormat('Hm');
     return dateFormat.format(date);
   }

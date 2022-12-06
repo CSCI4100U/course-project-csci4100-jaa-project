@@ -3,6 +3,7 @@ import 'package:course_project/models/entities/event.dart';
 import 'package:flutter/material.dart';
 import 'package:course_project/components/event_card.dart';
 import 'package:course_project/size_config.dart';
+import 'package:flutter_i18n/flutter_i18n.dart';
 import 'section_title.dart';
 
 class PopularEvents extends StatefulWidget {
@@ -11,6 +12,8 @@ class PopularEvents extends StatefulWidget {
 }
 
 class _PopularEventsState extends State<PopularEvents> {
+  final i18nKey = "home_screen.popular_events";
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -18,7 +21,10 @@ class _PopularEventsState extends State<PopularEvents> {
         Padding(
           padding:
               EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
-          child: SectionTitle(title: "Popular Events", press: () {}),
+          child: SectionTitle(
+            title: FlutterI18n.translate(context, "$i18nKey.title"),
+            press: () {},
+          ),
         ),
         SizedBox(height: getProportionateScreenWidth(20)),
         SingleChildScrollView(

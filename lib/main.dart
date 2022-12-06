@@ -5,14 +5,16 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:timezone/timezone.dart' as tz;
 import 'package:timezone/data/latest.dart' as tz;
+import 'package:flutter_i18n/flutter_i18n.dart';
+import 'package:flutter_i18n/flutter_i18n_delegate.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'package:course_project/firebase_options.dart';
 import 'package:course_project/theme.dart';
 import 'package:course_project/constants.dart';
-import 'dark_theme.dart';
-import 'models/notifications.dart';
 import 'package:course_project/models/db_models/category_model.dart';
 import 'package:course_project/screens/home/home_screen.dart';
+import 'dark_theme.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -53,10 +55,28 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Event App',
-        theme: theme(),         // light theme
+        theme: theme(), // light theme
         darkTheme: darkTheme(), // dark theme
         initialRoute: HomeScreen.routeName,
         routes: routes,
+        localizationsDelegates: [
+          FlutterI18nDelegate(
+            missingTranslationHandler: (key, locale) {
+              print("MISSING KEY: $key, Language Code: ${locale.languageCode}");
+            },
+            translationLoader: FileTranslationLoader(
+              useCountryCode: false,
+              fallbackFile: 'en',
+              basePath: 'assets/i18n',
+            ),
+          ),
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+        ],
+        supportedLocales: const [
+          Locale('en'),
+          Locale('es'),
+        ],
       ),
     );
   }

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:course_project/components/default_button.dart';
 import 'package:course_project/models/entities/event.dart';
 import 'package:course_project/size_config.dart';
+import 'package:flutter_i18n/flutter_i18n.dart';
 
 import 'event_description.dart';
 import 'top_rounded_container.dart';
@@ -59,13 +60,16 @@ class _BodyState extends State<Body> {
                             top: getProportionateScreenWidth(15),
                           ),
                           child: widget.event.isFull() && !userAssists
-                              ? const DefaultButton(
-                                  text: "Event is full",
+                              ? DefaultButton(
+                                  text: FlutterI18n.translate(
+                                      context, "details_screen.event_is_full"),
                                 )
                               : DefaultButton(
                                   text: userAssists
-                                      ? "Quit from Event"
-                                      : "Assist to Event",
+                                      ? FlutterI18n.translate(context,
+                                          "details_screen.quit_from_event")
+                                      : FlutterI18n.translate(context,
+                                          "details_screen.assist_to_event"),
                                   press: userAssists
                                       ? quitFromEvent
                                       : assistToEvent,

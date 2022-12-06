@@ -3,6 +3,7 @@ import 'package:course_project/models/db_models/notifications_model.dart';
 import 'package:course_project/models/entities/notification.dart'
     as notification;
 import 'package:flutter/material.dart';
+import 'package:flutter_i18n/flutter_i18n.dart';
 
 class Body extends StatefulWidget {
   const Body({super.key});
@@ -12,6 +13,8 @@ class Body extends StatefulWidget {
 }
 
 class _BodyState extends State<Body> {
+  final i18nKey = "notifications_screen.body";
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -19,9 +22,9 @@ class _BodyState extends State<Body> {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            const Text(
-              "Notifications",
-              style: TextStyle(
+            Text(
+              FlutterI18n.translate(context, "$i18nKey.title"),
+              style: const TextStyle(
                 color: kPrimaryColor,
                 fontSize: 40,
                 fontWeight: FontWeight.bold,
@@ -52,8 +55,14 @@ class _BodyState extends State<Body> {
       itemBuilder: (context, index) {
         var notification = notifications[index];
         return ListTile(
-          title: Text(notification.title, style: TextStyle(color: Colors.blueGrey),),
-          subtitle: Text(notification.body, style: TextStyle(color: Colors.grey),),
+          title: Text(
+            notification.title,
+            style: TextStyle(color: Colors.blueGrey),
+          ),
+          subtitle: Text(
+            notification.body,
+            style: TextStyle(color: Colors.grey),
+          ),
           trailing:
               Text(DateFormatDisplayShort.format(notification.createdAt!)),
         );

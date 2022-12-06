@@ -3,14 +3,11 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 import 'package:course_project/models/db_models/notifications_model.dart';
 import 'package:course_project/models/entities/notification.dart';
-import 'package:course_project/models/notifications.dart';
 import 'package:course_project/models/entities/category.dart';
 import 'package:course_project/models/entities/event.dart';
 import 'package:course_project/db/firebase_cloud_utils.dart';
 
 class EventModel {
-  final _notifications = Notifications();
-
   //Inserts an event into the database
   Future insertEvent(Event event, User author) async {
     final data = event.toMap();

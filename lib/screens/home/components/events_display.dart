@@ -4,9 +4,9 @@ import 'package:course_project/models/entities/event.dart';
 import 'package:course_project/components/events_grid.dart';
 import 'package:flutter/material.dart';
 import 'package:course_project/models/db_models/event_model.dart';
+import 'package:flutter_i18n/flutter_i18n.dart';
 
 import '../../../size_config.dart';
-import 'section_title.dart';
 
 class EventsDisplay extends StatefulWidget {
   static String routeName = '/eventsList';
@@ -17,11 +17,16 @@ class EventsDisplay extends StatefulWidget {
 }
 
 class _EventsDisplayState extends State<EventsDisplay> {
+  final i18nKey = "home_screen.events_display";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("My Events", style: TextStyle(color: kPrimaryColor),),
+        title: const Text(
+          "My Events",
+          style: TextStyle(color: kPrimaryColor),
+        ),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -29,7 +34,14 @@ class _EventsDisplayState extends State<EventsDisplay> {
             Padding(
               padding: EdgeInsets.symmetric(
                   horizontal: getProportionateScreenWidth(20)),
-              child: const Text(""),
+              child: Text(
+                FlutterI18n.translate(context, "$i18nKey.my_events"),
+                style: const TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.blueGrey,
+                ),
+              ),
             ),
             _buildProductList(context),
           ],
