@@ -66,6 +66,7 @@ class CustomAppBar extends StatelessWidget {
                 containerWidth: 1,
                 children: [
                   IconButton(
+                    color: Colors.grey,
                     onPressed: () async =>
                         await onEdit(context, isOwner, event),
                     icon: const Icon(Icons.edit),
@@ -80,6 +81,7 @@ class CustomAppBar extends StatelessWidget {
                 containerWidth: 1,
                 children: [
                   IconButton(
+                    color: Colors.grey,
                     onPressed: () => onDelete(context, isOwner, event),
                     icon: const Icon(Icons.delete),
                   ),
