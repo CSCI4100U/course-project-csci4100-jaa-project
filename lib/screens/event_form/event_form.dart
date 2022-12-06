@@ -119,7 +119,7 @@ class _EventFormState extends State<EventForm> {
     return "${twoDigits(date.hour)}:${twoDigits(date.minute)}";
   }
 
-  // used to display the date and time
+  /// used to display the date and time
   Widget displayTextContainer(String displayString) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -130,7 +130,7 @@ class _EventFormState extends State<EventForm> {
     );
   }
 
-  // description widget
+  /// description widget
   Widget descriptionWidget() {
     return Container(
       padding: const EdgeInsets.only(bottom: 20),
@@ -161,6 +161,7 @@ class _EventFormState extends State<EventForm> {
     );
   }
 
+  /// select location button
   Widget mapScreenButton() {
     return Container(
       padding: const EdgeInsets.only(bottom: 20),
@@ -181,7 +182,7 @@ class _EventFormState extends State<EventForm> {
     );
   }
 
-  // save button widget
+  /// save button widget
   Widget saveButton() {
     return ElevatedButton(
       onPressed: () {
@@ -201,7 +202,7 @@ class _EventFormState extends State<EventForm> {
     );
   }
 
-  // date button and date picker widget
+  /// date button and date picker widget
   Widget dateWidget() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
@@ -231,7 +232,7 @@ class _EventFormState extends State<EventForm> {
     );
   }
 
-  // time button and time picker widget
+  /// time button and time picker widget
   Widget timeWidget() {
     return Row(
       children: [
@@ -266,7 +267,7 @@ class _EventFormState extends State<EventForm> {
     );
   }
 
-  // event name price widget
+  /// event name price widget
   Widget priceFieldWidget() {
     return TextFormField(
         initialValue: event.price.toString(),
@@ -290,7 +291,7 @@ class _EventFormState extends State<EventForm> {
             });
           }
         },
-        // keyboard type to number with options
+        /// set keyboard type to number with options
         keyboardType:
             const TextInputType.numberWithOptions(decimal: true, signed: false),
         inputFormatters: [
@@ -304,7 +305,7 @@ class _EventFormState extends State<EventForm> {
         ]);
   }
 
-  // event name textfield widget
+  /// event name textfield widget
   Widget eventNameTextField() {
     return TextFormField(
       initialValue: event.name,
@@ -329,6 +330,7 @@ class _EventFormState extends State<EventForm> {
     );
   }
 
+  /// capacity text field
   Widget capacityTextField() {
     return TextFormField(
         initialValue: event.capacity.toString(),
@@ -357,7 +359,7 @@ class _EventFormState extends State<EventForm> {
         );
   }
 
-  // star rating field (0.5 to 5.0 rating)
+  /// star rating field (0.5 to 5.0 rating)
   Widget ratingField() {
     return RatingBar.builder(
       initialRating: event.rating,
@@ -378,7 +380,7 @@ class _EventFormState extends State<EventForm> {
     );
   }
 
-  // Generate the category dropdown
+  /// Generate the category dropdown
   Widget categoriesDropdown(List<Category> categories) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,

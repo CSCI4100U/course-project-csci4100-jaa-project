@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'constants.dart';
 
+/// theme for when the user's phone is set to use the default light mode
 ThemeData theme() {
   return ThemeData(
     scaffoldBackgroundColor: Colors.white,

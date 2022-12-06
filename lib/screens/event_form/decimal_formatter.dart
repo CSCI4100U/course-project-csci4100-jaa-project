@@ -2,7 +2,7 @@ import 'package:flutter/services.dart';
 import 'dart:math' as math;
 
 
-// to only allow for a maximum of 2 decimals to be entered (used for the price field)
+/// to only allow for a maximum of 2 decimals to be entered (used for the price field)
 class DecimalTextInputFormatter extends TextInputFormatter {
   DecimalTextInputFormatter({this.decimalRange = 2})
       : assert(decimalRange == null || decimalRange > 0);

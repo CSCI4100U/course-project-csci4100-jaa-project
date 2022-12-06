@@ -53,8 +53,8 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Event App',
-        theme: theme(),
-        darkTheme: darkTheme(),
+        theme: theme(),         // light theme
+        darkTheme: darkTheme(), // dark theme
         initialRoute: HomeScreen.routeName,
         routes: routes,
       ),

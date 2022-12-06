@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:charts_flutter_new/flutter.dart' as charts;
 import 'package:course_project/models/db_models/event_model.dart';
 import 'package:zoom_widget/zoom_widget.dart';
-import '../../components/chart_widgets.dart';
+import 'components/chart_widgets.dart';
 
 /// Vertical Bar Chart screen
 class VerticalChart extends StatefulWidget {

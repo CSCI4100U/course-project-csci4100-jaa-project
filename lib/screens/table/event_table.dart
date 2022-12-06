@@ -50,10 +50,8 @@ class _EventTableState extends State<EventTable> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(), // empty app bar
-      body:
-
-          /// so the user can scroll through the datatable items horizontally
-          SingleChildScrollView(
+      /// so the user can scroll through the datatable items horizontally
+      body: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
 
         /// so the user can scroll through the datatable items vertically
@@ -187,6 +185,7 @@ class _EventTableState extends State<EventTable> {
     ]);
   }
 
+  /// returns newly sorted dataColumn
   DataColumn sortedColumnWidget(String? title, String? dataName) {
     return DataColumn(
         label: Text(title!),

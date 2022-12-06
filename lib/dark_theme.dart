@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-
 import 'constants.dart';
 
+/// darkTheme for when the user's phone is set to use dark mode
 ThemeData darkTheme() {
   return ThemeData(
     scaffoldBackgroundColor: Colors.black38,
