@@ -23,26 +23,14 @@ class _EventsDisplayState extends State<EventsDisplay> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          "My Events",
+        title: Text(
+                FlutterI18n.translate(context, "$i18nKey.my_events"),
           style: TextStyle(color: kPrimaryColor),
         ),
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Padding(
-              padding: EdgeInsets.symmetric(
-                  horizontal: getProportionateScreenWidth(20)),
-              child: Text(
-                FlutterI18n.translate(context, "$i18nKey.my_events"),
-                style: const TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.blueGrey,
-                ),
-              ),
-            ),
             _buildProductList(context),
           ],
         ),
