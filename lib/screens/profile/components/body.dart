@@ -9,9 +9,14 @@ import '../my_account.dart';
 import 'profile_menu.dart';
 import 'profile_pic.dart';
 
-class Body extends StatelessWidget {
+class Body extends StatefulWidget {
   const Body({super.key});
 
+  @override
+  State<Body> createState() => _BodyState();
+}
+
+class _BodyState extends State<Body> {
   final i18nKey = "profile_screen.body";
 
   @override
@@ -25,8 +30,10 @@ class Body extends StatelessWidget {
           ProfileMenu(
             text: FlutterI18n.translate(context, "$i18nKey.my_account"),
             icon: "assets/icons/User Icon.svg",
-            press: () async =>
-                await Navigator.pushNamed(context, MyAccount.routeName),
+            press: () async {
+              await Navigator.pushNamed(context, MyAccount.routeName);
+              setState(() {});
+            },
           ),
           ProfileMenu(
             text: FlutterI18n.translate(context, "$i18nKey.notifications"),

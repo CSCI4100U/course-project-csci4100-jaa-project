@@ -131,3 +131,8 @@ List<CategoryEntity.Category> defaultCategories = [
     imagesPath: "assets/images/categories/other",
   ),
 ];
+
+const List<Locale> supportedLocales = [
+  Locale('en'),
+  Locale('es'),
+];

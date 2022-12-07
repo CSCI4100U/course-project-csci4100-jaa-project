@@ -10,6 +10,7 @@ import '../../table/event_table.dart';
 
 class DataVisualizationsDisplay extends StatelessWidget {
   final i18nKey = "home_screen.data_visualizations";
+
   List<String> routeNames = [
     EventTable.routeName,
     HorizontalChart.routeName,

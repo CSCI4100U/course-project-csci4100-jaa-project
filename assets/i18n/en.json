@@ -59,10 +59,19 @@
   },
   "event_screen": {
     "all_events": {
-      "title": "All {categoryFilter} Events"
+      "title": "All {categoryFilter} Events",
+      "connection_filter-0": "",
+      "connection_filter-1": ""
     }
   },
   "home_screen": {
+    "assisted_events_banner": {
+      "title": "Events you are attending\n",
+      "subtitle": "View the events you will attend!"
+    },
+    "assisted_events_display": {
+      "title": "Events I'm attending"
+    },
     "data_visualizations": {
       "table": {
         "name": "Table",
@@ -89,14 +98,14 @@
         "title": "Would you like to create this event?",
         "yes_option": "Yes, create event",
         "no_option": "No, cancel"
-      },
-      "popular_events": {
-        "title": "Popular Events"
-      },
-      "your_events_banner": {
-        "title": "Events you created\n",
-        "subtitle": "View your events!"
       }
+    },
+    "popular_events": {
+      "title": "Popular Events"
+    },
+    "your_events_banner": {
+      "title": "Events you created\n",
+      "subtitle": "View your events!"
     }
   },
   "notifications_screen": {
@@ -114,7 +123,8 @@
       "title": "My Account Details",
       "email": "Email: {email}",
       "name": "Name: {name}",
-      "phone": "Phone: {phone}"
+      "phone": "Phone: {phone}",
+      "locale": "Select Language: "
     },
     "event_table": {
       "title": "Events Data Table    ",
@@ -129,6 +139,14 @@
         "Date": "Date",
         "Date Created": "Date Created"
       }
+    }
+  },
+  "components": {
+    "menu_option": {
+      "Home": "Home",
+      "Profile": "Profile",
+      "Events": "Events",
+      "Map": "Map"
     }
   },
   "categories": {
@@ -147,5 +165,9 @@
       "body": "Starting in {date}",
       "payload": "Event id: {id}"
     }
+  },
+  "locales": {
+    "en": "English",
+    "es": "Spanish"
   }
 }

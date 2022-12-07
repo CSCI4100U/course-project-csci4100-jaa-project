@@ -4,24 +4,31 @@ import 'package:course_project/models/entities/event.dart';
 import 'package:course_project/components/events_grid.dart';
 import 'package:flutter/material.dart';
 import 'package:course_project/models/db_models/event_model.dart';
+import 'package:flutter_i18n/flutter_i18n.dart';
 
 import '../../../size_config.dart';
 import 'section_title.dart';
 
 class AssistedEventsDisplay extends StatefulWidget {
   static String routeName = '/assistedEventsList';
-  AssistedEventsDisplay({super.key});
+
+  const AssistedEventsDisplay({super.key});
 
   @override
   State<AssistedEventsDisplay> createState() => _AssistedEventsDisplayState();
 }
 
 class _AssistedEventsDisplayState extends State<AssistedEventsDisplay> {
+  final i18nKey = "home_screen.assisted_events_display";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Events I'm Attending", style: TextStyle(color: kPrimaryColor),),
+        title: Text(
+          FlutterI18n.translate(context, "$i18nKey.title"),
+          style: const TextStyle(color: kPrimaryColor),
+        ),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -36,7 +43,8 @@ class _AssistedEventsDisplayState extends State<AssistedEventsDisplay> {
         ),
       ),
     );
-}
+  }
+
   Widget _buildProductList(BuildContext context) {
     return Container(
       height: getProportionateScreenHeight(695),
@@ -58,5 +66,4 @@ class _AssistedEventsDisplayState extends State<AssistedEventsDisplay> {
   void whenReturn() {
     setState(() {});
   }
-
 }

@@ -44,6 +44,11 @@ class _AllEventsState extends State<AllEvents> {
                     translationParams: {
                       "categoryFilter":
                           widget.categoryFilter?.i18nName(context) ?? "",
+                      "connectionFilter": FlutterI18n.plural(
+                        context,
+                        "$i18nKey.connection_filter",
+                        widget.categoryFilter != null ? 1 : 0,
+                      ),
                     },
                   ),
                   press: () {}),

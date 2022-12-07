@@ -59,10 +59,19 @@
   },
   "event_screen": {
     "all_events": {
-      "title": "Todos los Eventos de {categoryFilter}"
+      "title": "Todos los Eventos {connectionFilter} {categoryFilter}",
+      "connection_filter-0": "",
+      "connection_filter-1": "de"
     }
   },
   "home_screen": {
+    "assisted_events_banner": {
+      "title": "Events que vas a asistir\n",
+      "subtitle": "¡Mira los eventos que asistirás!"
+    },
+    "assisted_events_display": {
+      "title": "Eventos que voy a asistir"
+    },
     "data_visualizations": {
       "table": {
         "name": "Tabla",
@@ -89,14 +98,14 @@
         "title": "¿Te gustaría crear el evento {name}",
         "yes_option": "Sí, crear evento",
         "no_option": "No, cancelar"
-      },
-      "popular_events": {
-        "title": "Eventos Populares"
-      },
-      "your_events_banner": {
-        "title": "Eventos que creates\n",
-        "subtitle": "¡Mira tus eventos!"
       }
+    },
+    "popular_events": {
+      "title": "Eventos Populares"
+    },
+    "your_events_banner": {
+      "title": "Eventos que creates\n",
+      "subtitle": "¡Mira tus eventos!"
     }
   },
   "notifications_screen": {
@@ -112,9 +121,10 @@
     },
     "my_account": {
       "title": "Detalles de Mi Cuenta",
-      "email": "Correo Electrónico: {email}",
+      "email": "Correo: {email}",
       "name": "Nombre: {name}",
-      "phone": "Número de Teléfono: {phone}"
+      "phone": "Teléfono: {phone}",
+      "locale": "Selecciona Idioma:"
     },
     "event_table": {
       "title": "Tabla de Datos de Eventos    ",
@@ -129,6 +139,14 @@
         "Date": "Fecha",
         "Date Created": "Fecha de Creación"
       }
+    }
+  },
+  "components": {
+    "menu_option": {
+      "Home": "Inicio",
+      "Profile": "Perfil",
+      "Events": "Eventos",
+      "Map": "Mapa"
     }
   },
   "categories": {
@@ -147,5 +165,9 @@
       "body": "Empezando en {date}",
       "payload": "Id del Evento: {id}"
     }
+  },
+  "locales": {
+    "en": "Ingles",
+    "es": "Español"
   }
 }
