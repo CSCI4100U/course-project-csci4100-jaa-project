@@ -50,7 +50,7 @@
     },
     "event_is_full": "Event is full",
     "quit_from_event": "Quit From Event",
-    "assist_to_event": "Attend To Event",
+    "assist_to_event": "Attend Event",
     "description": {
       "price": "Price: ${price}",
       "date": "Date: {date}",
