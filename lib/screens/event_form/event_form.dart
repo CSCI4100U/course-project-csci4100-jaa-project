@@ -6,6 +6,7 @@ import 'package:course_project/models/entities/event.dart';
 import 'package:course_project/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_i18n/flutter_i18n.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:geolocator/geolocator.dart';
 import 'decimal_formatter.dart';
@@ -76,11 +77,14 @@ class _EventFormState extends State<EventForm> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   // create a new event title
-                  const Text("Create a new event",
-                      style: TextStyle(
-                          fontSize: mainFontSize,
-                          fontWeight: FontWeight.bold,
-                          color: kPrimaryColor)),
+                  Text(
+                    FlutterI18n.translate(context, "event_form.title"),
+                    style: const TextStyle(
+                      fontSize: mainFontSize,
+                      fontWeight: FontWeight.bold,
+                      color: kPrimaryColor,
+                    ),
+                  ),
                   spacerBox,
                   eventNameTextField(),
                   spacerBox,
@@ -140,9 +144,9 @@ class _EventFormState extends State<EventForm> {
         child: TextFormField(
           initialValue: event.description,
           style: const TextStyle(fontSize: mainFontSize),
-          decoration: const InputDecoration(
-            hintText: "Description",
-            icon: Padding(
+          decoration: InputDecoration(
+            hintText: FlutterI18n.translate(context, "event_form.description"),
+            icon: const Padding(
               padding: EdgeInsets.symmetric(horizontal: mainIconPaddingAmount),
               child: Icon(
                 Icons.description,
@@ -189,7 +193,8 @@ class _EventFormState extends State<EventForm> {
                 });
               }
             },
-            child: const Text("Select Location"),
+            child: Text(
+                FlutterI18n.translate(context, "event_form.select_location")),
           );
         },
       ),
@@ -236,9 +241,9 @@ class _EventFormState extends State<EventForm> {
               });
             }
           },
-          child: const Text(
-            "Date",
-            style: TextStyle(fontSize: mainFontSize),
+          child: Text(
+            FlutterI18n.translate(context, "event_form.date"),
+            style: const TextStyle(fontSize: mainFontSize),
           ),
         ),
         displayTextContainer(toDateString(eventDate))
@@ -271,9 +276,9 @@ class _EventFormState extends State<EventForm> {
               },
             );
           },
-          child: const Text(
-            "Time",
-            style: TextStyle(fontSize: mainFontSize),
+          child: Text(
+            FlutterI18n.translate(context, "event_form.time"),
+            style: const TextStyle(fontSize: mainFontSize),
           ),
         ),
         displayTextContainer(toTimeString(eventTime))
@@ -286,9 +291,9 @@ class _EventFormState extends State<EventForm> {
     return TextFormField(
         initialValue: event.price.toString(),
         style: const TextStyle(fontSize: 20),
-        decoration: const InputDecoration(
-            hintText: "Price",
-            icon: Padding(
+        decoration: InputDecoration(
+            hintText: FlutterI18n.translate(context, "event_form.price"),
+            icon: const Padding(
               padding: EdgeInsets.symmetric(horizontal: mainIconPaddingAmount),
               child: Icon(
                 Icons.attach_money_sharp,
@@ -296,7 +301,8 @@ class _EventFormState extends State<EventForm> {
                 color: Colors.green,
               ),
             ),
-            contentPadding: EdgeInsets.symmetric(horizontal: 50, vertical: 10)),
+            contentPadding:
+                const EdgeInsets.symmetric(horizontal: 50, vertical: 10)),
         onChanged: (value) {
           double? price = double.tryParse(value);
           if (price != null) {
@@ -325,10 +331,10 @@ class _EventFormState extends State<EventForm> {
     return TextFormField(
       initialValue: event.name,
       style: const TextStyle(fontSize: mainFontSize),
-      decoration: const InputDecoration(
-        hintText: "Event Name",
-        border: OutlineInputBorder(),
-        icon: Padding(
+      decoration: InputDecoration(
+        hintText: FlutterI18n.translate(context, "event_form.name"),
+        border: const OutlineInputBorder(),
+        icon: const Padding(
           padding: EdgeInsets.symmetric(horizontal: mainIconPaddingAmount),
           child: Icon(
             Icons.drive_file_rename_outline,
@@ -350,14 +356,15 @@ class _EventFormState extends State<EventForm> {
     return TextFormField(
         initialValue: event.capacity.toString(),
         style: const TextStyle(fontSize: 20),
-        decoration: const InputDecoration(
-            hintText: "Capacity",
-            icon: Padding(
+        decoration: InputDecoration(
+            hintText: FlutterI18n.translate(context, "event_form.capacity"),
+            icon: const Padding(
               padding: EdgeInsets.symmetric(horizontal: mainIconPaddingAmount),
               child: Icon(Icons.reduce_capacity,
                   size: mainIconSize, color: Color.fromRGBO(153, 0, 0, 100.0)),
             ),
-            contentPadding: EdgeInsets.symmetric(horizontal: 50, vertical: 10)),
+            contentPadding:
+                const EdgeInsets.symmetric(horizontal: 50, vertical: 10)),
         onChanged: (value) {
           int? capacity = int.tryParse(value);
           if (capacity != null) {
@@ -401,12 +408,21 @@ class _EventFormState extends State<EventForm> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        const Text('Category: ', style: TextStyle(fontSize: mainFontSize)),
+        Text(
+          FlutterI18n.translate(context, "event_form.category"),
+          style: const TextStyle(fontSize: mainFontSize),
+        ),
         const SizedBox(
           width: 35,
         ),
         DropdownButton<int?>(
-          hint: const Text("Select Category", style: TextStyle(color: Colors.grey),),
+          hint: Text(
+            FlutterI18n.translate(
+              context,
+              "event_form.select_category",
+            ),
+            style: const TextStyle(color: Colors.grey),
+          ),
           value: categories
               .firstWhere((element) => element.id == event.categoryId,
                   orElse: () => Category(id: null, name: ""))
@@ -414,7 +430,8 @@ class _EventFormState extends State<EventForm> {
           items: categories.map((category) {
             return DropdownMenuItem(
               value: category.id,
-              child: Text(category.name,
+              child: Text(
+                  FlutterI18n.translate(context, "categories.${category.name}"),
                   style: const TextStyle(fontSize: mainFontSize)),
             );
           }).toList(),

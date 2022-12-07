@@ -1,11 +1,14 @@
 import 'package:course_project/screens/home/components/assisted_events_display.dart';
 import 'package:flutter/material.dart';
 import 'package:course_project/size_config.dart';
+import 'package:flutter_i18n/flutter_i18n.dart';
 
 import 'events_display.dart';
 
 class AssistedEventsBanner extends StatelessWidget {
   const AssistedEventsBanner({super.key});
+
+  final i18nKey = "home_screen.assisted_events_banner";
 
   @override
   Widget build(BuildContext context) {
@@ -27,9 +30,9 @@ class AssistedEventsBanner extends StatelessWidget {
           TextSpan(
             style: const TextStyle(color: Colors.white),
             children: [
-              const TextSpan(text: "Events to assist\n"),
+              TextSpan(text: FlutterI18n.translate(context, "$i18nKey.title")),
               TextSpan(
-                text: "View attended events",
+                text: FlutterI18n.translate(context, "$i18nKey.subtitle"),
                 style: TextStyle(
                   fontSize: getProportionateScreenWidth(24),
                   fontWeight: FontWeight.bold,

@@ -1,0 +1,173 @@
+{
+  "login": {
+    "success": "Login successful, {username}",
+    "failure": "Login incorrect",
+    "username": "Username: ",
+    "num_attempts-0": "{attempts} failed attempts",
+    "num_attempts-1": "{attempts} failed attempt",
+    "num_attempts-2": "{attempts} failed attempts",
+    "password": "Password",
+    "login": "Log In"
+  },
+  "event_form":{
+    "select_category": "Select Category",
+    "category": "Category: ",
+    "capacity": "Capacity",
+    "name": "Event Name",
+    "price": "Price",
+    "date": "Date",
+    "time": "Time",
+    "select_location": "Select Location",
+    "location_selected": "Update Location",
+    "description": "Description",
+    "title": "Create a new event"
+  },
+  "charts": {
+    "column_names": {
+      "id": "id",
+      "Name": "Name",
+      "Price": "Price",
+      "Rating": "Rating",
+      "Capacity": "Capacity",
+      "Rating/Price": "Rating/Price",
+      "Capacity/Price": "Capacity/Price"
+    },
+    "horizontal_bar": {
+      "title": "Horizontal Bar Chart"
+    },
+    "vertical_bar": {
+      "title": "Vertical Bar Chart"
+    }
+  },
+  "details_screen": {
+    "cant_delete":{
+       "first_message": "You can't delete this event",
+        "second_message": "You are not the owner"
+    },
+    "cant_edit":{
+       "first_message": "You can't edit this event",
+        "second_message": "You are not the owner"
+    },
+    "event_is_full": "Event is full",
+    "quit_from_event": "Quit From Event",
+    "assist_to_event": "Assist To Event",
+    "description": {
+      "price": "Price: ${price}",
+      "date": "Date: {date}",
+      "assistants": "Assistants: {totalAssistants}/{capacity}"
+    }
+  },
+  "event_screen": {
+    "all_events": {
+      "title": "All {categoryFilter} Events",
+      "connection_filter-0": "",
+      "connection_filter-1": ""
+    }
+  },
+  "home_screen": {
+    "assisted_events_banner": {
+      "title": "Events you are attending\n",
+      "subtitle": "View the events you will attend!"
+    },
+    "assisted_events_display": {
+      "title": "Events I'm attending"
+    },
+    "data_visualizations": {
+      "table": {
+        "name": "Table",
+        "description": "Table displaying the events data"
+      },
+      "charts": {
+        "name": "Charts",
+        "description": "Charts displaying the events data"
+      },
+      "calendar": {
+        "name": "Calendar",
+        "description": "Calendar displaying the events data"
+      }
+    },
+    "events_display": {
+      "my_events": "My Events"
+    },
+    "home_header": {
+      "add_event": "Add Event",
+      "view_notifications": "View Notifications",
+      "event_added": "Event {name} added",
+      "event_not_added": "Event {name} not added",
+      "add_event_confirmation": {
+        "title": "Would you like to create this event?",
+        "yes_option": "Yes, create event",
+        "no_option": "No, cancel"
+      }
+    },
+    "popular_events": {
+      "title": "Popular Events"
+    },
+    "your_events_banner": {
+      "title": "Events you created\n",
+      "subtitle": "View your events!"
+    }
+  },
+  "notifications_screen": {
+    "body": {
+      "title": "Notifications"
+    }
+  },
+  "profile_screen": {
+    "body": {
+      "my_account": "My Account",
+      "notifications": "Notifications",
+      "log_out": "Log Out"
+    },
+    "my_account": {
+      "title": "My Account Details",
+      "email": "Email: {email}",
+      "name": "Name: {name}",
+      "phone": "Phone: {phone}",
+      "locale": "Select Language: "
+    },
+    "event_table": {
+      "title": "Events Data Table    ",
+      "column_names": {
+        "id": "id",
+        "Name": "Name",
+        "Price": "Price",
+        "Rating": "Rating",
+        "Capacity": "Capacity",
+        "Rating per Price": "Rating per Price",
+        "Capacity per Price": "Capacity per Price",
+        "Date": "Date",
+        "Date Created": "Date Created"
+      }
+    }
+  },
+  "components": {
+    "menu_option": {
+      "Home": "Home",
+      "Profile": "Profile",
+      "Events": "Events",
+      "Map": "Map"
+    }
+  },
+  "categories": {
+    "Games": "Games",
+    "Food": "Food",
+    "Art": "Art",
+    "Movies": "Movies",
+    "Music": "Music",
+    "Sports": "Sports",
+    "Theatre": "Theatre",
+    "Other": "Other"
+  },
+  "notifications": {
+    "event_created": {
+      "title": "Event {name} Created",
+      "body": "Starting in {date}",
+      "payload": "Event id: {id}"
+    }
+  },
+  "locales": {
+    "en": "English",
+    "es": "Spanish"
+  }
+}

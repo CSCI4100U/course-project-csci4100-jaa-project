@@ -11,7 +11,6 @@ class DBUtils {
       path.join(await getDatabasesPath(), 'events_project_application.db'),
       onCreate: (db, version) {
         db.execute(
-            //'CREATE TABLE IF NOT EXISTS visualizations (id INTEGER PRIMARY KEY, name TEXT, description TEXT, icon INTEGER)');
             'CREATE TABLE categories(id INTEGER PRIMARY KEY, name TEXT, description TEXT, imagesPath TEXT, icon INTEGER, eventsIds TEXT, images TEXT)');
       },
       onUpgrade: ((db, oldVersion, newVersion) => {

@@ -5,7 +5,8 @@ import 'package:flutter/material.dart';
 import '../../../size_config.dart';
 
 class Body extends StatelessWidget {
-  Body({Key? key, this.categoryFilter}) : super(key: key);
+  const Body({Key? key, this.categoryFilter}) : super(key: key);
+
   final Category? categoryFilter;
 
   @override

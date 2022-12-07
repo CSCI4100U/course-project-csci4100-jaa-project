@@ -1,16 +1,11 @@
 import 'dart:convert';
 import 'dart:math';
-import 'dart:io' as io;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:course_project/constants.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:path_provider/path_provider.dart';
-import 'package:path/path.dart' as p;
 
 import 'package:course_project/db/firebase_cloud_utils.dart';
 import 'package:course_project/models/db_models/category_model.dart';
-import 'package:course_project/models/entities/assistant.dart';
 
 class Event {
   int? capacity, _categoryId;

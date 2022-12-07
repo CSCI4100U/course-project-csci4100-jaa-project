@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:course_project/size_config.dart';
+import 'package:flutter_i18n/flutter_i18n.dart';
 
 import 'events_display.dart';
 
@@ -7,6 +8,8 @@ class MyEventBanner extends StatelessWidget {
   const MyEventBanner({
     Key? key,
   }) : super(key: key);
+
+  final i18nKey = "home_screen.your_events_banner";
 
   @override
   Widget build(BuildContext context) {
@@ -28,9 +31,9 @@ class MyEventBanner extends StatelessWidget {
           TextSpan(
             style: const TextStyle(color: Colors.white),
             children: [
-              const TextSpan(text: "Events you created\n"),
+              TextSpan(text: FlutterI18n.translate(context, "$i18nKey.title")),
               TextSpan(
-                text: "View created events",
+                text: FlutterI18n.translate(context, "$i18nKey.subtitle"),
                 style: TextStyle(
                   fontSize: getProportionateScreenWidth(24),
                   fontWeight: FontWeight.bold,

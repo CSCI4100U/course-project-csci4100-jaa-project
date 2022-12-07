@@ -1,5 +1,6 @@
 import 'package:course_project/models/db_models/event_model.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_i18n/flutter_i18n.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:course_project/models/entities/event.dart';
 
@@ -13,6 +14,7 @@ class EventDescription extends StatelessWidget {
   }) : super(key: key);
 
   final Event event;
+  final String i18nKey = "details_screen.description";
 
   @override
   Widget build(BuildContext context) {
@@ -54,13 +56,30 @@ class EventDescription extends StatelessWidget {
                 maxLines: 3,
               ),
               Text(
-                "Price: \$${event.price}",
+                FlutterI18n.translate(
+                  context,
+                  "$i18nKey.price",
+                  translationParams: {"price": event.price.toString()},
+                ),
               ),
               Text(
-                "Date: ${DateFormatDisplay.format(event.date!)}",
+                FlutterI18n.translate(
+                  context,
+                  "$i18nKey.date",
+                  translationParams: {
+                    "date": DateFormatDisplay.format(event.date!)
+                  },
+                ),
               ),
               Text(
-                "Assistants: ${event.assistantsIds.length}/${event.capacity}",
+                FlutterI18n.translate(
+                  context,
+                  "$i18nKey.assistants",
+                  translationParams: {
+                    "totalAssistants": event.assistantsIds.length.toString(),
+                    "capacity": event.capacity.toString(),
+                  },
+                ),
               )
             ],
           ),

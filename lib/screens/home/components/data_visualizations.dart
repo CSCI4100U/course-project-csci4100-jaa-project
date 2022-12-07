@@ -3,11 +3,14 @@ import 'package:course_project/screens/charts/horizontal_bar_chart.dart';
 import 'package:course_project/screens/event/event_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:course_project/size_config.dart';
+import 'package:flutter_i18n/flutter_i18n.dart';
 import '../../../models/db_models/data_visualization_model.dart';
 import '../../../models/entities/data_visualization.dart';
 import '../../table/event_table.dart';
 
 class DataVisualizationsDisplay extends StatelessWidget {
+  final i18nKey = "home_screen.data_visualizations";
+
   List<String> routeNames = [
     EventTable.routeName,
     HorizontalChart.routeName,
@@ -17,24 +20,24 @@ class DataVisualizationsDisplay extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //add data to db
-    DataVisualizationModel _model = new DataVisualizationModel();
+    DataVisualizationModel _model = DataVisualizationModel();
     List<List> info = [
       [
         0,
-        "Table",
-        "Table displaying the events data",
+        FlutterI18n.translate(context, "$i18nKey.table.name"),
+        FlutterI18n.translate(context, "$i18nKey.table.description"),
         const Icon(Icons.table_chart_rounded)
       ],
       [
         1,
-        "Charts",
-        "Charts dispplaying the events data",
+        FlutterI18n.translate(context, "$i18nKey.charts.name"),
+        FlutterI18n.translate(context, "$i18nKey.charts.description"),
         const Icon(Icons.insert_chart)
       ],
       [
         2,
-        "Calendar",
-        "Calendar displaying the events data",
+        FlutterI18n.translate(context, "$i18nKey.calendar.name"),
+        FlutterI18n.translate(context, "$i18nKey.calendar.description"),
         const Icon(Icons.calendar_month)
       ]
     ];
