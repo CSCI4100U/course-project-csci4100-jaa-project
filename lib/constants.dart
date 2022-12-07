@@ -9,6 +9,9 @@ import 'package:course_project/screens/profile/components/body.dart'
 import 'package:course_project/screens/event/components/body.dart' as eventBody;
 import 'package:course_project/screens/map/components/body.dart' as mapBody;
 import 'package:course_project/models/entities/category.dart' as CategoryEntity;
+import 'package:intl/intl.dart';
+
+import 'models/notifications.dart';
 
 const kPrimaryColor = Color(0xFFFF7643);
 const kPrimaryLightColor = Color(0xFFFFECDF);
@@ -19,6 +22,9 @@ const kPrimaryGradientColor = LinearGradient(
 );
 const kSecondaryColor = Color(0xFF979797);
 const kTextColor = Color(0xFF757575);
+const kTextColorForDarkTheme = Colors.white;
+const kBorderOutline = Colors.black;
+const kPrimaryDarkThemeBackground = Colors.black12;
 
 const kAnimationDuration = Duration(milliseconds: 200);
 
@@ -31,18 +37,6 @@ final headingStyle = TextStyle(
 
 const defaultDuration = Duration(milliseconds: 250);
 final lastDateTimeDate = DateTime(2100);
-// Form Error
-final RegExp emailValidatorRegExp =
-    RegExp(r"^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
-const String kEmailNullError = "Please Enter your email";
-const String kInvalidEmailError = "Please Enter Valid Email";
-const String kPassNullError = "Please Enter your password";
-const String kShortPassError = "Password is too short";
-const String kMatchPassError = "Passwords don't match";
-const String kNamelNullError = "Please Enter your name";
-const String kPhoneNumberNullError = "Please Enter your phone number";
-const String kAddressNullError = "Please Enter your address";
-
 final otpInputDecoration = InputDecoration(
   contentPadding:
       EdgeInsets.symmetric(vertical: getProportionateScreenWidth(15)),
@@ -54,11 +48,17 @@ final otpInputDecoration = InputDecoration(
 OutlineInputBorder outlineInputBorder() {
   return OutlineInputBorder(
     borderRadius: BorderRadius.circular(getProportionateScreenWidth(15)),
-    borderSide: BorderSide(color: kTextColor),
+    borderSide: const BorderSide(color: kTextColor),
   );
 }
 
-final NO_AVAILABLE_IMAGE_PATH = 'assets/images/No_image_available.png';
+const NO_AVAILABLE_IMAGE_PATH = 'assets/images/No_image_available.png';
+final DateFormatDisplay = DateFormat("yyyy-MM-dd hh:mm:ss");
+final DateFormatDisplayShort = DateFormat("yyyy-MM-dd");
+
+final NotificationsConst = Notifications();
+const String URL_TEMPLATE =
+    "https://api.mapbox.com/styles/v1/joacotome24/clar6ybyw000j14njy9l1uv4p/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1Ijoiam9hY290b21lMjQiLCJhIjoiY2xhcjVpam5kMXB2MDN2bzVlY3EydW8xOCJ9.tiwkoeBOZnsBzRgsJxOtpQ";
 
 List<MenuOption> options = [
   MenuOption(
@@ -69,8 +69,11 @@ List<MenuOption> options = [
   MenuOption(
       name: "Events",
       icon: buildIcon(Icons.event_available),
-      builder: () => eventBody.Body()),
-  MenuOption(name: "Map", icon: buildIcon(Icons.map), builder: () => mapBody.Body()),
+      builder: () => const eventBody.Body()),
+  MenuOption(
+      name: "Map",
+      icon: buildIcon(Icons.map),
+      builder: () => const mapBody.Body()),
   MenuOption(
       name: "Profile",
       icon: buildIcon(Icons.person),
@@ -127,4 +130,9 @@ List<CategoryEntity.Category> defaultCategories = [
     description: "Events related to other topics",
     imagesPath: "assets/images/categories/other",
   ),
+];
+
+const List<Locale> supportedLocales = [
+  Locale('en'),
+  Locale('es'),
 ];

@@ -12,10 +12,12 @@ class EventCard extends StatelessWidget {
     this.width = 140,
     this.aspectRatio = 1.02,
     required this.event,
+    required this.whenReturn,
   }) : super(key: key);
 
   final double width, aspectRatio;
   final Event event;
+  final void Function() whenReturn;
 
   @override
   Widget build(BuildContext context) {
@@ -24,11 +26,14 @@ class EventCard extends StatelessWidget {
       child: SizedBox(
         width: getProportionateScreenWidth(width),
         child: GestureDetector(
-          onTap: () => Navigator.pushNamed(
-            context,
-            DetailsScreen.routeName,
-            arguments: EventDetailsArguments(event: event),
-          ),
+          onTap: () async {
+            await Navigator.pushNamed(
+              context,
+              DetailsScreen.routeName,
+              arguments: EventDetailsArguments(event: event),
+            );
+            whenReturn();
+          },
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -36,7 +41,7 @@ class EventCard extends StatelessWidget {
                 aspectRatio: aspectRatio,
                 child: Container(
                   decoration: BoxDecoration(
-                    color: kSecondaryColor.withOpacity(0.1),
+                    color: Colors.blueGrey.withOpacity(0.3),
                     borderRadius: BorderRadius.circular(15),
                   ),
                   child: Hero(
@@ -50,7 +55,7 @@ class EventCard extends StatelessWidget {
               const SizedBox(height: 15),
               Text(
                 event.name,
-                style: TextStyle(color: Colors.black),
+                style: TextStyle(color: Colors.grey),
                 maxLines: 2,
               ),
               Row(

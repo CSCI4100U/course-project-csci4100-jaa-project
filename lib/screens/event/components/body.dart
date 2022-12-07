@@ -5,13 +5,15 @@ import 'package:flutter/material.dart';
 import '../../../size_config.dart';
 
 class Body extends StatelessWidget {
-  Body({Key? key, this.categoryFilter}) : super(key: key);
+  const Body({Key? key, this.categoryFilter}) : super(key: key);
+
   final Category? categoryFilter;
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: SingleChildScrollView(
+        padding: const EdgeInsets.only(right: 20),
         child: AllEvents(categoryFilter: categoryFilter),
       ),
     );

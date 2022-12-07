@@ -1,12 +1,11 @@
+import 'package:course_project/components/events_grid.dart';
 import 'package:course_project/models/db_models/event_model.dart';
 import 'package:course_project/models/entities/category.dart';
 import 'package:course_project/models/entities/event.dart';
-import 'package:course_project/screens/event/components/grid_events.dart';
-import 'package:course_project/screens/event/components/search_field.dart';
 import 'package:course_project/screens/event/components/section_title.dart';
 import 'package:flutter/material.dart';
-import 'package:course_project/components/event_card.dart';
 import 'package:course_project/size_config.dart';
+import 'package:flutter_i18n/flutter_i18n.dart';
 
 class AllEvents extends StatefulWidget {
   AllEvents({Key? key, required this.categoryFilter}) : super(key: key);
@@ -18,19 +17,18 @@ class AllEvents extends StatefulWidget {
 }
 
 class _AllEventsState extends State<AllEvents> {
+  final i18nKey = "event_screen.all_events";
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(height: getProportionateScreenHeight(20)),
         Padding(
           padding:
               EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
-              SearchField(),
-            ],
+            children: const [],
           ),
         ),
         SizedBox(height: getProportionateScreenWidth(20)),
@@ -40,11 +38,23 @@ class _AllEventsState extends State<AllEvents> {
               padding: EdgeInsets.symmetric(
                   horizontal: getProportionateScreenWidth(20)),
               child: SectionTitle(
-                  title: "All ${widget.categoryFilter?.name ?? ""} Events",
+                  title: FlutterI18n.translate(
+                    context,
+                    "$i18nKey.title",
+                    translationParams: {
+                      "categoryFilter":
+                          widget.categoryFilter?.i18nName(context) ?? "",
+                      "connectionFilter": FlutterI18n.plural(
+                        context,
+                        "$i18nKey.connection_filter",
+                        widget.categoryFilter != null ? 1 : 0,
+                      ),
+                    },
+                  ),
                   press: () {}),
             ),
             SizedBox(height: getProportionateScreenWidth(20)),
-            Container(
+            SizedBox(
               height: getProportionateScreenHeight(60000),
               child: StreamBuilder(
                 stream: Stream.fromFuture(EventModel()
@@ -52,9 +62,9 @@ class _AllEventsState extends State<AllEvents> {
                 builder: (context, snapshot) {
                   if (snapshot.hasData) {
                     List<Event> events = snapshot.data as List<Event>;
-                    return GridEvents(events: events);
+                    return GridEvents(events: events, whenReturn: whenReturn);
                   } else {
-                    return const CircularProgressIndicator();
+                    return const Center(child: CircularProgressIndicator());
                   }
                 },
               ),
@@ -63,5 +73,9 @@ class _AllEventsState extends State<AllEvents> {
         ),
       ],
     );
+  }
+
+  void whenReturn() {
+    setState(() {});
   }
 }

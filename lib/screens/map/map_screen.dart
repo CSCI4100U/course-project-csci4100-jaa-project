@@ -11,9 +11,9 @@ class MapScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Map"),
+        title: const Text("Map"),
       ),
-      body: Body(),
+      body: const Body(),
       bottomNavigationBar: CustomBottomNavBar(
           selectedOption:
               options.firstWhere((element) => element.name == "Map")),

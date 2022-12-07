@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:course_project/size_config.dart';
 
 class Categories extends StatelessWidget {
+  const Categories({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -26,7 +28,7 @@ class Categories extends StatelessWidget {
                 categories.length,
                 (index) => CategoryCard(
                   icon: categories[index].icon,
-                  text: categories[index].name,
+                  text: categories[index].i18nName(context),
                   press: () async => Navigator.pushNamed(
                       context, EventScreen.routeName,
                       arguments: categories[index]),

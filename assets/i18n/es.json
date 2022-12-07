@@ -1,0 +1,173 @@
+{
+  "login": {
+    "success": "Inicio de Sesión exitoso, {username}",
+    "failure": "Inicio de Sesión incorrecto",
+    "username": "Nombre de Usuario: ",
+    "num_attempts-0": "{attempts} intentos fallidos",
+    "num_attempts-1": "{attempts} intento fallido",
+    "num_attempts-2": "{attempts} intentos fallidos",
+    "password": "Contraseña: ",
+    "login": "Iniciar Sesión"
+  },
+  "event_form":{
+    "select_category": "Seleccionar Categoría",
+    "category": "Categoría: ",
+    "capacity": "Capacidad",
+    "name": "Nombre de Evento",
+    "price": "Precio",
+    "date": "Fecha",
+    "time": "Hora",
+    "select_location": "Seleccionar Ubicación",
+    "location_selected": "Ubicación Seleccionada",
+    "description": "Descripción",
+    "title": "Crear Evento"
+  },
+  "charts": {
+    "column_names": {
+      "id": "id",
+      "Name": "Nombre",
+      "Price": "Precio",
+      "Rating": "Rating",
+      "Capacity": "Capacidad",
+      "Rating/Price": "Rating/Precio",
+      "Capacity/Price": "Capacidad/Precio"
+    },
+    "horizontal_bar": {
+      "title": "Gráfico de Barras Horizontal"
+    },
+    "vertical_bar": {
+      "title": "Gráfico de Barras Vertical"
+    }
+  },
+  "details_screen": {
+    "cant_delete":{
+       "first_message": "No puedes borrar este evento",
+        "second_message": "No eres el dueño"
+    },
+    "cant_edit":{
+       "first_message": "No puedes editar este evento",
+        "second_message": "No eres el dueño"
+    },
+    "event_is_full": "Este evento está lleno",
+    "quit_from_event": "Dejar Evento",
+    "assist_to_event": "Asistir a Evento",
+    "description": {
+      "price": "Precio: ${price}",
+      "date": "Fecha: {date}",
+      "assistants": "Asistentes: {totalAssistants}/{capacity}"
+    }
+  },
+  "event_screen": {
+    "all_events": {
+      "title": "Todos los Eventos {connectionFilter} {categoryFilter}",
+      "connection_filter-0": "",
+      "connection_filter-1": "de"
+    }
+  },
+  "home_screen": {
+    "assisted_events_banner": {
+      "title": "Events que vas a asistir\n",
+      "subtitle": "¡Mira los eventos que asistirás!"
+    },
+    "assisted_events_display": {
+      "title": "Eventos que voy a asistir"
+    },
+    "data_visualizations": {
+      "table": {
+        "name": "Tabla",
+        "description": "Tabla de datos de los eventos"
+      },
+      "charts": {
+        "name": "Gráficas",
+        "description": "Gráficas de datos de los eventos"
+      },
+      "calendar": {
+        "name": "Calendario",
+        "description": "Calendario de datos de los eventos"
+      }
+    },
+    "events_display": {
+      "my_events": "Mis Eventos"
+    },
+    "home_header": {
+      "add_event": "Agregar Evento",
+      "view_notifications": "Ver Notificaciones",
+      "event_added": "Evento {name} agregado",
+      "event_not_added": "Evento {name} no agregado",
+      "add_event_confirmation": {
+        "title": "¿Te gustaría crear el evento {name}",
+        "yes_option": "Sí, crear evento",
+        "no_option": "No, cancelar"
+      }
+    },
+    "popular_events": {
+      "title": "Eventos Populares"
+    },
+    "your_events_banner": {
+      "title": "Eventos que creates\n",
+      "subtitle": "¡Mira tus eventos!"
+    }
+  },
+  "notifications_screen": {
+    "body": {
+      "title": "Notificaciones"
+    }
+  },
+  "profile_screen": {
+    "body": {
+      "my_account": "Mi Cuenta",
+      "notifications": "Notificaciones",
+      "log_out": "Cerrar Sesión"
+    },
+    "my_account": {
+      "title": "Detalles de Mi Cuenta",
+      "email": "Correo: {email}",
+      "name": "Nombre: {name}",
+      "phone": "Teléfono: {phone}",
+      "locale": "Selecciona Idioma:"
+    }
+  },
+  "event_table": {
+    "title": "Tabla de Datos de Eventos    ",
+    "column_names": {
+      "id": "id",
+      "Name": "Nombre",
+      "Price": "Precio",
+      "Rating": "Rating",
+      "Capacity": "Capacidad",
+      "Rating per Price": "Rating por Precio",
+      "Capacity per Price": "Capacidad por Precio",
+      "Date": "Fecha",
+      "Date Created": "Fecha de Creación"
+    }
+  },
+  "components": {
+    "menu_option": {
+      "Home": "Inicio",
+      "Profile": "Perfil",
+      "Events": "Eventos",
+      "Map": "Mapa"
+    }
+  },
+  "categories": {
+    "Games": "Juegos",
+    "Food": "Comida",
+    "Art": "Arte",
+    "Movies": "Películas",
+    "Music": "Música",
+    "Sports": "Deportes",
+    "Theatre": "Teatro",
+    "Other": "Otros"
+  },
+  "notifications": {
+    "event_created": {
+      "title": "Evento {name} Creado",
+      "body": "Empezando en {date}",
+      "payload": "Id del Evento: {id}"
+    }
+  },
+  "locales": {
+    "en": "Ingles",
+    "es": "Español"
+  }
+}

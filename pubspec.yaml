@@ -41,8 +41,16 @@ dependencies:
   path_provider:
   timezone:
   flutter_local_notifications:
+  flutter_i18n:
   flutter_rating_bar: ^4.0.1
   flutter_map: ^1.1.1
+  charts_flutter_new:
+  image_picker:
+  firebase_storage:
+  geolocator:
+  table_calendar: ^2.1.0
+  zoom_widget: ^2.0.0
+  intl:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -69,6 +77,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
+    # Images
     - assets/images/
     - assets/images/categories/food/
     - assets/images/categories/music/
@@ -79,8 +88,13 @@ flutter:
     - assets/images/categories/no_category/
     - assets/images/categories/movies/
 
+    # Icons
     - assets/icons/
+    # Fonts
     - assets/fonts/
+
+    #I18n
+    - assets/i18n/
 
   fonts:
     - family: Muli

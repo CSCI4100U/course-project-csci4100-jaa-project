@@ -3,9 +3,12 @@ import 'package:course_project/constants.dart';
 import 'package:course_project/models/db_models/category_model.dart';
 import 'package:course_project/models/entities/category.dart';
 import 'package:course_project/models/entities/event.dart';
+import 'package:course_project/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_i18n/flutter_i18n.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:geolocator/geolocator.dart';
 import 'decimal_formatter.dart';
 import 'package:latlong2/latlong.dart';
 
@@ -20,8 +23,7 @@ class EventForm extends StatefulWidget {
 }
 
 class _EventFormState extends State<EventForm> {
-  final _formKey = GlobalKey<FormState>();
-
+  bool firstRender = true;
   Event event = Event();
   DateTime rightNow = DateTime.now();
   DateTime eventTime = DateTime.now();
@@ -48,6 +50,11 @@ class _EventFormState extends State<EventForm> {
     final eventToEdit = ModalRoute.of(context)!.settings.arguments as Event?;
     if (eventToEdit != null) {
       event = eventToEdit;
+      if (firstRender) {
+        eventTime = event.date!;
+        eventDate = event.date!;
+        firstRender = false;
+      }
     }
 
     return Scaffold(
@@ -60,19 +67,24 @@ class _EventFormState extends State<EventForm> {
           stream: Stream.fromFuture(CategoryModel().getAllCategories()),
           builder: (context, snapshot) {
             if (!snapshot.hasData) {
-              return const CircularProgressIndicator();
+              return const Center(child: CircularProgressIndicator());
             }
             List<Category> categories = snapshot.data;
             return Container(
               padding: const EdgeInsets.only(left: 20, right: 20, top: 5),
-              color: Colors.white,
+              color: Theme.of(context).scaffoldBackgroundColor,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   // create a new event title
-                  const Text("Create a new event",
-                      style: TextStyle(
-                          fontSize: mainFontSize, fontWeight: FontWeight.bold)),
+                  Text(
+                    FlutterI18n.translate(context, "event_form.title"),
+                    style: const TextStyle(
+                      fontSize: mainFontSize,
+                      fontWeight: FontWeight.bold,
+                      color: kPrimaryColor,
+                    ),
+                  ),
                   spacerBox,
                   eventNameTextField(),
                   spacerBox,
@@ -112,36 +124,37 @@ class _EventFormState extends State<EventForm> {
     return "${twoDigits(date.hour)}:${twoDigits(date.minute)}";
   }
 
-  // used to display the date and time
+  /// used to display the date and time
   Widget displayTextContainer(String displayString) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Text(
         displayString,
-        style: const TextStyle(fontSize: mainFontSize),
+        style: const TextStyle(fontSize: mainFontSize, color: Colors.grey),
       ),
     );
   }
 
-  // description widget
+  /// description widget
   Widget descriptionWidget() {
     return Container(
       padding: const EdgeInsets.only(bottom: 20),
       constraints: const BoxConstraints(maxHeight: 90),
       child: SingleChildScrollView(
-        child: TextField(
+        child: TextFormField(
+          initialValue: event.description,
           style: const TextStyle(fontSize: mainFontSize),
-          decoration: const InputDecoration(
-              hintText: "Description",
-              icon: Padding(
-                padding:
-                    EdgeInsets.symmetric(horizontal: mainIconPaddingAmount),
-                child: Icon(
-                  Icons.description,
-                  color: Colors.amber,
-                  size: mainIconSize,
-                ),
-              )),
+          decoration: InputDecoration(
+            hintText: FlutterI18n.translate(context, "event_form.description"),
+            icon: const Padding(
+              padding: EdgeInsets.symmetric(horizontal: mainIconPaddingAmount),
+              child: Icon(
+                Icons.description,
+                color: Colors.amber,
+                size: mainIconSize,
+              ),
+            ),
+          ),
           maxLines: null,
           onChanged: (value) {
             setState(() {
@@ -153,28 +166,42 @@ class _EventFormState extends State<EventForm> {
     );
   }
 
+  /// select location button
   Widget mapScreenButton() {
     return Container(
       padding: const EdgeInsets.only(bottom: 20),
-      child: ElevatedButton(
-        onPressed: () {
-            Navigator.pushNamed(context, LocationMap.routeName).then((value) {
-              setState(() {
-                var latlng = value as LatLng;
-                double lat = latlng.latitude;
-                double lng = latlng.longitude;
-                GeoPoint geoPoint = GeoPoint(lat, lng);
-                event.location = geoPoint;
-              });
-          });
-
+      child: FutureBuilder(
+        future: Geolocator.getCurrentPosition(),
+        builder: (context, snapshot) {
+          if (!snapshot.hasData && event.location == null) {
+            return const CircularProgressIndicator();
+          }
+          return ElevatedButton(
+            onPressed: () async {
+              event.location ??=
+                  GeoPoint(snapshot.data!.latitude, snapshot.data!.longitude);
+              var locationSelected = await Navigator.pushNamed(
+                context,
+                LocationMap.routeName,
+                arguments: event.location,
+              );
+              if (locationSelected != null) {
+                var location = locationSelected as LatLng;
+                setState(() {
+                  event.location =
+                      GeoPoint(location.latitude, location.longitude);
+                });
+              }
+            },
+            child: Text(
+                FlutterI18n.translate(context, "event_form.select_location")),
+          );
         },
-        child: const Text("Select Location"),
       ),
     );
   }
 
-  // save button widget
+  /// save button widget
   Widget saveButton() {
     return ElevatedButton(
       onPressed: () {
@@ -194,29 +221,29 @@ class _EventFormState extends State<EventForm> {
     );
   }
 
-  // date button and date picker widget
+  /// date button and date picker widget
   Widget dateWidget() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         ElevatedButton(
-          onPressed: () {
-            showDatePicker(
+          onPressed: () async {
+            var date = await showDatePicker(
               context: context,
-              initialDate: rightNow,
+              initialDate: event.date ?? rightNow,
               firstDate: rightNow.isBefore(eventDate) ? rightNow : eventDate,
               lastDate: lastDateTimeDate,
-            ).then((value) {
-              if (value != null) {
-                setState(() {
-                  eventDate = value;
-                });
-              }
-            });
+              currentDate: rightNow,
+            );
+            if (date != null) {
+              setState(() {
+                eventDate = date;
+              });
+            }
           },
-          child: const Text(
-            "Date",
-            style: TextStyle(fontSize: mainFontSize),
+          child: Text(
+            FlutterI18n.translate(context, "event_form.date"),
+            style: const TextStyle(fontSize: mainFontSize),
           ),
         ),
         displayTextContainer(toDateString(eventDate))
@@ -224,7 +251,7 @@ class _EventFormState extends State<EventForm> {
     );
   }
 
-  // time button and time picker widget
+  /// time button and time picker widget
   Widget timeWidget() {
     return Row(
       children: [
@@ -249,9 +276,9 @@ class _EventFormState extends State<EventForm> {
               },
             );
           },
-          child: const Text(
-            "Time",
-            style: TextStyle(fontSize: mainFontSize),
+          child: Text(
+            FlutterI18n.translate(context, "event_form.time"),
+            style: const TextStyle(fontSize: mainFontSize),
           ),
         ),
         displayTextContainer(toTimeString(eventTime))
@@ -259,13 +286,14 @@ class _EventFormState extends State<EventForm> {
     );
   }
 
-  // event name price widget
+  /// event name price widget
   Widget priceFieldWidget() {
-    return TextField(
+    return TextFormField(
+        initialValue: event.price.toString(),
         style: const TextStyle(fontSize: 20),
-        decoration: const InputDecoration(
-            hintText: "Price",
-            icon: Padding(
+        decoration: InputDecoration(
+            hintText: FlutterI18n.translate(context, "event_form.price"),
+            icon: const Padding(
               padding: EdgeInsets.symmetric(horizontal: mainIconPaddingAmount),
               child: Icon(
                 Icons.attach_money_sharp,
@@ -273,16 +301,18 @@ class _EventFormState extends State<EventForm> {
                 color: Colors.green,
               ),
             ),
-            contentPadding: EdgeInsets.symmetric(horizontal: 50, vertical: 10)),
+            contentPadding:
+                const EdgeInsets.symmetric(horizontal: 50, vertical: 10)),
         onChanged: (value) {
-          setState(() {
-            event.price = double.tryParse(value);
-            if (event.price == null) {
-              print("Invalid value for price");
-            }
-          });
+          double? price = double.tryParse(value);
+          if (price != null) {
+            setState(() {
+              event.price = price;
+            });
+          }
         },
-        // keyboard type to number with options
+
+        /// set keyboard type to number with options
         keyboardType:
             const TextInputType.numberWithOptions(decimal: true, signed: false),
         inputFormatters: [
@@ -296,20 +326,23 @@ class _EventFormState extends State<EventForm> {
         ]);
   }
 
-  // event name textfield widget
+  /// event name textfield widget
   Widget eventNameTextField() {
-    return TextField(
+    return TextFormField(
+      initialValue: event.name,
       style: const TextStyle(fontSize: mainFontSize),
-      decoration: const InputDecoration(
-          hintText: "Event Name",
-          border: OutlineInputBorder(),
-          icon: Padding(
-              padding: EdgeInsets.symmetric(horizontal: mainIconPaddingAmount),
-              child: Icon(
-                Icons.drive_file_rename_outline,
-                color: Colors.brown,
-                size: mainIconSize,
-              ))),
+      decoration: InputDecoration(
+        hintText: FlutterI18n.translate(context, "event_form.name"),
+        border: const OutlineInputBorder(),
+        icon: const Padding(
+          padding: EdgeInsets.symmetric(horizontal: mainIconPaddingAmount),
+          child: Icon(
+            Icons.drive_file_rename_outline,
+            color: Colors.brown,
+            size: mainIconSize,
+          ),
+        ),
+      ),
       onChanged: (value) {
         setState(() {
           event.name = value;
@@ -318,21 +351,27 @@ class _EventFormState extends State<EventForm> {
     );
   }
 
+  /// capacity text field
   Widget capacityTextField() {
-    return TextField(
+    return TextFormField(
+        initialValue: event.capacity.toString(),
         style: const TextStyle(fontSize: 20),
-        decoration: const InputDecoration(
-            hintText: "Capacity",
-            icon: Padding(
+        decoration: InputDecoration(
+            hintText: FlutterI18n.translate(context, "event_form.capacity"),
+            icon: const Padding(
               padding: EdgeInsets.symmetric(horizontal: mainIconPaddingAmount),
               child: Icon(Icons.reduce_capacity,
                   size: mainIconSize, color: Color.fromRGBO(153, 0, 0, 100.0)),
             ),
-            contentPadding: EdgeInsets.symmetric(horizontal: 50, vertical: 10)),
+            contentPadding:
+                const EdgeInsets.symmetric(horizontal: 50, vertical: 10)),
         onChanged: (value) {
-          setState(() {
-            event.capacity = int.tryParse(value);
-          });
+          int? capacity = int.tryParse(value);
+          if (capacity != null) {
+            setState(() {
+              event.capacity = capacity;
+            });
+          }
         },
         // keyboard type to number keyboard
         keyboardType: TextInputType.number,
@@ -342,9 +381,10 @@ class _EventFormState extends State<EventForm> {
         );
   }
 
-  // star rating field (0.5 to 5.0 rating)
+  /// star rating field (0.5 to 5.0 rating)
   Widget ratingField() {
     return RatingBar.builder(
+      unratedColor: Colors.grey,
       initialRating: event.rating,
       minRating: 0.5,
       allowHalfRating: true,
@@ -363,17 +403,26 @@ class _EventFormState extends State<EventForm> {
     );
   }
 
-  // Generate the category dropdown
+  /// Generate the category dropdown
   Widget categoriesDropdown(List<Category> categories) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        const Text('Category: ', style: TextStyle(fontSize: mainFontSize)),
+        Text(
+          FlutterI18n.translate(context, "event_form.category"),
+          style: const TextStyle(fontSize: mainFontSize),
+        ),
         const SizedBox(
           width: 35,
         ),
         DropdownButton<int?>(
-          hint: new Text("Select Category"),
+          hint: Text(
+            FlutterI18n.translate(
+              context,
+              "event_form.select_category",
+            ),
+            style: const TextStyle(color: Colors.grey),
+          ),
           value: categories
               .firstWhere((element) => element.id == event.categoryId,
                   orElse: () => Category(id: null, name: ""))
@@ -381,7 +430,8 @@ class _EventFormState extends State<EventForm> {
           items: categories.map((category) {
             return DropdownMenuItem(
               value: category.id,
-              child: Text(category.name,
+              child: Text(
+                  FlutterI18n.translate(context, "categories.${category.name}"),
                   style: const TextStyle(fontSize: mainFontSize)),
             );
           }).toList(),

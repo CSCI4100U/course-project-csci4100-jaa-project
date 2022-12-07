@@ -14,7 +14,7 @@ class EventScreen extends StatelessWidget {
         ModalRoute.of(context)!.settings.arguments as Category;
     return Scaffold(
         appBar: AppBar(
-          title: Text("Events"),
+          title: const Text("Events"),
         ),
         body: Body(categoryFilter: categoryFilter));
   }
