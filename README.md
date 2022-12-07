@@ -8,3 +8,6 @@ Group members (3-5) (no Student IDs, only names and github usernames):
 
 3. Name: Agustín Hernández, Github Username: AgustinH09
 
+## Technical Report
+
+Technical Report.pdf found in the root of the project
