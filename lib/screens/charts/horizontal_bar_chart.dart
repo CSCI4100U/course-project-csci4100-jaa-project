@@ -30,7 +30,7 @@ class HorizontalChart extends StatefulWidget {
 }
 
 class _HorizontalChartState extends State<HorizontalChart> {
-  late List<String> columnNames = [
+  final List<String> columnNames = [
     'id',
     'Name',
     'Price',
@@ -38,9 +38,7 @@ class _HorizontalChartState extends State<HorizontalChart> {
     'Capacity',
     'Rating/Price',
     'Capacity/Price',
-  ]
-      .map((col) => FlutterI18n.translate(context, "charts.column_names.$col"))
-      .toList();
+  ];
 
   final EventModel _eventModel = EventModel();
   late List<Map> dataItems = List.empty(growable: true);

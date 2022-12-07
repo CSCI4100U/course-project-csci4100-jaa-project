@@ -50,11 +50,11 @@
     },
     "event_is_full": "Event is full",
     "quit_from_event": "Quit From Event",
-    "assist_to_event": "Assist To Event",
+    "assist_to_event": "Attend To Event",
     "description": {
       "price": "Price: ${price}",
       "date": "Date: {date}",
-      "assistants": "Assistants: {totalAssistants}/{capacity}"
+      "assistants": "People Attending: {totalAssistants}/{capacity}"
     }
   },
   "event_screen": {
@@ -125,20 +125,20 @@
       "name": "Name: {name}",
       "phone": "Phone: {phone}",
       "locale": "Select Language: "
-    },
-    "event_table": {
-      "title": "Events Data Table    ",
-      "column_names": {
-        "id": "id",
-        "Name": "Name",
-        "Price": "Price",
-        "Rating": "Rating",
-        "Capacity": "Capacity",
-        "Rating per Price": "Rating per Price",
-        "Capacity per Price": "Capacity per Price",
-        "Date": "Date",
-        "Date Created": "Date Created"
-      }
+    }
+  },
+  "event_table": {
+    "title": "Events Data Table    ",
+    "column_names": {
+      "id": "id",
+      "Name": "Name",
+      "Price": "Price",
+      "Rating": "Rating",
+      "Capacity": "Capacity",
+      "Rating per Price": "Rating per Price",
+      "Capacity per Price": "Capacity per Price",
+      "Date": "Date",
+      "Date Created": "Date Created"
     }
   },
   "components": {

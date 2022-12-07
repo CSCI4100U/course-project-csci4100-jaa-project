@@ -125,20 +125,20 @@
       "name": "Nombre: {name}",
       "phone": "Teléfono: {phone}",
       "locale": "Selecciona Idioma:"
-    },
-    "event_table": {
-      "title": "Tabla de Datos de Eventos    ",
-      "column_names": {
-        "id": "id",
-        "Name": "Nombre",
-        "Price": "Precio",
-        "Rating": "Rating",
-        "Capacity": "Capacidad",
-        "Rating per Price": "Rating por Precio",
-        "Capacity per Price": "Capacidad por Precio",
-        "Date": "Fecha",
-        "Date Created": "Fecha de Creación"
-      }
+    }
+  },
+  "event_table": {
+    "title": "Tabla de Datos de Eventos    ",
+    "column_names": {
+      "id": "id",
+      "Name": "Nombre",
+      "Price": "Precio",
+      "Rating": "Rating",
+      "Capacity": "Capacidad",
+      "Rating per Price": "Rating por Precio",
+      "Capacity per Price": "Capacidad por Precio",
+      "Date": "Fecha",
+      "Date Created": "Fecha de Creación"
     }
   },
   "components": {

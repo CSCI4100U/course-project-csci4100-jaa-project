@@ -27,7 +27,7 @@ class VerticalChart extends StatefulWidget {
 }
 
 class _VerticalChartState extends State<VerticalChart> {
-  late List<String> columnNames = [
+  final List<String> columnNames = [
     'id',
     'Name',
     'Price',
@@ -35,9 +35,7 @@ class _VerticalChartState extends State<VerticalChart> {
     'Capacity',
     'Rating/Price',
     'Capacity/Price'
-  ]
-      .map((col) => FlutterI18n.translate(context, "charts.column_names.$col"))
-      .toList();
+  ];
 
   @override
   Widget build(BuildContext context) {
