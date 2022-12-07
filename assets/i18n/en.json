@@ -21,8 +21,6 @@
     "location_selected": "Update Location",
     "description": "Description",
     "title": "Create a new event"
-
-
   },
   "charts": {
     "column_names": {
@@ -43,11 +41,11 @@
   },
   "details_screen": {
     "cant_delete":{
-       "first_message": "You can"t delete this event",
+       "first_message": "You can't delete this event",
         "second_message": "You are not the owner"
     },
     "cant_edit":{
-       "first_message": "You can"t edit this event",
+       "first_message": "You can't edit this event",
         "second_message": "You are not the owner"
     },
     "event_is_full": "Event is full",
